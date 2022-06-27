@@ -1,0 +1,34 @@
+#TITLE	CK Metrics
+#SUMMARY	Measurements for an interpretation of the metrics from the CK metrics suite
+
+##Dataset attributes
+Timestamp	Sun Apr 24 08:48:57 NZST 2022
+Tool	mete-analysis(ck metrics):20180206T1230
+System	design1000
+Codebase	../grad006-03/design1000/design1000
+
+##Measurements
+#Metadata
+CKCBO (Coupling)	UnboundedCount	(trgtdcl) Only record dependencies to target modules whose declarations have been seen; (srcsttc) Record dependencies with respect to both instance and static fields and methods in the source module; (trgtsttic) Record dependencies to both instance and static fields and methods in the target module; (srccons) Consider constructors as invokers as creating coupling; (trgtcons) Record both invoking methods and calling construtors as creating dependencies; (type) Record dependencies between all types, including interfaces, enums, an annotations; (anc) Include dependencies to ancestors of source; (desc) Include descendants to ancestors of source; (inh) Include dependencies on targets whose accessed members were inherited; (poly) Include dependencies on targets whose members were accessed via polymorphism; (bidir) Dependencies are recorded as bi-directional. If A has a dependency to B, then B has a dependency to A; (fanout) Record only dependencies from source to target (no-op when bidir); (mod) Record dependencies between modules (as opposed to between packages); (pres) Record only the presence (or not) of an occurrence of a dependency between entities; (nest) Consider nested or enclosing types are separate; (raw) Do not record dependencies due to synthetic constructs
+WMC (Size)	UnboundedCount	(srcsttc) Record dependencies with respect to both instance and static fields and methods in the source module; (srccons) Consider constructors as invokers as creating coupling; (init) Record all dependencies including those in all initialisers; (raw) Do not record dependencies due to synthetic constructs; (srcmem) Include dependencies to members of all visibilities in source
+NOC (Inheritance)	UnboundedCount	(srcsttc) Record dependencies with respect to both instance and static fields and methods in the source module; (srccons) Consider constructors as invokers as creating coupling; (init) Record all dependencies including those in all initialisers; (raw) Do not record dependencies due to synthetic constructs; (srcmem) Include dependencies to members of all visibilities in source
+DIT (Inheritance)	UnboundedCount	(srcsttc) Record dependencies with respect to both instance and static fields and methods in the source module; (srccons) Consider constructors as invokers as creating coupling; (init) Record all dependencies including those in all initialisers; (raw) Do not record dependencies due to synthetic constructs; (srcmem) Include dependencies to members of all visibilities in source
+LCOM2 (Cohesion)	UnboundedCount	(srcsttc) Record dependencies with respect to both instance and static fields and methods in the source module; (srcmeth) Do not consider constructors as invokers as creating coupling; (init) Record all dependencies including those in all initialisers; (srcmem) Include dependencies to members of all visibilities in source
+RFC (Coupling)	UnboundedCount	(trgtall) Record dependencies to target modules whether or not the declarations have been seen; (srcsttc) Record dependencies with respect to both instance and static fields and methods in the source module; (trgtsttic) Record dependencies to both instance and static fields and methods in the target module; (trgtcons) Record both invoking methods and calling construtors as creating dependencies; (type) Record dependencies between all types, including interfaces, enums, an annotations
+#Data
+#Entity	CKCBO (Coupling)	WMC (Size)	NOC (Inheritance)	DIT (Inheritance)	LCOM2 (Cohesion)	RFC (Coupling)
+kalah.Kalah	4	5	0	1	2	15
+kalah.game.CaptureRule	7	2	0	1	0	18
+kalah.game.EmptyStoreSow	4	2	0	1	0	7
+kalah.game.GameControl	1	6	1	0	0	6
+kalah.game.GameRules	1	1	3	0	0	1
+kalah.game.GameState	5	3	0	1	1	5
+kalah.game.House	5	8	0	1	15	13
+kalah.game.IPlayer	5	10	1	0	0	10
+kalah.game.IllegalMoveRule	7	3	0	1	0	10
+kalah.game.KalahGameControl	13	11	0	1	29	64
+kalah.game.Player	9	12	0	1	45	36
+kalah.game.SeedContainer	5	5	2	0	0	5
+kalah.game.Store	5	6	0	1	4	11
+kalah.ui.Board	8	9	0	1	10	54
+kalah.ui.GameInterface	1	4	1	0	0	4

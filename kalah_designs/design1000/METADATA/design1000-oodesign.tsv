@@ -1,0 +1,86 @@
+#TITLE	OO Measurements
+#SUMMARY	Description of static structure of system. Includes measurements of individual modules and measurements of the overall design.
+
+##Dataset attributes
+Timestamp	Sun Apr 24 08:48:00 NZST 2022
+Tool	mete-analysis(static structure):20211117T0000
+System	design1000
+Codebase	../grad006-03/design1000/design1000
+
+##Module Attributes
+#Metadata
+Ce	UnboundedCount	Efferent coupling - Total number of user-defined modules (including inherited) this module has a dependency on
+Ca	UnboundedCount	Afferent coupling - Total number of user-defined modules (including inherited) that are dependent on this module
+CON	UnboundedCount	Total number of constructors in module
+DIF	UnboundedCount	Total number of instance fields DECLARED in module
+DIM	UnboundedCount	Total number of instance methods DECLARED in module
+DSF	UnboundedCount	Total number of NON FINAL static fields DECLARED in module
+DSM	UnboundedCount	Total number of static methods (not counting main()) DECLARED in module
+DSFF	UnboundedCount	Total number of FINAL static fields DECLARED in module
+MIF	UnboundedCount	Module Instance Fields - Total number of instance fields in module (ie including inherited, not including libraries)
+MIM	UnboundedCount	Module Instance Methods - Total number of instance methods in module (ie including inherited, not including libaries)
+MSF	UnboundedCount	Module Static Fields - Total number of NON FINAL static fields in module (ie including inherited, not including libraries)
+MSM	UnboundedCount	Module Static Methods - Total number of static methods (not counting main()) in module (ie including inherited, not including libraries)
+MAIN	Flag[0|1]	Module has main() entry-point method
+CLS	Flag[0|1]	Module is a class (and not an enum or exception)
+INT	Flag[0|1]	Module is interface
+ENM	Flag[0|1]	Module is enum
+ANN	Flag[0|1]	Module is annotation
+EXP	Flag[0|1]	Modules is exception
+NST	Flag[0|1]	Module is nested
+EXT	Flag[0|1]	Module extends another (excluding Object)
+IMP	Flag[0|1]	Module (class) implements at least one (interface)
+MDUInh	Flag[0|1]	Module is defined using inheritance (non exception that extends or implements something that is not java.lang.Object
+MInhF	Flag[0|1]	Some other module inherits from (implements or extends) this module
+CeR	BoundedReal[0.0-1.0]	Ratio of Ce to Total_Modules
+CaR	BoundedReal[0.0-1.0]	Ratio of Ca to Total_Modules
+#Data
+#Entity	Ce	Ca	CON	DIF	DIM	DSF	DSM	DSFF	MIF	MIM	MSF	MSM	MAIN	CLS	INT	ENM	ANN	EXP	NST	EXT	IMP	MDUInh	MInhF	CeR	CaR
+kalah.Kalah	6	0	1	4	3	0	0	0	4	3	0	0	1	1	0	0	0	0	0	0	0	0	0	0.400	0.000
+kalah.game.CaptureRule	7	1	1	0	1	0	0	0	0	1	0	0	0	1	0	0	0	0	0	0	1	1	0	0.467	0.067
+kalah.game.EmptyStoreSow	4	1	1	0	1	0	0	0	0	1	0	0	0	1	0	0	0	0	0	0	1	1	0	0.267	0.067
+kalah.game.GameControl	1	2	0	0	6	0	0	0	0	6	0	0	0	0	1	0	0	0	0	0	0	0	1	0.067	0.133
+kalah.game.GameRules	2	4	0	0	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	0	0	0	1	0.133	0.267
+kalah.game.GameState	0	7	1	0	0	0	2	8	0	0	0	2	0	0	0	1	0	0	0	1	0	1	0	0.000	0.467
+kalah.game.House	1	5	1	2	7	0	0	1	2	7	0	0	0	1	0	0	0	0	0	0	1	1	0	0.067	0.333
+kalah.game.IPlayer	1	9	0	0	10	0	0	0	0	10	0	0	0	0	1	0	0	0	0	0	0	0	1	0.067	0.600
+kalah.game.IllegalMoveRule	7	1	1	0	2	0	0	0	0	2	0	0	0	1	0	0	0	0	0	0	1	1	0	0.467	0.067
+kalah.game.KalahGameControl	13	1	1	4	10	0	0	1	4	10	0	0	0	1	0	0	0	0	0	0	1	1	0	0.867	0.067
+kalah.game.Player	4	6	1	5	11	0	0	1	5	11	0	0	0	1	0	0	0	0	0	0	1	1	0	0.267	0.400
+kalah.game.SeedContainer	0	8	0	0	5	0	0	0	0	5	0	0	0	0	1	0	0	0	0	0	0	0	1	0.000	0.533
+kalah.game.Store	1	5	1	1	5	0	0	0	1	5	0	0	0	1	0	0	0	0	0	0	1	1	0	0.067	0.333
+kalah.ui.Board	7	2	1	4	8	0	0	1	4	8	0	0	0	1	0	0	0	0	0	0	1	1	0	0.467	0.133
+kalah.ui.GameInterface	1	3	0	0	4	0	0	0	0	4	0	0	0	0	1	0	0	0	0	0	0	0	1	0.067	0.200
+
+##Design Attributes
+#Metadata
+Total_Modules	UnboundedCount	Number of modules
+#CLS	UnboundedCount	Number of modules that are CLS in Module Attributes
+#INT	UnboundedCount	Number of modules that are INT in Module Attributes
+#ENM	UnboundedCount	Number of modules that are ENM in Module Attributes
+#ANN	UnboundedCount	Number of modules that are ANN in Module Attributes
+#EXP	UnboundedCount	Number of modules that are EXP in Module Attributes
+#NST	UnboundedCount	Number of modules that are NST in Module Attributes
+#MAIN	UnboundedCount	Number of modules that are MAIN in Module Attributes
+DUI	BoundedReal[0.0-1.0]	Proportion of user-defined modules defined using inheritance
+IF	BoundedReal[0.0-1.0]	Proportion of user-defined modules that are inherited from
+#IND	UnboundedCount	Number of modules that are independent, depend on no other user-defined type
+#NDP	UnboundedCount	Number of modules that have no other modules depend on them
+NoInstanceMethods	UnboundedCount	Number of modules with no instance methods
+NoInstanceFields	UnboundedCount	Number of modules with no instance fields
+#Data
+design1000	
+Total_Modules	15
+#CLS	9
+#INT	5
+#ENM	1
+#ANN	0
+#EXP	0
+#NST	0
+#MAIN	1
+DUI	0.600
+IF	0.333
+#IND	2
+#NDP	1
+NoInstanceMethods	0
+NoInstanceFields	3

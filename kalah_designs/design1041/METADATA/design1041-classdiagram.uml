@@ -1,0 +1,16 @@
+@startuml
+title design1041
+class kalah.Board
+class kalah.Kalah
+class kalah.Row
+class print.BoardPrinter
+class print.TwoPlayerBoardPrinter
+
+print.TwoPlayerBoardPrinter --|>print.BoardPrinter
+kalah.Kalah -->print.BoardPrinter
+kalah.Kalah -->print.TwoPlayerBoardPrinter
+kalah.Kalah -->kalah.Board
+kalah.Board -->print.BoardPrinter
+kalah.Board -->print.TwoPlayerBoardPrinter
+kalah.Board -->kalah.Row
+@enduml

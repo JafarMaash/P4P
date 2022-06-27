@@ -1,0 +1,29 @@
+#TITLE	NCLOC for design1000
+#SUMMARY	Non-comment non-blank lines of code per top-level module
+
+##Dataset attributes
+Timestamp	20220424 08:47:54 NZST
+Tool	loc.pl 20170704T0800
+System	design1000
+Codebase	../grad006-03/design1000/src
+
+##Measurements
+#Metadata
+NCLOC	UnboundedCount	Non-comment non-blank lines of code for module (first line with simple name to line with closing brace)
+#Data
+#Entity	NCLOC
+kalah.Kalah	25
+kalah.game.CaptureRule	15
+kalah.game.EmptyStoreSow	10
+kalah.game.GameControl	8
+kalah.game.GameRules	3
+kalah.game.GameState	10
+kalah.game.House	34
+kalah.game.IPlayer	12
+kalah.game.IllegalMoveRule	16
+kalah.game.KalahGameControl	86
+kalah.game.Player	68
+kalah.game.SeedContainer	7
+kalah.game.Store	22
+kalah.ui.Board	84
+kalah.ui.GameInterface	6

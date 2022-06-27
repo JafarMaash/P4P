@@ -1,0 +1,1599 @@
+<html>
+<head>
+<style>
+  .stripe tbody tr:nth-child(even) td {background-color:#f2f2f2;}
+  div.scrollable { width: 100%; max-height: 100px; margin: 0; padding: 0; overflow: auto;}
+</style>
+</head>
+</html>
+<body>
+<h1>OO Measurements</h1>
+<p>Description of static structure of system. Includes measurements of individual modules and measurements of the overall design.</p>
+<h3>Dataset attributes</h3>
+<table style="empty-cells: show" border>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+Timestamp
+</div></th>
+    <td><div class="scrollable">
+Sun Apr 24 08:48:48 NZST 2022
+</div></td>
+    <td><div class="scrollable">
+
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+Tool
+</div></th>
+    <td><div class="scrollable">
+mete-analysis(static structure):20211117T0000
+</div></td>
+    <td><div class="scrollable">
+
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+System
+</div></th>
+    <td><div class="scrollable">
+design1041
+</div></td>
+    <td><div class="scrollable">
+
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+Codebase
+</div></th>
+    <td><div class="scrollable">
+../grad006-03/design1041/design1041
+</div></td>
+    <td><div class="scrollable">
+
+</div></td>
+  </tr>
+</table>
+<h3>Module Attributes</h3>
+<h4>Metadata<h4>
+<table style="empty-cells: show" border>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+Ce
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Efferent coupling - Total number of user-defined modules (including inherited) this module has a dependency on
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+Ca
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Afferent coupling - Total number of user-defined modules (including inherited) that are dependent on this module
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+CON
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Total number of constructors in module
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+DIF
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Total number of instance fields DECLARED in module
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+DIM
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Total number of instance methods DECLARED in module
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+DSF
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Total number of NON FINAL static fields DECLARED in module
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+DSM
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Total number of static methods (not counting main()) DECLARED in module
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+DSFF
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Total number of FINAL static fields DECLARED in module
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+MIF
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Module Instance Fields - Total number of instance fields in module (ie including inherited, not including libraries)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+MIM
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Module Instance Methods - Total number of instance methods in module (ie including inherited, not including libaries)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+MSF
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Module Static Fields - Total number of NON FINAL static fields in module (ie including inherited, not including libraries)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+MSM
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Module Static Methods - Total number of static methods (not counting main()) in module (ie including inherited, not including libraries)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+MAIN
+</div></td>
+    <td><div class="scrollable">
+Flag[0|1]
+</div></td>
+    <td><div class="scrollable">
+Module has main() entry-point method
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+CLS
+</div></td>
+    <td><div class="scrollable">
+Flag[0|1]
+</div></td>
+    <td><div class="scrollable">
+Module is a class (and not an enum or exception)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+INT
+</div></td>
+    <td><div class="scrollable">
+Flag[0|1]
+</div></td>
+    <td><div class="scrollable">
+Module is interface
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+ENM
+</div></td>
+    <td><div class="scrollable">
+Flag[0|1]
+</div></td>
+    <td><div class="scrollable">
+Module is enum
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+ANN
+</div></td>
+    <td><div class="scrollable">
+Flag[0|1]
+</div></td>
+    <td><div class="scrollable">
+Module is annotation
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+EXP
+</div></td>
+    <td><div class="scrollable">
+Flag[0|1]
+</div></td>
+    <td><div class="scrollable">
+Modules is exception
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+NST
+</div></td>
+    <td><div class="scrollable">
+Flag[0|1]
+</div></td>
+    <td><div class="scrollable">
+Module is nested
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+EXT
+</div></td>
+    <td><div class="scrollable">
+Flag[0|1]
+</div></td>
+    <td><div class="scrollable">
+Module extends another (excluding Object)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+IMP
+</div></td>
+    <td><div class="scrollable">
+Flag[0|1]
+</div></td>
+    <td><div class="scrollable">
+Module (class) implements at least one (interface)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+MDUInh
+</div></td>
+    <td><div class="scrollable">
+Flag[0|1]
+</div></td>
+    <td><div class="scrollable">
+Module is defined using inheritance (non exception that extends or implements something that is not java.lang.Object
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+MInhF
+</div></td>
+    <td><div class="scrollable">
+Flag[0|1]
+</div></td>
+    <td><div class="scrollable">
+Some other module inherits from (implements or extends) this module
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+CeR
+</div></td>
+    <td><div class="scrollable">
+BoundedReal[0.0-1.0]
+</div></td>
+    <td><div class="scrollable">
+Ratio of Ce to Total_Modules
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+CaR
+</div></td>
+    <td><div class="scrollable">
+BoundedReal[0.0-1.0]
+</div></td>
+    <td><div class="scrollable">
+Ratio of Ca to Total_Modules
+</div></td>
+  </tr>
+</table>
+<h4>Data<h4>
+<div class="stripe">
+<table style="empty-cells: show" border>
+  <tr valign=top>
+    <th><div class="scrollable">
+Entity
+</div></th>
+    <th><div class="scrollable">
+Ce
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+Ca
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+CON
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+DIF
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+DIM
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+DSF
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+DSM
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+DSFF
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+MIF
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+MIM
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+MSF
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+MSM
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+MAIN
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+CLS
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+INT
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+ENM
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+ANN
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+EXP
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+NST
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+EXT
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+IMP
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+MDUInh
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+MInhF
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+CeR
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+CaR
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.Board
+</div></td>
+    <td><div class="scrollable">
+3
+</div></td>
+    <td><div class="scrollable">
+[print.BoardPrinter, print.TwoPlayerBoardPrinter, kalah.Row]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.Kalah]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.Board#public <init>(int,int,int,print.BoardPrinter) {}>java.lang.Object#public <init>() <>*:[1]]
+</div></td>
+    <td><div class="scrollable">
+4
+</div></td>
+    <td><div class="scrollable">
+[kalah.Board#private final kalah.Row[] rows, kalah.Board#private final int numHouses, kalah.Board#private final print.BoardPrinter printer, kalah.Board#private int playerTurn]
+</div></td>
+    <td><div class="scrollable">
+6
+</div></td>
+    <td><div class="scrollable">
+[kalah.Board#public boolean isGameOver() {}, kalah.Board#public void printState(com.qualitascorpus.testsupport.IO) {}, kalah.Board#public boolean doMove(int) {}, kalah.Board#public void printResult(com.qualitascorpus.testsupport.IO) {}, kalah.Board#private int getNextPlayer(int,int) {}, kalah.Board#public int getPlayer() {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.Board#private static final int NUM_PLAYERS]
+</div></td>
+    <td><div class="scrollable">
+4
+</div></td>
+    <td><div class="scrollable">
+[kalah.Board#private final kalah.Row[] rows, kalah.Board#private final int numHouses, kalah.Board#private final print.BoardPrinter printer, kalah.Board#private int playerTurn]
+</div></td>
+    <td><div class="scrollable">
+6
+</div></td>
+    <td><div class="scrollable">
+[kalah.Board#public boolean isGameOver() {}, kalah.Board#public void printState(com.qualitascorpus.testsupport.IO) {}, kalah.Board#public boolean doMove(int) {}, kalah.Board#public void printResult(com.qualitascorpus.testsupport.IO) {}, kalah.Board#private int getNextPlayer(int,int) {}, kalah.Board#public int getPlayer() {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.Board]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0.600
+</div></td>
+    <td><div class="scrollable">
+f(3)
+</div></td>
+    <td><div class="scrollable">
+0.200
+</div></td>
+    <td><div class="scrollable">
+f(1)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.Kalah
+</div></td>
+    <td><div class="scrollable">
+3
+</div></td>
+    <td><div class="scrollable">
+[print.BoardPrinter, print.TwoPlayerBoardPrinter, kalah.Board]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.Kalah#public <init>() {}>java.lang.Object#public <init>() <>*:[1]]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+5
+</div></td>
+    <td><div class="scrollable">
+[kalah.Kalah#private static final int QUIT_VALUE, kalah.Kalah#private static final int STARTING_PLAYER, kalah.Kalah#private static final int NUM_HOUSES, kalah.Kalah#private static final java.lang.String QUIT_STRING, kalah.Kalah#private static final int NUM_SEEDS]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.Kalah]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.Kalah]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0.600
+</div></td>
+    <td><div class="scrollable">
+f(3)
+</div></td>
+    <td><div class="scrollable">
+0.000
+</div></td>
+    <td><div class="scrollable">
+f(0)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.Row
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.Board]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.Row#public <init>(int,int) {}>java.lang.Object#public <init>() <>*:[1]]
+</div></td>
+    <td><div class="scrollable">
+2
+</div></td>
+    <td><div class="scrollable">
+[kalah.Row#private int store, kalah.Row#private int[] houses]
+</div></td>
+    <td><div class="scrollable">
+6
+</div></td>
+    <td><div class="scrollable">
+[kalah.Row#public int getStore() {}, kalah.Row#public void addToStore(int) {}, kalah.Row#public int[] getHouses() {}, kalah.Row#public int getScore() {}, kalah.Row#public int insertSeed(int) {}, kalah.Row#public int takeSeeds(int) {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+2
+</div></td>
+    <td><div class="scrollable">
+[kalah.Row#private int store, kalah.Row#private int[] houses]
+</div></td>
+    <td><div class="scrollable">
+6
+</div></td>
+    <td><div class="scrollable">
+[kalah.Row#public int getStore() {}, kalah.Row#public void addToStore(int) {}, kalah.Row#public int[] getHouses() {}, kalah.Row#public int getScore() {}, kalah.Row#public int insertSeed(int) {}, kalah.Row#public int takeSeeds(int) {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.Row]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0.000
+</div></td>
+    <td><div class="scrollable">
+f(0)
+</div></td>
+    <td><div class="scrollable">
+0.200
+</div></td>
+    <td><div class="scrollable">
+f(1)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+print.BoardPrinter
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+3
+</div></td>
+    <td><div class="scrollable">
+[print.TwoPlayerBoardPrinter, kalah.Kalah, kalah.Board]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[print.BoardPrinter#public <init>() {}>java.lang.Object#public <init>() <>*:[1]]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+3
+</div></td>
+    <td><div class="scrollable">
+[print.BoardPrinter#protected int convertToPrintValue(int) {}, print.BoardPrinter#public abstract void printState(com.qualitascorpus.testsupport.IO,int[][],int[]) <>, print.BoardPrinter#public void printResult(com.qualitascorpus.testsupport.IO,int[]) {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+3
+</div></td>
+    <td><div class="scrollable">
+[print.BoardPrinter#protected int convertToPrintValue(int) {}, print.BoardPrinter#public abstract void printState(com.qualitascorpus.testsupport.IO,int[][],int[]) <>, print.BoardPrinter#public void printResult(com.qualitascorpus.testsupport.IO,int[]) {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[print.BoardPrinter]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[print.BoardPrinter]
+</div></td>
+    <td><div class="scrollable">
+0.000
+</div></td>
+    <td><div class="scrollable">
+f(0)
+</div></td>
+    <td><div class="scrollable">
+0.600
+</div></td>
+    <td><div class="scrollable">
+f(3)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+print.TwoPlayerBoardPrinter
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[print.BoardPrinter]
+</div></td>
+    <td><div class="scrollable">
+2
+</div></td>
+    <td><div class="scrollable">
+[kalah.Kalah, kalah.Board]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[print.TwoPlayerBoardPrinter#public <init>() {}>print.BoardPrinter#public <init>() {}:[1]]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+4
+</div></td>
+    <td><div class="scrollable">
+[print.TwoPlayerBoardPrinter#public void printState(com.qualitascorpus.testsupport.IO,int[][],int[]) {}, print.TwoPlayerBoardPrinter#private void trim(java.lang.StringBuilder) {}, print.TwoPlayerBoardPrinter#private java.lang.String formatHouseString(java.lang.String,int,int) {}, print.TwoPlayerBoardPrinter#private java.lang.String leftPad(int) {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+7
+</div></td>
+    <td><div class="scrollable">
+[print.TwoPlayerBoardPrinter#public void printState(com.qualitascorpus.testsupport.IO,int[][],int[]) {}, print.TwoPlayerBoardPrinter#private void trim(java.lang.StringBuilder) {}, print.TwoPlayerBoardPrinter#private java.lang.String formatHouseString(java.lang.String,int,int) {}, print.TwoPlayerBoardPrinter#private java.lang.String leftPad(int) {}, print.BoardPrinter#protected int convertToPrintValue(int) {}, print.BoardPrinter#public abstract void printState(com.qualitascorpus.testsupport.IO,int[][],int[]) <>, print.BoardPrinter#public void printResult(com.qualitascorpus.testsupport.IO,int[]) {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[print.TwoPlayerBoardPrinter]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[print.TwoPlayerBoardPrinter]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[print.TwoPlayerBoardPrinter]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0.200
+</div></td>
+    <td><div class="scrollable">
+f(1)
+</div></td>
+    <td><div class="scrollable">
+0.400
+</div></td>
+    <td><div class="scrollable">
+f(2)
+</div></td>
+  </tr>
+</table>
+</div>
+<h3>Design Attributes</h3>
+<h4>Metadata<h4>
+<table style="empty-cells: show" border>
+  <tr valign=top>
+    <td colspan="14"><div class="scrollable">
+Total_Modules
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Number of modules
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="14"><div class="scrollable">
+#CLS
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Number of modules that are CLS in Module Attributes
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="14"><div class="scrollable">
+#INT
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Number of modules that are INT in Module Attributes
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="14"><div class="scrollable">
+#ENM
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Number of modules that are ENM in Module Attributes
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="14"><div class="scrollable">
+#ANN
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Number of modules that are ANN in Module Attributes
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="14"><div class="scrollable">
+#EXP
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Number of modules that are EXP in Module Attributes
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="14"><div class="scrollable">
+#NST
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Number of modules that are NST in Module Attributes
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="14"><div class="scrollable">
+#MAIN
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Number of modules that are MAIN in Module Attributes
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="14"><div class="scrollable">
+DUI
+</div></td>
+    <td><div class="scrollable">
+BoundedReal[0.0-1.0]
+</div></td>
+    <td><div class="scrollable">
+Proportion of user-defined modules defined using inheritance
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="14"><div class="scrollable">
+IF
+</div></td>
+    <td><div class="scrollable">
+BoundedReal[0.0-1.0]
+</div></td>
+    <td><div class="scrollable">
+Proportion of user-defined modules that are inherited from
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="14"><div class="scrollable">
+#IND
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Number of modules that are independent, depend on no other user-defined type
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="14"><div class="scrollable">
+#NDP
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Number of modules that have no other modules depend on them
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="14"><div class="scrollable">
+NoInstanceMethods
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Number of modules with no instance methods
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="14"><div class="scrollable">
+NoInstanceFields
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Number of modules with no instance fields
+</div></td>
+  </tr>
+</table>
+<h4>Data<h4>
+<table style="empty-cells: show" border>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+design1041
+</div></th>
+    <td><div class="scrollable">
+
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+Total_Modules
+</div></th>
+    <td><div class="scrollable">
+5
+</div></td>
+    <td><div class="scrollable">
+[kalah.Board, kalah.Kalah, kalah.Row, print.BoardPrinter, print.TwoPlayerBoardPrinter]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+#CLS
+</div></th>
+    <td><div class="scrollable">
+5
+</div></td>
+    <td><div class="scrollable">
+[kalah.Board, kalah.Kalah, kalah.Row, print.BoardPrinter, print.TwoPlayerBoardPrinter]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+#INT
+</div></th>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+#ENM
+</div></th>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+#ANN
+</div></th>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+#EXP
+</div></th>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+#NST
+</div></th>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+#MAIN
+</div></th>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.Kalah]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+DUI
+</div></th>
+    <td><div class="scrollable">
+0.200
+</div></td>
+    <td><div class="scrollable">
+1/5
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+IF
+</div></th>
+    <td><div class="scrollable">
+0.200
+</div></td>
+    <td><div class="scrollable">
+1/5
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+#IND
+</div></th>
+    <td><div class="scrollable">
+2
+</div></td>
+    <td><div class="scrollable">
+[kalah.Row, print.BoardPrinter]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+#NDP
+</div></th>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.Kalah]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+NoInstanceMethods
+</div></th>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+NoInstanceFields
+</div></th>
+    <td><div class="scrollable">
+2
+</div></td>
+    <td><div class="scrollable">
+[print.BoardPrinter, print.TwoPlayerBoardPrinter]
+</div></td>
+  </tr>
+</table>
+</body>
+</html>
+<h3>Relationships</h3>
+<img src="design1041-classdiagram.png">

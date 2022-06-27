@@ -1,0 +1,1 @@
+design1034	kalah.Board(19),kalah.House(228),kalah.Player(38),kalah.Store(38),kalah.UI(19)	5	342

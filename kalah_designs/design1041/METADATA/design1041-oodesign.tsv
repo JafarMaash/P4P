@@ -1,0 +1,76 @@
+#TITLE	OO Measurements
+#SUMMARY	Description of static structure of system. Includes measurements of individual modules and measurements of the overall design.
+
+##Dataset attributes
+Timestamp	Sun Apr 24 08:48:47 NZST 2022
+Tool	mete-analysis(static structure):20211117T0000
+System	design1041
+Codebase	../grad006-03/design1041/design1041
+
+##Module Attributes
+#Metadata
+Ce	UnboundedCount	Efferent coupling - Total number of user-defined modules (including inherited) this module has a dependency on
+Ca	UnboundedCount	Afferent coupling - Total number of user-defined modules (including inherited) that are dependent on this module
+CON	UnboundedCount	Total number of constructors in module
+DIF	UnboundedCount	Total number of instance fields DECLARED in module
+DIM	UnboundedCount	Total number of instance methods DECLARED in module
+DSF	UnboundedCount	Total number of NON FINAL static fields DECLARED in module
+DSM	UnboundedCount	Total number of static methods (not counting main()) DECLARED in module
+DSFF	UnboundedCount	Total number of FINAL static fields DECLARED in module
+MIF	UnboundedCount	Module Instance Fields - Total number of instance fields in module (ie including inherited, not including libraries)
+MIM	UnboundedCount	Module Instance Methods - Total number of instance methods in module (ie including inherited, not including libaries)
+MSF	UnboundedCount	Module Static Fields - Total number of NON FINAL static fields in module (ie including inherited, not including libraries)
+MSM	UnboundedCount	Module Static Methods - Total number of static methods (not counting main()) in module (ie including inherited, not including libraries)
+MAIN	Flag[0|1]	Module has main() entry-point method
+CLS	Flag[0|1]	Module is a class (and not an enum or exception)
+INT	Flag[0|1]	Module is interface
+ENM	Flag[0|1]	Module is enum
+ANN	Flag[0|1]	Module is annotation
+EXP	Flag[0|1]	Modules is exception
+NST	Flag[0|1]	Module is nested
+EXT	Flag[0|1]	Module extends another (excluding Object)
+IMP	Flag[0|1]	Module (class) implements at least one (interface)
+MDUInh	Flag[0|1]	Module is defined using inheritance (non exception that extends or implements something that is not java.lang.Object
+MInhF	Flag[0|1]	Some other module inherits from (implements or extends) this module
+CeR	BoundedReal[0.0-1.0]	Ratio of Ce to Total_Modules
+CaR	BoundedReal[0.0-1.0]	Ratio of Ca to Total_Modules
+#Data
+#Entity	Ce	Ca	CON	DIF	DIM	DSF	DSM	DSFF	MIF	MIM	MSF	MSM	MAIN	CLS	INT	ENM	ANN	EXP	NST	EXT	IMP	MDUInh	MInhF	CeR	CaR
+kalah.Board	3	1	1	4	6	0	0	1	4	6	0	0	0	1	0	0	0	0	0	0	0	0	0	0.600	0.200
+kalah.Kalah	3	0	1	0	1	0	0	5	0	1	0	0	1	1	0	0	0	0	0	0	0	0	0	0.600	0.000
+kalah.Row	0	1	1	2	6	0	0	0	2	6	0	0	0	1	0	0	0	0	0	0	0	0	0	0.000	0.200
+print.BoardPrinter	0	3	1	0	3	0	0	0	0	3	0	0	0	1	0	0	0	0	0	0	0	0	1	0.000	0.600
+print.TwoPlayerBoardPrinter	1	2	1	0	4	0	0	0	0	7	0	0	0	1	0	0	0	0	0	1	0	1	0	0.200	0.400
+
+##Design Attributes
+#Metadata
+Total_Modules	UnboundedCount	Number of modules
+#CLS	UnboundedCount	Number of modules that are CLS in Module Attributes
+#INT	UnboundedCount	Number of modules that are INT in Module Attributes
+#ENM	UnboundedCount	Number of modules that are ENM in Module Attributes
+#ANN	UnboundedCount	Number of modules that are ANN in Module Attributes
+#EXP	UnboundedCount	Number of modules that are EXP in Module Attributes
+#NST	UnboundedCount	Number of modules that are NST in Module Attributes
+#MAIN	UnboundedCount	Number of modules that are MAIN in Module Attributes
+DUI	BoundedReal[0.0-1.0]	Proportion of user-defined modules defined using inheritance
+IF	BoundedReal[0.0-1.0]	Proportion of user-defined modules that are inherited from
+#IND	UnboundedCount	Number of modules that are independent, depend on no other user-defined type
+#NDP	UnboundedCount	Number of modules that have no other modules depend on them
+NoInstanceMethods	UnboundedCount	Number of modules with no instance methods
+NoInstanceFields	UnboundedCount	Number of modules with no instance fields
+#Data
+design1041	
+Total_Modules	5
+#CLS	5
+#INT	0
+#ENM	0
+#ANN	0
+#EXP	0
+#NST	0
+#MAIN	1
+DUI	0.200
+IF	0.200
+#IND	2
+#NDP	1
+NoInstanceMethods	0
+NoInstanceFields	2

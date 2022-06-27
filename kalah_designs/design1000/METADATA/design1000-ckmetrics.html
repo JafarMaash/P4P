@@ -1,0 +1,779 @@
+<html>
+<head>
+<style>
+  .stripe tbody tr:nth-child(even) td {background-color:#f2f2f2;}
+  div.scrollable { width: 100%; max-height: 100px; margin: 0; padding: 0; overflow: auto;}
+</style>
+</head>
+</html>
+<body>
+<h1>CK Metrics</h1>
+<p>Measurements for an interpretation of the metrics from the CK metrics suite</p>
+<h3>Dataset attributes</h3>
+<table style="empty-cells: show" border>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+Timestamp
+</div></th>
+    <td><div class="scrollable">
+Sun Apr 24 08:48:57 NZST 2022
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+Tool
+</div></th>
+    <td><div class="scrollable">
+mete-analysis(ck metrics):20180206T1230
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+System
+</div></th>
+    <td><div class="scrollable">
+design1000
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+Codebase
+</div></th>
+    <td><div class="scrollable">
+../grad006-03/design1000/design1000
+</div></td>
+  </tr>
+</table>
+<h3>Measurements</h3>
+<h4>Metadata<h4>
+<table style="empty-cells: show" border>
+  <tr valign=top>
+    <td colspan="6"><div class="scrollable">
+CKCBO (Coupling)
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+(trgtdcl) Only record dependencies to target modules whose declarations have been seen; (srcsttc) Record dependencies with respect to both instance and static fields and methods in the source module; (trgtsttic) Record dependencies to both instance and static fields and methods in the target module; (srccons) Consider constructors as invokers as creating coupling; (trgtcons) Record both invoking methods and calling construtors as creating dependencies; (type) Record dependencies between all types, including interfaces, enums, an annotations; (anc) Include dependencies to ancestors of source; (desc) Include descendants to ancestors of source; (inh) Include dependencies on targets whose accessed members were inherited; (poly) Include dependencies on targets whose members were accessed via polymorphism; (bidir) Dependencies are recorded as bi-directional. If A has a dependency to B, then B has a dependency to A; (fanout) Record only dependencies from source to target (no-op when bidir); (mod) Record dependencies between modules (as opposed to between packages); (pres) Record only the presence (or not) of an occurrence of a dependency between entities; (nest) Consider nested or enclosing types are separate; (raw) Do not record dependencies due to synthetic constructs
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="6"><div class="scrollable">
+WMC (Size)
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+(srcsttc) Record dependencies with respect to both instance and static fields and methods in the source module; (srccons) Consider constructors as invokers as creating coupling; (init) Record all dependencies including those in all initialisers; (raw) Do not record dependencies due to synthetic constructs; (srcmem) Include dependencies to members of all visibilities in source
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="6"><div class="scrollable">
+NOC (Inheritance)
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+(srcsttc) Record dependencies with respect to both instance and static fields and methods in the source module; (srccons) Consider constructors as invokers as creating coupling; (init) Record all dependencies including those in all initialisers; (raw) Do not record dependencies due to synthetic constructs; (srcmem) Include dependencies to members of all visibilities in source
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="6"><div class="scrollable">
+DIT (Inheritance)
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+(srcsttc) Record dependencies with respect to both instance and static fields and methods in the source module; (srccons) Consider constructors as invokers as creating coupling; (init) Record all dependencies including those in all initialisers; (raw) Do not record dependencies due to synthetic constructs; (srcmem) Include dependencies to members of all visibilities in source
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="6"><div class="scrollable">
+LCOM2 (Cohesion)
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+(srcsttc) Record dependencies with respect to both instance and static fields and methods in the source module; (srcmeth) Do not consider constructors as invokers as creating coupling; (init) Record all dependencies including those in all initialisers; (srcmem) Include dependencies to members of all visibilities in source
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="6"><div class="scrollable">
+RFC (Coupling)
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+(trgtall) Record dependencies to target modules whether or not the declarations have been seen; (srcsttc) Record dependencies with respect to both instance and static fields and methods in the source module; (trgtsttic) Record dependencies to both instance and static fields and methods in the target module; (trgtcons) Record both invoking methods and calling construtors as creating dependencies; (type) Record dependencies between all types, including interfaces, enums, an annotations
+</div></td>
+  </tr>
+</table>
+<h4>Data<h4>
+<div class="stripe">
+<table style="empty-cells: show" border>
+  <tr valign=top>
+    <th><div class="scrollable">
+Entity
+</div></th>
+    <th><div class="scrollable">
+CKCBO (Coupling)
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+WMC (Size)
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+NOC (Inheritance)
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+DIT (Inheritance)
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+LCOM2 (Cohesion)
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+RFC (Coupling)
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.Kalah
+</div></td>
+    <td><div class="scrollable">
+4
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl, kalah.game.GameControl, kalah.game.Player, kalah.ui.Board]
+</div></td>
+    <td><div class="scrollable">
+5
+</div></td>
+    <td><div class="scrollable">
+[Return:kalah.Kalah#public static void main(java.lang.String[]) {}, Return:kalah.Kalah#public void startNewGame() {}, Return:kalah.Kalah#public void stopGame() {}, kalah.Kalah#public <init>() {}>java.lang.Object#public <init>() <>*:[1], Return:kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.Kalah->java.lang.Object*]
+</div></td>
+    <td><div class="scrollable">
+2
+</div></td>
+    <td><div class="scrollable">
+[value1, value0]
+</div></td>
+    <td><div class="scrollable">
+15
+</div></td>
+    <td><div class="scrollable">
+[startNewGame()>kalah.game.GameControl#public abstract void chooseStartingPlayer(kalah.game.IPlayer) <>, startNewGame()>kalah.game.GameControl#public abstract void start() <>, startNewGame()>kalah.game.KalahGameControl#public void start() {}, startNewGame()>[D], play(com.qualitascorpus.testsupport.IO)>kalah.game.Player#public <init>(java.lang.String,int) {}, stopGame()>kalah.game.KalahGameControl#public void gameOver() {}, play(com.qualitascorpus.testsupport.IO)>kalah.ui.Board#public <init>(com.qualitascorpus.testsupport.IO,kalah.game.IPlayer,kalah.game.IPlayer) {}, <init>()>java.lang.Object#public <init>() <>*, play(com.qualitascorpus.testsupport.IO)>[D], stopGame()>[D], <init>()>[D], main(java.lang.String[])>[D], stopGame()>kalah.game.GameControl#public abstract void gameOver() <>, startNewGame()>kalah.game.KalahGameControl#public <init>(kalah.ui.GameInterface,kalah.game.IPlayer,kalah.game.IPlayer) {}, startNewGame()>kalah.game.KalahGameControl#public void chooseStartingPlayer(kalah.game.IPlayer) {}]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.game.CaptureRule
+</div></td>
+    <td><div class="scrollable">
+7
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.IPlayer, kalah.game.KalahGameControl, kalah.game.Player, kalah.game.SeedContainer, kalah.game.GameState, kalah.game.House, kalah.game.Store]
+</div></td>
+    <td><div class="scrollable">
+2
+</div></td>
+    <td><div class="scrollable">
+[Return:kalah.game.CaptureRule#public kalah.game.GameState executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState) {}, kalah.game.CaptureRule#public <init>() {}>java.lang.Object#public <init>() <>*:[1]]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.CaptureRule->kalah.game.GameRules]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+18
+</div></td>
+    <td><div class="scrollable">
+[executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState)>kalah.game.Store#public void setSeeds(int) {}, executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState)>kalah.game.Player#public kalah.game.SeedContainer getStore() {}, executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState)>java.util.List#java.lang.Object get(int) <>*, executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState)>kalah.game.House#public void addSeeds(int) {}, executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState)>kalah.game.IPlayer#public abstract java.util.List getHouses() <>, executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState)>kalah.game.Player#public java.util.List getHouses() {}, executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState)>kalah.game.IPlayer#public abstract kalah.game.SeedContainer getStore() <>, executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState)>kalah.game.Store#public void addSeeds(int) {}, executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState)>kalah.game.Store#public int getSeeds() {}, <init>()>java.lang.Object#public <init>() <>*, executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState)>[D], executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState)>kalah.game.House#public int getSeeds() {}, executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState)>kalah.game.SeedContainer#public abstract int getSeeds() <>, <init>()>[D], executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState)>java.util.List#int size() <>*, executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState)>kalah.game.SeedContainer#public abstract void addSeeds(int) <>, executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState)>kalah.game.SeedContainer#public abstract void setSeeds(int) <>, executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState)>kalah.game.House#public void setSeeds(int) {}]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.game.EmptyStoreSow
+</div></td>
+    <td><div class="scrollable">
+4
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.IPlayer, kalah.game.KalahGameControl, kalah.game.Player, kalah.game.GameState]
+</div></td>
+    <td><div class="scrollable">
+2
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.EmptyStoreSow#public <init>() {}>java.lang.Object#public <init>() <>*:[1], Return:kalah.game.EmptyStoreSow#public kalah.game.GameState executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState) {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.EmptyStoreSow->kalah.game.GameRules]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+7
+</div></td>
+    <td><div class="scrollable">
+[executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState)>[D], executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState)>kalah.game.IPlayer#public abstract boolean getTurn() <>, executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState)>kalah.game.IPlayer#public abstract void setTurn(boolean) <>, <init>()>[D], executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState)>kalah.game.Player#public void setTurn(boolean) {}, executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState)>kalah.game.Player#public boolean getTurn() {}, <init>()>java.lang.Object#public <init>() <>*]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.game.GameControl
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.Kalah]
+</div></td>
+    <td><div class="scrollable">
+6
+</div></td>
+    <td><div class="scrollable">
+[Return:kalah.game.GameControl#public abstract void quitGame() <>, Return:kalah.game.GameControl#public abstract void addGameRules() <>, Return:kalah.game.GameControl#public abstract void changeTurn() <>, Return:kalah.game.GameControl#public abstract void start() <>, Return:kalah.game.GameControl#public abstract void gameOver() <>, Return:kalah.game.GameControl#public abstract void chooseStartingPlayer(kalah.game.IPlayer) <>]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+6
+</div></td>
+    <td><div class="scrollable">
+[quitGame()>[D], start()>[D], chooseStartingPlayer(kalah.game.IPlayer)>[D], changeTurn()>[D], addGameRules()>[D], gameOver()>[D]]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.game.GameRules
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[Return:kalah.game.GameRules#public abstract kalah.game.GameState executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState) <>]
+</div></td>
+    <td><div class="scrollable">
+3
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.EmptyStoreSow, kalah.game.IllegalMoveRule, kalah.game.CaptureRule]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState)>[D]]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.game.GameState
+</div></td>
+    <td><div class="scrollable">
+5
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl, kalah.game.EmptyStoreSow, kalah.game.IllegalMoveRule, kalah.ui.Board, kalah.game.CaptureRule]
+</div></td>
+    <td><div class="scrollable">
+3
+</div></td>
+    <td><div class="scrollable">
+[Return:kalah.game.GameState#public static kalah.game.GameState[] values() {}, Return:kalah.game.GameState#public static kalah.game.GameState valueOf(java.lang.String) {}, kalah.game.GameState#private <init>(java.lang.String,int) {}>java.lang.Enum#<init>(java.lang.String,int) <>*:[1]]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.GameState->java.lang.Enum*]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[value0]
+</div></td>
+    <td><div class="scrollable">
+5
+</div></td>
+    <td><div class="scrollable">
+[valueOf(java.lang.String)>[D], <init>(java.lang.String,int)>[D], valueOf(java.lang.String)>java.lang.Enum#java.lang.Enum valueOf(java.lang.Class,java.lang.String) <>*, values()>[D], <init>(java.lang.String,int)>java.lang.Enum#<init>(java.lang.String,int) <>*]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.game.House
+</div></td>
+    <td><div class="scrollable">
+5
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl, kalah.game.Player, kalah.game.IllegalMoveRule, kalah.ui.Board, kalah.game.CaptureRule]
+</div></td>
+    <td><div class="scrollable">
+8
+</div></td>
+    <td><div class="scrollable">
+[Return:kalah.game.House#public void setSeeds(int) {}, kalah.game.House#public <init>(int) {}>java.lang.Object#public <init>() <>*:[1], Return:kalah.game.House#public boolean isEmpty() {}, Return:kalah.game.House#public int getSeeds() {}, Return:kalah.game.House#public void addSeeds(int) {}, Return:kalah.game.House#public java.lang.String getRepresentation() {}, Return:kalah.game.House#public int getNumStartingSeeds() {}, Return:kalah.game.House#public int getHouseIndex() {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.House->java.lang.Object*]
+</div></td>
+    <td><div class="scrollable">
+15
+</div></td>
+    <td><div class="scrollable">
+[value6, value5, value8, value7, value2, value1, value4, value3, value9, value14, value0, value11, value10, value13, value12]
+</div></td>
+    <td><div class="scrollable">
+13
+</div></td>
+    <td><div class="scrollable">
+[<init>(int)>java.lang.Object#public <init>() <>*, <init>(int)>[D], getNumStartingSeeds()>[D], getRepresentation()>java.lang.StringBuilder#java.lang.String toString() <>*, addSeeds(int)>[D], getRepresentation()>java.lang.StringBuilder#java.lang.StringBuilder append(int) <>*, getSeeds()>[D], getHouseIndex()>[D], getRepresentation()>java.lang.StringBuilder#<init>() <>*, setSeeds(int)>[D], getRepresentation()>[D], isEmpty()>[D], getRepresentation()>java.lang.StringBuilder#java.lang.StringBuilder append(java.lang.String) <>*]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.game.IPlayer
+</div></td>
+    <td><div class="scrollable">
+5
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl, kalah.game.EmptyStoreSow, kalah.game.IllegalMoveRule, kalah.ui.Board, kalah.game.CaptureRule]
+</div></td>
+    <td><div class="scrollable">
+10
+</div></td>
+    <td><div class="scrollable">
+[Return:kalah.game.IPlayer#public abstract void setName(java.lang.String) <>, Return:kalah.game.IPlayer#public abstract int getId() <>, Return:kalah.game.IPlayer#public abstract java.util.List getHouses() <>, Return:kalah.game.IPlayer#public abstract void setTurn(boolean) <>, Return:kalah.game.IPlayer#public abstract int shiftSeeds(int,int) <>, Return:kalah.game.IPlayer#public abstract int getTotalNumSeeds() <>, Return:kalah.game.IPlayer#public abstract boolean getTurn() <>, Return:kalah.game.IPlayer#public abstract boolean checkIfPlayerHousesEmpty() <>, Return:kalah.game.IPlayer#public abstract java.lang.String getName() <>, Return:kalah.game.IPlayer#public abstract kalah.game.SeedContainer getStore() <>]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.Player]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+10
+</div></td>
+    <td><div class="scrollable">
+[getStore()>[D], setTurn(boolean)>[D], setName(java.lang.String)>[D], getTurn()>[D], getHouses()>[D], getName()>[D], checkIfPlayerHousesEmpty()>[D], getId()>[D], getTotalNumSeeds()>[D], shiftSeeds(int,int)>[D]]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.game.IllegalMoveRule
+</div></td>
+    <td><div class="scrollable">
+7
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl, kalah.game.IPlayer, kalah.game.Player, kalah.game.GameState, kalah.game.SeedContainer, kalah.game.House, kalah.game.Store]
+</div></td>
+    <td><div class="scrollable">
+3
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.IllegalMoveRule#public <init>() {}>java.lang.Object#public <init>() <>*:[1], Return:kalah.game.IllegalMoveRule#public boolean emptyHouseSelected(kalah.game.IPlayer,int) {}, Return:kalah.game.IllegalMoveRule#public kalah.game.GameState executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState) {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.IllegalMoveRule->java.lang.Object*]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+10
+</div></td>
+    <td><div class="scrollable">
+[executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState)>[D], emptyHouseSelected(kalah.game.IPlayer,int)>kalah.game.SeedContainer#public abstract boolean isEmpty() <>, emptyHouseSelected(kalah.game.IPlayer,int)>kalah.game.House#public boolean isEmpty() {}, <init>()>[D], emptyHouseSelected(kalah.game.IPlayer,int)>kalah.game.Store#public boolean isEmpty() {}, emptyHouseSelected(kalah.game.IPlayer,int)>kalah.game.Player#public java.util.List getHouses() {}, emptyHouseSelected(kalah.game.IPlayer,int)>java.util.List#java.lang.Object get(int) <>*, emptyHouseSelected(kalah.game.IPlayer,int)>[D], emptyHouseSelected(kalah.game.IPlayer,int)>kalah.game.IPlayer#public abstract java.util.List getHouses() <>, <init>()>java.lang.Object#public <init>() <>*]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.game.KalahGameControl
+</div></td>
+    <td><div class="scrollable">
+13
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.EmptyStoreSow, kalah.game.GameState, kalah.game.CaptureRule, kalah.game.IPlayer, kalah.game.Player, kalah.game.SeedContainer, kalah.game.IllegalMoveRule, kalah.ui.GameInterface, kalah.game.House, kalah.ui.Board, kalah.game.Store, kalah.Kalah, kalah.game.GameRules]
+</div></td>
+    <td><div class="scrollable">
+11
+</div></td>
+    <td><div class="scrollable">
+[Return:kalah.game.KalahGameControl#public kalah.game.GameState executePlayerTurn(kalah.game.IPlayer,kalah.game.IPlayer) {}, Return:kalah.game.KalahGameControl#public void gameOver() {}, Return:kalah.game.KalahGameControl#public void start() {}, Return:kalah.game.KalahGameControl#public kalah.game.GameState playerTurn(kalah.game.IPlayer,kalah.game.IPlayer) {}, Return:kalah.game.KalahGameControl#public void quitGame() {}, Return:kalah.game.KalahGameControl#public void changeTurn() {}, Return:kalah.game.KalahGameControl#public int sowSeeds(kalah.game.IPlayer,kalah.game.IPlayer,int) {}, kalah.game.KalahGameControl#public <init>(kalah.ui.GameInterface,kalah.game.IPlayer,kalah.game.IPlayer) {}>java.lang.Object#public <init>() <>*:[1], Return:kalah.game.KalahGameControl#public void addGameRules() {}, Return:kalah.game.KalahGameControl#public void chooseStartingPlayer(kalah.game.IPlayer) {}, Return:kalah.game.KalahGameControl#public kalah.game.GameState applyGameRules(kalah.game.IPlayer,kalah.game.IPlayer,kalah.game.GameState,int) {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl->kalah.game.GameControl]
+</div></td>
+    <td><div class="scrollable">
+29
+</div></td>
+    <td><div class="scrollable">
+[value6, value5, value8, value7, value2, value1, value4, value3, value9, value19, value18, value15, value14, value17, value16, value11, value10, value13, value12, value20, value26, value25, value0, value28, value27, value22, value21, value24, value23]
+</div></td>
+    <td><div class="scrollable">
+64
+</div></td>
+    <td><div class="scrollable">
+[executePlayerTurn(kalah.game.IPlayer,kalah.game.IPlayer)>kalah.game.IPlayer#public abstract java.lang.String getName() <>, executePlayerTurn(kalah.game.IPlayer,kalah.game.IPlayer)>kalah.game.SeedContainer#public abstract int getSeeds() <>, addGameRules()>kalah.game.CaptureRule#public <init>() {}, changeTurn()>kalah.game.Player#public boolean getTurn() {}, executePlayerTurn(kalah.game.IPlayer,kalah.game.IPlayer)>kalah.game.IPlayer#public abstract int shiftSeeds(int,int) <>, addGameRules()>java.util.List#boolean add(java.lang.Object) <>*, executePlayerTurn(kalah.game.IPlayer,kalah.game.IPlayer)>kalah.game.Store#public void setSeeds(int) {}, changeTurn()>[D], sowSeeds(kalah.game.IPlayer,kalah.game.IPlayer,int)>kalah.game.House#public void addSeeds(int) {}, executePlayerTurn(kalah.game.IPlayer,kalah.game.IPlayer)>kalah.ui.GameInterface#public abstract int getPlayerInput(java.lang.String) <>, sowSeeds(kalah.game.IPlayer,kalah.game.IPlayer,int)>[D], executePlayerTurn(kalah.game.IPlayer,kalah.game.IPlayer)>kalah.game.Player#public int shiftSeeds(int,int) {}, sowSeeds(kalah.game.IPlayer,kalah.game.IPlayer,int)>kalah.game.Player#public kalah.game.SeedContainer getStore() {}, chooseStartingPlayer(kalah.game.IPlayer)>[D], addGameRules()>kalah.game.EmptyStoreSow#public <init>() {}, playerTurn(kalah.game.IPlayer,kalah.game.IPlayer)>kalah.game.IPlayer#public abstract boolean checkIfPlayerHousesEmpty() <>, executePlayerTurn(kalah.game.IPlayer,kalah.game.IPlayer)>kalah.game.House#public void setSeeds(int) {}, applyGameRules(kalah.game.IPlayer,kalah.game.IPlayer,kalah.game.GameState,int)>kalah.game.EmptyStoreSow#public kalah.game.GameState executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState) {}, <init>(kalah.ui.GameInterface,kalah.game.IPlayer,kalah.game.IPlayer)>java.lang.Object#public <init>() <>*, executePlayerTurn(kalah.game.IPlayer,kalah.game.IPlayer)>kalah.game.IPlayer#public abstract java.util.List getHouses() <>, sowSeeds(kalah.game.IPlayer,kalah.game.IPlayer,int)>kalah.game.SeedContainer#public abstract void addSeeds(int) <>, <init>(kalah.ui.GameInterface,kalah.game.IPlayer,kalah.game.IPlayer)>java.util.ArrayList#<init>() <>*, applyGameRules(kalah.game.IPlayer,kalah.game.IPlayer,kalah.game.GameState,int)>java.util.Iterator#java.lang.Object next() <>*, quitGame()>[D], sowSeeds(kalah.game.IPlayer,kalah.game.IPlayer,int)>kalah.game.IPlayer#public abstract kalah.game.SeedContainer getStore() <>, start()>[D], applyGameRules(kalah.game.IPlayer,kalah.game.IPlayer,kalah.game.GameState,int)>java.util.Iterator#boolean hasNext() <>*, start()>kalah.ui.Board#public void outputBoard() {}, applyGameRules(kalah.game.IPlayer,kalah.game.IPlayer,kalah.game.GameState,int)>kalah.game.GameRules#public abstract kalah.game.GameState executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState) <>, sowSeeds(kalah.game.IPlayer,kalah.game.IPlayer,int)>kalah.game.Player#public int shiftSeeds(int,int) {}, executePlayerTurn(kalah.game.IPlayer,kalah.game.IPlayer)>kalah.game.Player#public java.lang.String getName() {}, start()>kalah.game.IPlayer#public abstract boolean getTurn() <>, applyGameRules(kalah.game.IPlayer,kalah.game.IPlayer,kalah.game.GameState,int)>[D], chooseStartingPlayer(kalah.game.IPlayer)>kalah.game.IPlayer#public abstract void setTurn(boolean) <>, executePlayerTurn(kalah.game.IPlayer,kalah.game.IPlayer)>java.util.List#java.lang.Object get(int) <>*, playerTurn(kalah.game.IPlayer,kalah.game.IPlayer)>[D], chooseStartingPlayer(kalah.game.IPlayer)>kalah.game.Player#public void setTurn(boolean) {}, quitGame()>kalah.ui.GameInterface#public abstract void outputGameOver(boolean) <>, executePlayerTurn(kalah.game.IPlayer,kalah.game.IPlayer)>kalah.game.Player#public java.util.List getHouses() {}, executePlayerTurn(kalah.game.IPlayer,kalah.game.IPlayer)>kalah.game.House#public int getSeeds() {}, executePlayerTurn(kalah.game.IPlayer,kalah.game.IPlayer)>kalah.ui.GameInterface#public abstract void outputErrorMessage(kalah.game.GameState) <>, addGameRules()>[D], quitGame()>kalah.ui.Board#public void outputGameOver(boolean) {}, executePlayerTurn(kalah.game.IPlayer,kalah.game.IPlayer)>[D], changeTurn()>kalah.game.Player#public void setTurn(boolean) {}, changeTurn()>kalah.game.IPlayer#public abstract boolean getTurn() <>, sowSeeds(kalah.game.IPlayer,kalah.game.IPlayer,int)>kalah.game.IPlayer#public abstract int shiftSeeds(int,int) <>, applyGameRules(kalah.game.IPlayer,kalah.game.IPlayer,kalah.game.GameState,int)>kalah.game.CaptureRule#public kalah.game.GameState executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState) {}, start()>kalah.game.Player#public boolean getTurn() {}, playerTurn(kalah.game.IPlayer,kalah.game.IPlayer)>kalah.game.Player#public boolean checkIfPlayerHousesEmpty() {}, executePlayerTurn(kalah.game.IPlayer,kalah.game.IPlayer)>kalah.ui.Board#public int getPlayerInput(java.lang.String) {}, <init>(kalah.ui.GameInterface,kalah.game.IPlayer,kalah.game.IPlayer)>[D], addGameRules()>kalah.game.IllegalMoveRule#public <init>() {}, executePlayerTurn(kalah.game.IPlayer,kalah.game.IPlayer)>kalah.game.SeedContainer#public abstract void setSeeds(int) <>, applyGameRules(kalah.game.IPlayer,kalah.game.IPlayer,kalah.game.GameState,int)>java.util.List#java.util.Iterator iterator() <>*, executePlayerTurn(kalah.game.IPlayer,kalah.game.IPlayer)>kalah.game.Store#public int getSeeds() {}, gameOver()>kalah.ui.Board#public void outputGameOver(boolean) {}, start()>kalah.ui.GameInterface#public abstract void outputBoard() <>, applyGameRules(kalah.game.IPlayer,kalah.game.IPlayer,kalah.game.GameState,int)>kalah.game.IllegalMoveRule#public kalah.game.GameState executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState) {}, gameOver()>[D], executePlayerTurn(kalah.game.IPlayer,kalah.game.IPlayer)>kalah.ui.Board#public void outputErrorMessage(kalah.game.GameState) {}, sowSeeds(kalah.game.IPlayer,kalah.game.IPlayer,int)>kalah.game.Store#public void addSeeds(int) {}, changeTurn()>kalah.game.IPlayer#public abstract void setTurn(boolean) <>, gameOver()>kalah.ui.GameInterface#public abstract void outputGameOver(boolean) <>]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.game.Player
+</div></td>
+    <td><div class="scrollable">
+9
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl, kalah.game.EmptyStoreSow, kalah.game.SeedContainer, kalah.game.IllegalMoveRule, kalah.game.House, kalah.game.Store, kalah.Kalah, kalah.ui.Board, kalah.game.CaptureRule]
+</div></td>
+    <td><div class="scrollable">
+12
+</div></td>
+    <td><div class="scrollable">
+[Return:kalah.game.Player#public boolean checkIfPlayerHousesEmpty() {}, Return:kalah.game.Player#public java.util.List getHouses() {}, kalah.game.Player#public <init>(java.lang.String,int) {}>java.lang.Object#public <init>() <>*:[1], Return:kalah.game.Player#public int getTotalNumSeeds() {}, Return:kalah.game.Player#private java.util.List initHouses() {}, Return:kalah.game.Player#public int shiftSeeds(int,int) {}, Return:kalah.game.Player#public void setName(java.lang.String) {}, Return:kalah.game.Player#public kalah.game.SeedContainer getStore() {}, Return:kalah.game.Player#public boolean getTurn() {}, Return:kalah.game.Player#public void setTurn(boolean) {}, Return:kalah.game.Player#public int getId() {}, Return:kalah.game.Player#public java.lang.String getName() {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.Player->java.lang.Object*]
+</div></td>
+    <td><div class="scrollable">
+45
+</div></td>
+    <td><div class="scrollable">
+[value6, value5, value8, value31, value7, value30, value2, value1, value4, value3, value9, value19, value18, value15, value37, value14, value36, value17, value39, value16, value38, value11, value33, value10, value32, value13, value35, value12, value34, value40, value20, value42, value41, value29, value26, value25, value0, value28, value27, value22, value44, value21, value43, value24, value23]
+</div></td>
+    <td><div class="scrollable">
+36
+</div></td>
+    <td><div class="scrollable">
+[<init>(java.lang.String,int)>kalah.game.Store#public <init>() {}, <init>(java.lang.String,int)>[D], getTotalNumSeeds()>java.util.Iterator#java.lang.Object next() <>*, initHouses()>java.util.List#boolean add(java.lang.Object) <>*, getTurn()>[D], checkIfPlayerHousesEmpty()>java.util.List#java.util.Iterator iterator() <>*, getId()>[D], getTotalNumSeeds()>[D], initHouses()>java.util.ArrayList#<init>() <>*, initHouses()>kalah.game.House#public <init>(int) {}, shiftSeeds(int,int)>kalah.game.House#public int getSeeds() {}, checkIfPlayerHousesEmpty()>kalah.game.SeedContainer#public abstract boolean isEmpty() <>, setName(java.lang.String)>[D], checkIfPlayerHousesEmpty()>java.util.Iterator#boolean hasNext() <>*, shiftSeeds(int,int)>kalah.game.Store#public void addSeeds(int) {}, shiftSeeds(int,int)>kalah.game.SeedContainer#public abstract void addSeeds(int) <>, checkIfPlayerHousesEmpty()>[D], getTotalNumSeeds()>java.util.Iterator#boolean hasNext() <>*, getTotalNumSeeds()>kalah.game.SeedContainer#public abstract int getSeeds() <>, getTotalNumSeeds()>kalah.game.House#public int getSeeds() {}, getStore()>[D], shiftSeeds(int,int)>java.util.List#int size() <>*, shiftSeeds(int,int)>kalah.game.SeedContainer#public abstract int getSeeds() <>, getName()>[D], checkIfPlayerHousesEmpty()>kalah.game.House#public boolean isEmpty() {}, shiftSeeds(int,int)>[D], setTurn(boolean)>[D], checkIfPlayerHousesEmpty()>kalah.game.Store#public boolean isEmpty() {}, shiftSeeds(int,int)>kalah.game.Store#public int getSeeds() {}, <init>(java.lang.String,int)>java.lang.Object#public <init>() <>*, shiftSeeds(int,int)>kalah.game.House#public void addSeeds(int) {}, getTotalNumSeeds()>java.util.List#java.util.Iterator iterator() <>*, getHouses()>[D], getTotalNumSeeds()>kalah.game.Store#public int getSeeds() {}, checkIfPlayerHousesEmpty()>java.util.Iterator#java.lang.Object next() <>*, shiftSeeds(int,int)>java.util.List#java.lang.Object get(int) <>*]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.game.SeedContainer
+</div></td>
+    <td><div class="scrollable">
+5
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl, kalah.game.Player, kalah.game.IllegalMoveRule, kalah.ui.Board, kalah.game.CaptureRule]
+</div></td>
+    <td><div class="scrollable">
+5
+</div></td>
+    <td><div class="scrollable">
+[Return:kalah.game.SeedContainer#public abstract void setSeeds(int) <>, Return:kalah.game.SeedContainer#public abstract java.lang.String getRepresentation() <>, Return:kalah.game.SeedContainer#public abstract void addSeeds(int) <>, Return:kalah.game.SeedContainer#public abstract int getSeeds() <>, Return:kalah.game.SeedContainer#public abstract boolean isEmpty() <>]
+</div></td>
+    <td><div class="scrollable">
+2
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.House, kalah.game.Store]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+5
+</div></td>
+    <td><div class="scrollable">
+[getRepresentation()>[D], isEmpty()>[D], addSeeds(int)>[D], getSeeds()>[D], setSeeds(int)>[D]]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.game.Store
+</div></td>
+    <td><div class="scrollable">
+5
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl, kalah.game.Player, kalah.game.IllegalMoveRule, kalah.ui.Board, kalah.game.CaptureRule]
+</div></td>
+    <td><div class="scrollable">
+6
+</div></td>
+    <td><div class="scrollable">
+[Return:kalah.game.Store#public void addSeeds(int) {}, Return:kalah.game.Store#public java.lang.String getRepresentation() {}, Return:kalah.game.Store#public void setSeeds(int) {}, kalah.game.Store#public <init>() {}>java.lang.Object#public <init>() <>*:[1], Return:kalah.game.Store#public int getSeeds() {}, Return:kalah.game.Store#public boolean isEmpty() {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.Store->kalah.game.SeedContainer]
+</div></td>
+    <td><div class="scrollable">
+4
+</div></td>
+    <td><div class="scrollable">
+[value2, value1, value3, value0]
+</div></td>
+    <td><div class="scrollable">
+11
+</div></td>
+    <td><div class="scrollable">
+[getRepresentation()>[D], <init>()>[D], getRepresentation()>java.lang.StringBuilder#java.lang.String toString() <>*, isEmpty()>[D], addSeeds(int)>[D], getRepresentation()>java.lang.StringBuilder#java.lang.StringBuilder append(int) <>*, getSeeds()>[D], getRepresentation()>java.lang.StringBuilder#java.lang.StringBuilder append(java.lang.String) <>*, getRepresentation()>java.lang.StringBuilder#<init>() <>*, setSeeds(int)>[D], <init>()>java.lang.Object#public <init>() <>*]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.ui.Board
+</div></td>
+    <td><div class="scrollable">
+8
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl, kalah.game.IPlayer, kalah.game.Player, kalah.game.SeedContainer, kalah.game.GameState, kalah.game.House, kalah.Kalah, kalah.game.Store]
+</div></td>
+    <td><div class="scrollable">
+9
+</div></td>
+    <td><div class="scrollable">
+[Return:kalah.ui.Board#public java.lang.String getPlayerRepresentation(kalah.game.IPlayer) {}, Return:kalah.ui.Board#public void outputBoard() {}, Return:kalah.ui.Board#public int getPlayerInput(java.lang.String) {}, Return:kalah.ui.Board#private java.lang.String buildBoardBottom() {}, Return:kalah.ui.Board#public void outputEmptyHouseError() {}, kalah.ui.Board#public <init>(com.qualitascorpus.testsupport.IO,kalah.game.IPlayer,kalah.game.IPlayer) {}>java.lang.Object#public <init>() <>*:[1], Return:kalah.ui.Board#public void outputGameOver(boolean) {}, Return:kalah.ui.Board#public void outputErrorMessage(kalah.game.GameState) {}, Return:kalah.ui.Board#private java.lang.String buildBoardTop() {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.ui.Board->java.lang.Object*]
+</div></td>
+    <td><div class="scrollable">
+10
+</div></td>
+    <td><div class="scrollable">
+[value6, value5, value8, value7, value2, value1, value4, value3, value0, value9]
+</div></td>
+    <td><div class="scrollable">
+54
+</div></td>
+    <td><div class="scrollable">
+[buildBoardBottom()>kalah.game.Store#public java.lang.String getRepresentation() {}, outputGameOver(boolean)>java.lang.StringBuilder#java.lang.StringBuilder append(int) <>*, outputErrorMessage(kalah.game.GameState)>java.lang.Enum#int ordinal() <>*, buildBoardTop()>java.lang.StringBuilder#<init>() <>*, outputErrorMessage(kalah.game.GameState)>[D], buildBoardBottom()>kalah.game.IPlayer#public abstract kalah.game.SeedContainer getStore() <>, getPlayerInput(java.lang.String)>java.lang.StringBuilder#java.lang.StringBuilder append(java.lang.String) <>*, getPlayerRepresentation(kalah.game.IPlayer)>kalah.game.IPlayer#public abstract java.util.List getHouses() <>, outputErrorMessage(kalah.game.GameState)>kalah.game.GameState#int ordinal() <>*, <init>(com.qualitascorpus.testsupport.IO,kalah.game.IPlayer,kalah.game.IPlayer)>java.lang.Object#public <init>() <>*, getPlayerRepresentation(kalah.game.IPlayer)>java.util.Iterator#boolean hasNext() <>*, buildBoardBottom()>kalah.game.IPlayer#public abstract java.lang.String getName() <>, getPlayerRepresentation(kalah.game.IPlayer)>java.util.List#java.lang.Object get(int) <>*, outputGameOver(boolean)>[D], getPlayerRepresentation(kalah.game.IPlayer)>java.lang.StringBuilder#<init>() <>*, outputEmptyHouseError()>[D], outputGameOver(boolean)>java.lang.StringBuilder#java.lang.StringBuilder append(java.lang.String) <>*, outputGameOver(boolean)>kalah.game.IPlayer#public abstract int getTotalNumSeeds() <>, buildBoardBottom()>java.lang.StringBuilder#java.lang.String toString() <>*, buildBoardTop()>kalah.game.IPlayer#public abstract kalah.game.SeedContainer getStore() <>, buildBoardBottom()>java.lang.StringBuilder#java.lang.StringBuilder append(java.lang.String) <>*, buildBoardTop()>kalah.game.IPlayer#public abstract java.lang.String getName() <>, outputGameOver(boolean)>kalah.game.Player#public int getTotalNumSeeds() {}, buildBoardTop()>kalah.game.House#public java.lang.String getRepresentation() {}, buildBoardTop()>kalah.game.SeedContainer#public abstract java.lang.String getRepresentation() <>, getPlayerRepresentation(kalah.game.IPlayer)>kalah.game.IPlayer#public abstract int getId() <>, getPlayerRepresentation(kalah.game.IPlayer)>kalah.game.SeedContainer#public abstract java.lang.String getRepresentation() <>, getPlayerRepresentation(kalah.game.IPlayer)>[D], getPlayerRepresentation(kalah.game.IPlayer)>kalah.game.House#public java.lang.String getRepresentation() {}, buildBoardTop()>kalah.game.Store#public java.lang.String getRepresentation() {}, buildBoardTop()>java.lang.StringBuilder#java.lang.StringBuilder append(java.lang.String) <>*, getPlayerInput(java.lang.String)>java.lang.StringBuilder#java.lang.String toString() <>*, getPlayerRepresentation(kalah.game.IPlayer)>java.lang.StringBuilder#java.lang.StringBuilder append(java.lang.String) <>*, <init>(com.qualitascorpus.testsupport.IO,kalah.game.IPlayer,kalah.game.IPlayer)>[D], getPlayerInput(java.lang.String)>[D], getPlayerRepresentation(kalah.game.IPlayer)>kalah.game.Player#public int getId() {}, getPlayerRepresentation(kalah.game.IPlayer)>java.lang.StringBuilder#java.lang.String toString() <>*, buildBoardTop()>kalah.game.Player#public java.lang.String getName() {}, getPlayerInput(java.lang.String)>java.lang.StringBuilder#<init>() <>*, getPlayerRepresentation(kalah.game.IPlayer)>kalah.game.Store#public java.lang.String getRepresentation() {}, buildBoardBottom()>kalah.game.SeedContainer#public abstract java.lang.String getRepresentation() <>, getPlayerRepresentation(kalah.game.IPlayer)>kalah.game.Player#public java.util.List getHouses() {}, buildBoardBottom()>kalah.game.Player#public kalah.game.SeedContainer getStore() {}, outputGameOver(boolean)>java.lang.StringBuilder#java.lang.String toString() <>*, getPlayerRepresentation(kalah.game.IPlayer)>java.util.List#int size() <>*, outputBoard()>[D], buildBoardBottom()>kalah.game.House#public java.lang.String getRepresentation() {}, buildBoardTop()>kalah.game.Player#public kalah.game.SeedContainer getStore() {}, buildBoardTop()>java.lang.StringBuilder#java.lang.String toString() <>*, outputGameOver(boolean)>java.lang.StringBuilder#<init>() <>*, getPlayerRepresentation(kalah.game.IPlayer)>java.util.Iterator#java.lang.Object next() <>*, getPlayerRepresentation(kalah.game.IPlayer)>java.util.List#java.util.Iterator iterator() <>*, buildBoardBottom()>kalah.game.Player#public java.lang.String getName() {}, buildBoardBottom()>java.lang.StringBuilder#<init>() <>*]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.ui.GameInterface
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl]
+</div></td>
+    <td><div class="scrollable">
+4
+</div></td>
+    <td><div class="scrollable">
+[Return:kalah.ui.GameInterface#public abstract void outputErrorMessage(kalah.game.GameState) <>, Return:kalah.ui.GameInterface#public abstract void outputBoard() <>, Return:kalah.ui.GameInterface#public abstract void outputGameOver(boolean) <>, Return:kalah.ui.GameInterface#public abstract int getPlayerInput(java.lang.String) <>]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.ui.Board]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+4
+</div></td>
+    <td><div class="scrollable">
+[outputBoard()>[D], outputGameOver(boolean)>[D], outputErrorMessage(kalah.game.GameState)>[D], getPlayerInput(java.lang.String)>[D]]
+</div></td>
+  </tr>
+</table>
+</div>
+</body>
+</html>

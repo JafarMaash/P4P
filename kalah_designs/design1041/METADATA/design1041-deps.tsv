@@ -1,0 +1,199 @@
+# Dependencies for design1041
+# Analyse and report dependencies of modules.
+
+# Summary Information
+# Timestamp	Sun Apr 24 08:52:35 NZST 2022
+# Tool	mete-analysis(dependencies):20170202T1945
+# System	design1041
+# Codebase	./../grad006-03/design1041/design1041
+
+# Attribute Descriptions
+# 1	Source	The name of the module the dependency is from.
+# 2	Package	The package the source module belongs to. Provided for convenience as it is part of the source name
+# 3	Kind	Modules are classified into 1 of 5 'Kinds': Class, Interface, Enum, Annotation, Exception. 
+# 4	Modifiers	The modifiers for the source module (comma separated).
+# 5	Target	The name of the module the dependency is to.
+# 6	Package	The package the target module belongs to. Provided for convenience as it is part of the target name
+# 7	Kind	Modules are classified into 1 of 5 'Kinds': Class, Interface, Enum, Annotation, Exception. 
+# 8	Category	Dependencies are classified according to what kind of dependency they represent.
+# 9	Area	Classification of the area of the source module the dependency originates from.
+# 10	Details	More details of the origin of the dependency. Typically formatted text.
+# 11	Locations	Even more details of the origin of the dependency. Typically formatted text.
+# 12	Target	Information about the target of the dependency within the target module, if such makes sense.
+# 13	Visibility	The degree to which the dependency is visible outside the source module
+# 14	Inheritance	In what way is the dependency due to inheritance (if it is)
+
+# Data
+# Source	Package	Kind	Modifiers	Target	Package	Kind	Category	Area	Details	Locations	Target	Visibility	Inheritance
+print.TwoPlayerBoardPrinter	print	Class	public	print.BoardPrinter	print	Class	Extends	Header			To whole module	Public	None
+print.TwoPlayerBoardPrinter	print	Class	public	print.BoardPrinter	print	Class	InvokeSuper	Method	print.TwoPlayerBoardPrinter#public <init>() {}	1	print.BoardPrinter#public <init>() {}	Private	None
+print.TwoPlayerBoardPrinter	print	Class	public	com.qualitascorpus.testsupport.IO*?	com.qualitascorpus.testsupport	Unknown	Parameter	Method	print.TwoPlayerBoardPrinter#public void printState(com.qualitascorpus.testsupport.IO,int[][],int[]) {}	0	To whole module	Public	None
+print.TwoPlayerBoardPrinter	print	Class	public	int*		Primitive	Parameter	Method	print.TwoPlayerBoardPrinter#public void printState(com.qualitascorpus.testsupport.IO,int[][],int[]) {}	1,2	To whole module	Public	None
+print.TwoPlayerBoardPrinter	print	Class	public	void*		Primitive	Return	Method	print.TwoPlayerBoardPrinter#public void printState(com.qualitascorpus.testsupport.IO,int[][],int[]) {}		To whole module	Public	None
+print.TwoPlayerBoardPrinter	print	Class	public	int*		Primitive	Local	Method	print.TwoPlayerBoardPrinter#public void printState(com.qualitascorpus.testsupport.IO,int[][],int[]) {}	0,1,6,7,8,9,10	To whole module	Private	None
+print.TwoPlayerBoardPrinter	print	Class	public	java.lang.String*	java.lang	Class	Local	Method	print.TwoPlayerBoardPrinter#public void printState(com.qualitascorpus.testsupport.IO,int[][],int[]) {}	2,3,4,5	To whole module	Private	None
+print.TwoPlayerBoardPrinter	print	Class	public	java.lang.StringBuilder*	java.lang	Class	Local	Method	print.TwoPlayerBoardPrinter#public void printState(com.qualitascorpus.testsupport.IO,int[][],int[]) {}	11,12,13,14	To whole module	Private	None
+print.TwoPlayerBoardPrinter	print	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeSpecial	Method	print.TwoPlayerBoardPrinter#public void printState(com.qualitascorpus.testsupport.IO,int[][],int[]) {}	1,2,3,4,8,23	java.lang.StringBuilder#<init>() <>*	Private	None
+print.TwoPlayerBoardPrinter	print	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	print.TwoPlayerBoardPrinter#public void printState(com.qualitascorpus.testsupport.IO,int[][],int[]) {}	5,6,7,9,15,17,18,20,22,24,31,32	java.lang.StringBuilder#java.lang.StringBuilder append(java.lang.String) <>*	Private	None
+print.TwoPlayerBoardPrinter	print	Class	public	print.TwoPlayerBoardPrinter	print	Class	InvokeSpecial	Method	print.TwoPlayerBoardPrinter#public void printState(com.qualitascorpus.testsupport.IO,int[][],int[]) {}	10,25	print.TwoPlayerBoardPrinter#private java.lang.String leftPad(int) {}	Private	None
+print.TwoPlayerBoardPrinter	print	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	print.TwoPlayerBoardPrinter#public void printState(com.qualitascorpus.testsupport.IO,int[][],int[]) {}	13,28,33,35,37,39,41	java.lang.StringBuilder#java.lang.String toString() <>*	Private	None
+print.TwoPlayerBoardPrinter	print	Class	public	print.TwoPlayerBoardPrinter	print	Class	InvokeSpecial	Method	print.TwoPlayerBoardPrinter#public void printState(com.qualitascorpus.testsupport.IO,int[][],int[]) {}	16,19	print.TwoPlayerBoardPrinter#private java.lang.String formatHouseString(java.lang.String,int,int) {}	Private	None
+print.TwoPlayerBoardPrinter	print	Class	public	print.TwoPlayerBoardPrinter	print	Class	InvokeSpecial	Method	print.TwoPlayerBoardPrinter#public void printState(com.qualitascorpus.testsupport.IO,int[][],int[]) {}	21,30	print.TwoPlayerBoardPrinter#private void trim(java.lang.StringBuilder) {}	Private	None
+print.TwoPlayerBoardPrinter	print	Class	public	com.qualitascorpus.testsupport.IO*?	com.qualitascorpus.testsupport	Unknown	InvokeInterface	Method	print.TwoPlayerBoardPrinter#public void printState(com.qualitascorpus.testsupport.IO,int[][],int[]) {}	34,36,38,40,42	com.qualitascorpus.testsupport.IO#void println(java.lang.String) <>*	Private	None
+print.TwoPlayerBoardPrinter	print	Class	public	int*		Primitive	Parameter	Method	print.TwoPlayerBoardPrinter#private java.lang.String leftPad(int) {}	0	To whole module	Private	None
+print.TwoPlayerBoardPrinter	print	Class	public	java.lang.String*	java.lang	Class	Return	Method	print.TwoPlayerBoardPrinter#private java.lang.String leftPad(int) {}		To whole module	Private	None
+print.TwoPlayerBoardPrinter	print	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeSpecial	Method	print.TwoPlayerBoardPrinter#private java.lang.String leftPad(int) {}	1,5	java.lang.StringBuilder#<init>() <>*	Private	None
+print.TwoPlayerBoardPrinter	print	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	print.TwoPlayerBoardPrinter#private java.lang.String leftPad(int) {}	2,6	java.lang.StringBuilder#java.lang.StringBuilder append(java.lang.String) <>*	Private	None
+print.TwoPlayerBoardPrinter	print	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	print.TwoPlayerBoardPrinter#private java.lang.String leftPad(int) {}	3,7	java.lang.StringBuilder#java.lang.StringBuilder append(int) <>*	Private	None
+print.TwoPlayerBoardPrinter	print	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	print.TwoPlayerBoardPrinter#private java.lang.String leftPad(int) {}	4,8	java.lang.StringBuilder#java.lang.String toString() <>*	Private	None
+print.TwoPlayerBoardPrinter	print	Class	public	java.lang.String*	java.lang	Class	Parameter	Method	print.TwoPlayerBoardPrinter#private java.lang.String formatHouseString(java.lang.String,int,int) {}	0	To whole module	Private	None
+print.TwoPlayerBoardPrinter	print	Class	public	int*		Primitive	Parameter	Method	print.TwoPlayerBoardPrinter#private java.lang.String formatHouseString(java.lang.String,int,int) {}	1,2	To whole module	Private	None
+print.TwoPlayerBoardPrinter	print	Class	public	java.lang.String*	java.lang	Class	Return	Method	print.TwoPlayerBoardPrinter#private java.lang.String formatHouseString(java.lang.String,int,int) {}		To whole module	Private	None
+print.TwoPlayerBoardPrinter	print	Class	public	print.TwoPlayerBoardPrinter	print	Class	InvokeInstance	Method	print.TwoPlayerBoardPrinter#private java.lang.String formatHouseString(java.lang.String,int,int) {}	1	print.TwoPlayerBoardPrinter#int convertToPrintValue(int) <>*	Private	None
+print.TwoPlayerBoardPrinter	print	Class	public	print.BoardPrinter	print	Class	InvokeInstance	Method	print.TwoPlayerBoardPrinter#private java.lang.String formatHouseString(java.lang.String,int,int) {}	1	print.BoardPrinter#protected int convertToPrintValue(int) {}	Private	Inherited
+print.TwoPlayerBoardPrinter	print	Class	public	print.TwoPlayerBoardPrinter	print	Class	InvokeSpecial	Method	print.TwoPlayerBoardPrinter#private java.lang.String formatHouseString(java.lang.String,int,int) {}	2	print.TwoPlayerBoardPrinter#private java.lang.String leftPad(int) {}	Private	None
+print.TwoPlayerBoardPrinter	print	Class	public	java.lang.String*	java.lang	Class	InvokeStatic	Method	print.TwoPlayerBoardPrinter#private java.lang.String formatHouseString(java.lang.String,int,int) {}	4	java.lang.String#java.lang.String format(java.lang.String,java.lang.Object[]) <>*	Private	None
+print.TwoPlayerBoardPrinter	print	Class	public	java.lang.StringBuilder*	java.lang	Class	Parameter	Method	print.TwoPlayerBoardPrinter#private void trim(java.lang.StringBuilder) {}	0	To whole module	Private	None
+print.TwoPlayerBoardPrinter	print	Class	public	void*		Primitive	Return	Method	print.TwoPlayerBoardPrinter#private void trim(java.lang.StringBuilder) {}		To whole module	Private	None
+print.TwoPlayerBoardPrinter	print	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	print.TwoPlayerBoardPrinter#private void trim(java.lang.StringBuilder) {}	1	java.lang.StringBuilder#int length() <>*	Private	None
+print.TwoPlayerBoardPrinter	print	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	print.TwoPlayerBoardPrinter#private void trim(java.lang.StringBuilder) {}	2	java.lang.StringBuilder#void setLength(int) <>*	Private	None
+kalah.Row	kalah	Class	public	java.lang.Object*	java.lang	Class	Extends	Header			To whole module	Public	None
+kalah.Row	kalah	Class	public	int*		Primitive	Parameter	Constructor	kalah.Row#public <init>(int,int) {}	0,1	To whole module	Public	None
+kalah.Row	kalah	Class	public	int*		Primitive	Local	Constructor	kalah.Row#public <init>(int,int) {}	0	To whole module	Private	None
+kalah.Row	kalah	Class	public	java.lang.Object*	java.lang	Class	InvokeSuper	Method	kalah.Row#public <init>(int,int) {}	1	java.lang.Object#public <init>() <>*	Private	None
+kalah.Row	kalah	Class	public	kalah.Row	kalah	Class	Put	Method	kalah.Row#public <init>(int,int) {}	2	kalah.Row#private int[] houses	Private	None
+kalah.Row	kalah	Class	public	kalah.Row	kalah	Class	Get	Method	kalah.Row#public <init>(int,int) {}	3	kalah.Row#private int[] houses	Private	None
+kalah.Row	kalah	Class	public	kalah.Row	kalah	Class	Put	Method	kalah.Row#public <init>(int,int) {}	4	kalah.Row#private int store	Private	None
+kalah.Row	kalah	Class	public	int*		Primitive	Parameter	Method	kalah.Row#public int takeSeeds(int) {}	0	To whole module	Public	None
+kalah.Row	kalah	Class	public	int*		Primitive	Return	Method	kalah.Row#public int takeSeeds(int) {}		To whole module	Public	None
+kalah.Row	kalah	Class	public	int*		Primitive	Local	Method	kalah.Row#public int takeSeeds(int) {}	0	To whole module	Private	None
+kalah.Row	kalah	Class	public	kalah.Row	kalah	Class	Get	Method	kalah.Row#public int takeSeeds(int) {}	1,2	kalah.Row#private int[] houses	Private	None
+kalah.Row	kalah	Class	public	int*		Primitive	Parameter	Method	kalah.Row#public int insertSeed(int) {}	0	To whole module	Public	None
+kalah.Row	kalah	Class	public	int*		Primitive	Return	Method	kalah.Row#public int insertSeed(int) {}		To whole module	Public	None
+kalah.Row	kalah	Class	public	java.lang.IllegalArgumentException*	java.lang	Exception	InvokeSpecial	Method	kalah.Row#public int insertSeed(int) {}	7	java.lang.IllegalArgumentException#<init>(java.lang.String) <>*	Private	None
+kalah.Row	kalah	Class	public	kalah.Row	kalah	Class	Get	Method	kalah.Row#public int insertSeed(int) {}	1,2,3,4	kalah.Row#private int[] houses	Private	None
+kalah.Row	kalah	Class	public	kalah.Row	kalah	Class	Put	Method	kalah.Row#public int insertSeed(int) {}	6	kalah.Row#private int store	Private	None
+kalah.Row	kalah	Class	public	kalah.Row	kalah	Class	Get	Method	kalah.Row#public int insertSeed(int) {}	5	kalah.Row#private int store	Private	None
+kalah.Row	kalah	Class	public	int*		Primitive	Parameter	Method	kalah.Row#public void addToStore(int) {}	0	To whole module	Public	None
+kalah.Row	kalah	Class	public	void*		Primitive	Return	Method	kalah.Row#public void addToStore(int) {}		To whole module	Public	None
+kalah.Row	kalah	Class	public	kalah.Row	kalah	Class	Put	Method	kalah.Row#public void addToStore(int) {}	2	kalah.Row#private int store	Private	None
+kalah.Row	kalah	Class	public	kalah.Row	kalah	Class	Get	Method	kalah.Row#public void addToStore(int) {}	1	kalah.Row#private int store	Private	None
+kalah.Row	kalah	Class	public	int*		Primitive	Return	Method	kalah.Row#public int[] getHouses() {}		To whole module	Public	None
+kalah.Row	kalah	Class	public	kalah.Row	kalah	Class	Get	Method	kalah.Row#public int[] getHouses() {}	1	kalah.Row#private int[] houses	Private	None
+kalah.Row	kalah	Class	public	int*		Primitive	Return	Method	kalah.Row#public int getStore() {}		To whole module	Public	None
+kalah.Row	kalah	Class	public	kalah.Row	kalah	Class	Get	Method	kalah.Row#public int getStore() {}	1	kalah.Row#private int store	Private	None
+kalah.Row	kalah	Class	public	int*		Primitive	Return	Method	kalah.Row#public int getScore() {}		To whole module	Public	None
+kalah.Row	kalah	Class	public	int*		Primitive	Local	Method	kalah.Row#public int getScore() {}	0,1	To whole module	Private	None
+kalah.Row	kalah	Class	public	kalah.Row	kalah	Class	Get	Method	kalah.Row#public int getScore() {}	1,2	kalah.Row#private int[] houses	Private	None
+kalah.Row	kalah	Class	public	kalah.Row	kalah	Class	Get	Method	kalah.Row#public int getScore() {}	3	kalah.Row#private int store	Private	None
+kalah.Row	kalah	Class	public	int*		Primitive	Field	Field	kalah.Row#private int[] houses		To whole module	Private	None
+kalah.Row	kalah	Class	public	int*		Primitive	Field	Field	kalah.Row#private int store		To whole module	Private	None
+kalah.Board	kalah	Class	public	java.lang.Object*	java.lang	Class	Extends	Header			To whole module	Public	None
+kalah.Board	kalah	Class	public	int*		Primitive	Parameter	Constructor	kalah.Board#public <init>(int,int,int,print.BoardPrinter) {}	0,1,2	To whole module	Public	None
+kalah.Board	kalah	Class	public	print.BoardPrinter	print	Class	Parameter	Constructor	kalah.Board#public <init>(int,int,int,print.BoardPrinter) {}	3	To whole module	Public	None
+kalah.Board	kalah	Class	public	int*		Primitive	Local	Constructor	kalah.Board#public <init>(int,int,int,print.BoardPrinter) {}	0	To whole module	Private	None
+kalah.Board	kalah	Class	public	java.lang.Object*	java.lang	Class	InvokeSuper	Method	kalah.Board#public <init>(int,int,int,print.BoardPrinter) {}	1	java.lang.Object#public <init>() <>*	Private	None
+kalah.Board	kalah	Class	public	kalah.Row	kalah	Class	InvokeSpecial	Method	kalah.Board#public <init>(int,int,int,print.BoardPrinter) {}	7	kalah.Row#public <init>(int,int) {}	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Put	Method	kalah.Board#public <init>(int,int,int,print.BoardPrinter) {}	2	kalah.Board#private final int numHouses	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Put	Method	kalah.Board#public <init>(int,int,int,print.BoardPrinter) {}	4	kalah.Board#private int playerTurn	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Put	Method	kalah.Board#public <init>(int,int,int,print.BoardPrinter) {}	3	kalah.Board#private final print.BoardPrinter printer	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Put	Method	kalah.Board#public <init>(int,int,int,print.BoardPrinter) {}	5	kalah.Board#private final kalah.Row[] rows	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#public <init>(int,int,int,print.BoardPrinter) {}	6	kalah.Board#private final kalah.Row[] rows	Private	None
+kalah.Board	kalah	Class	public	int*		Primitive	Parameter	Method	kalah.Board#public boolean doMove(int) {}	0	To whole module	Public	None
+kalah.Board	kalah	Class	public	boolean*		Primitive	Return	Method	kalah.Board#public boolean doMove(int) {}		To whole module	Public	None
+kalah.Board	kalah	Class	public	int*		Primitive	Local	Method	kalah.Board#public boolean doMove(int) {}	0,1,2,4,5,6,7	To whole module	Private	None
+kalah.Board	kalah	Class	public	kalah.Row	kalah	Class	Local	Method	kalah.Board#public boolean doMove(int) {}	3	To whole module	Private	None
+kalah.Board	kalah	Class	public	boolean*		Primitive	Local	Method	kalah.Board#public boolean doMove(int) {}	8,9	To whole module	Private	None
+kalah.Board	kalah	Class	public	kalah.Row	kalah	Class	InvokeInstance	Method	kalah.Board#public boolean doMove(int) {}	5,15,16	kalah.Row#public int takeSeeds(int) {}	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	InvokeSpecial	Method	kalah.Board#public boolean doMove(int) {}	8,20	kalah.Board#private int getNextPlayer(int,int) {}	Private	None
+kalah.Board	kalah	Class	public	kalah.Row	kalah	Class	InvokeInstance	Method	kalah.Board#public boolean doMove(int) {}	10	kalah.Row#public int insertSeed(int) {}	Private	None
+kalah.Board	kalah	Class	public	kalah.Row	kalah	Class	InvokeInstance	Method	kalah.Board#public boolean doMove(int) {}	17	kalah.Row#public void addToStore(int) {}	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#public boolean doMove(int) {}	18,11,14,7,6	kalah.Board#private final int numHouses	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Put	Method	kalah.Board#public boolean doMove(int) {}	21	kalah.Board#private int playerTurn	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#public boolean doMove(int) {}	2,3,4,19	kalah.Board#private int playerTurn	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#public boolean doMove(int) {}	9,1,13,12	kalah.Board#private final kalah.Row[] rows	Private	None
+kalah.Board	kalah	Class	public	int*		Primitive	Parameter	Method	kalah.Board#private int getNextPlayer(int,int) {}	0,1	To whole module	Private	None
+kalah.Board	kalah	Class	public	int*		Primitive	Return	Method	kalah.Board#private int getNextPlayer(int,int) {}		To whole module	Private	None
+kalah.Board	kalah	Class	public	int*		Primitive	Return	Method	kalah.Board#public int getPlayer() {}		To whole module	Public	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#public int getPlayer() {}	1	kalah.Board#private int playerTurn	Private	None
+kalah.Board	kalah	Class	public	boolean*		Primitive	Return	Method	kalah.Board#public boolean isGameOver() {}		To whole module	Public	None
+kalah.Board	kalah	Class	public	int*		Primitive	Local	Method	kalah.Board#public boolean isGameOver() {}	0,1	To whole module	Private	None
+kalah.Board	kalah	Class	public	kalah.Row	kalah	Class	InvokeInstance	Method	kalah.Board#public boolean isGameOver() {}	3	kalah.Row#public int[] getHouses() {}	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#public boolean isGameOver() {}	2	kalah.Board#private int playerTurn	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#public boolean isGameOver() {}	1	kalah.Board#private final kalah.Row[] rows	Private	None
+kalah.Board	kalah	Class	public	com.qualitascorpus.testsupport.IO*?	com.qualitascorpus.testsupport	Unknown	Parameter	Method	kalah.Board#public void printState(com.qualitascorpus.testsupport.IO) {}	0	To whole module	Public	None
+kalah.Board	kalah	Class	public	void*		Primitive	Return	Method	kalah.Board#public void printState(com.qualitascorpus.testsupport.IO) {}		To whole module	Public	None
+kalah.Board	kalah	Class	public	int*		Primitive	Local	Method	kalah.Board#public void printState(com.qualitascorpus.testsupport.IO) {}	0,1,2	To whole module	Private	None
+kalah.Board	kalah	Class	public	kalah.Row	kalah	Class	InvokeInstance	Method	kalah.Board#public void printState(com.qualitascorpus.testsupport.IO) {}	4	kalah.Row#public int[] getHouses() {}	Private	None
+kalah.Board	kalah	Class	public	kalah.Row	kalah	Class	InvokeInstance	Method	kalah.Board#public void printState(com.qualitascorpus.testsupport.IO) {}	6	kalah.Row#public int getStore() {}	Private	None
+kalah.Board	kalah	Class	public	print.BoardPrinter	print	Class	InvokeInstance	Method	kalah.Board#public void printState(com.qualitascorpus.testsupport.IO) {}	8	print.BoardPrinter#public abstract void printState(com.qualitascorpus.testsupport.IO,int[][],int[]) <>	Private	None
+kalah.Board	kalah	Class	public	print.TwoPlayerBoardPrinter	print	Class	InvokeInstance	Method	kalah.Board#public void printState(com.qualitascorpus.testsupport.IO) {}	8	print.TwoPlayerBoardPrinter#public void printState(com.qualitascorpus.testsupport.IO,int[][],int[]) {}	Private	Polymorphic
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#public void printState(com.qualitascorpus.testsupport.IO) {}	1,2	kalah.Board#private final int numHouses	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#public void printState(com.qualitascorpus.testsupport.IO) {}	7	kalah.Board#private final print.BoardPrinter printer	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#public void printState(com.qualitascorpus.testsupport.IO) {}	3,5	kalah.Board#private final kalah.Row[] rows	Private	None
+kalah.Board	kalah	Class	public	com.qualitascorpus.testsupport.IO*?	com.qualitascorpus.testsupport	Unknown	Parameter	Method	kalah.Board#public void printResult(com.qualitascorpus.testsupport.IO) {}	0	To whole module	Public	None
+kalah.Board	kalah	Class	public	void*		Primitive	Return	Method	kalah.Board#public void printResult(com.qualitascorpus.testsupport.IO) {}		To whole module	Public	None
+kalah.Board	kalah	Class	public	int*		Primitive	Local	Method	kalah.Board#public void printResult(com.qualitascorpus.testsupport.IO) {}	0,1	To whole module	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	InvokeInstance	Method	kalah.Board#public void printResult(com.qualitascorpus.testsupport.IO) {}	1	kalah.Board#public void printState(com.qualitascorpus.testsupport.IO) {}	Private	None
+kalah.Board	kalah	Class	public	kalah.Row	kalah	Class	InvokeInstance	Method	kalah.Board#public void printResult(com.qualitascorpus.testsupport.IO) {}	3	kalah.Row#public int getScore() {}	Private	None
+kalah.Board	kalah	Class	public	print.BoardPrinter	print	Class	InvokeInstance	Method	kalah.Board#public void printResult(com.qualitascorpus.testsupport.IO) {}	5	print.BoardPrinter#public void printResult(com.qualitascorpus.testsupport.IO,int[]) {}	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#public void printResult(com.qualitascorpus.testsupport.IO) {}	4	kalah.Board#private final print.BoardPrinter printer	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#public void printResult(com.qualitascorpus.testsupport.IO) {}	2	kalah.Board#private final kalah.Row[] rows	Private	None
+kalah.Board	kalah	Class	public	int*		Primitive	Field	Field	kalah.Board#private static final int NUM_PLAYERS		To whole module	Private	None
+kalah.Board	kalah	Class	public	int*		Primitive	Field	Field	kalah.Board#private final int numHouses		To whole module	Private	None
+kalah.Board	kalah	Class	public	kalah.Row	kalah	Class	Field	Field	kalah.Board#private final kalah.Row[] rows		To whole module	Private	None
+kalah.Board	kalah	Class	public	print.BoardPrinter	print	Class	Field	Field	kalah.Board#private final print.BoardPrinter printer		To whole module	Private	None
+kalah.Board	kalah	Class	public	int*		Primitive	Field	Field	kalah.Board#private int playerTurn		To whole module	Private	None
+print.BoardPrinter	print	Class	public,abstract	java.lang.Object*	java.lang	Class	Extends	Header			To whole module	Public	None
+print.BoardPrinter	print	Class	public,abstract	com.qualitascorpus.testsupport.IO*?	com.qualitascorpus.testsupport	Unknown	Parameter	Method	print.BoardPrinter#public abstract void printState(com.qualitascorpus.testsupport.IO,int[][],int[]) <>	0	To whole module	Public	None
+print.BoardPrinter	print	Class	public,abstract	int*		Primitive	Parameter	Method	print.BoardPrinter#public abstract void printState(com.qualitascorpus.testsupport.IO,int[][],int[]) <>	1,2	To whole module	Public	None
+print.BoardPrinter	print	Class	public,abstract	void*		Primitive	Return	Method	print.BoardPrinter#public abstract void printState(com.qualitascorpus.testsupport.IO,int[][],int[]) <>		To whole module	Public	None
+print.BoardPrinter	print	Class	public,abstract	com.qualitascorpus.testsupport.IO*?	com.qualitascorpus.testsupport	Unknown	Parameter	Method	print.BoardPrinter#public void printResult(com.qualitascorpus.testsupport.IO,int[]) {}	0	To whole module	Public	None
+print.BoardPrinter	print	Class	public,abstract	int*		Primitive	Parameter	Method	print.BoardPrinter#public void printResult(com.qualitascorpus.testsupport.IO,int[]) {}	1	To whole module	Public	None
+print.BoardPrinter	print	Class	public,abstract	void*		Primitive	Return	Method	print.BoardPrinter#public void printResult(com.qualitascorpus.testsupport.IO,int[]) {}		To whole module	Public	None
+print.BoardPrinter	print	Class	public,abstract	int*		Primitive	Local	Method	print.BoardPrinter#public void printResult(com.qualitascorpus.testsupport.IO,int[]) {}	0,1,2,3,5,6	To whole module	Private	None
+print.BoardPrinter	print	Class	public,abstract	boolean*		Primitive	Local	Method	print.BoardPrinter#public void printResult(com.qualitascorpus.testsupport.IO,int[]) {}	4	To whole module	Private	None
+print.BoardPrinter	print	Class	public,abstract	java.lang.StringBuilder*	java.lang	Class	InvokeSpecial	Method	print.BoardPrinter#public void printResult(com.qualitascorpus.testsupport.IO,int[]) {}	1,11	java.lang.StringBuilder#<init>() <>*	Private	None
+print.BoardPrinter	print	Class	public,abstract	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	print.BoardPrinter#public void printResult(com.qualitascorpus.testsupport.IO,int[]) {}	2,12	java.lang.StringBuilder#java.lang.StringBuilder append(java.lang.String) <>*	Private	None
+print.BoardPrinter	print	Class	public,abstract	print.BoardPrinter	print	Class	InvokeInstance	Method	print.BoardPrinter#public void printResult(com.qualitascorpus.testsupport.IO,int[]) {}	3,9	print.BoardPrinter#protected int convertToPrintValue(int) {}	Private	None
+print.BoardPrinter	print	Class	public,abstract	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	print.BoardPrinter#public void printResult(com.qualitascorpus.testsupport.IO,int[]) {}	4,13	java.lang.StringBuilder#java.lang.StringBuilder append(int) <>*	Private	None
+print.BoardPrinter	print	Class	public,abstract	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	print.BoardPrinter#public void printResult(com.qualitascorpus.testsupport.IO,int[]) {}	7,15	java.lang.StringBuilder#java.lang.String toString() <>*	Private	None
+print.BoardPrinter	print	Class	public,abstract	com.qualitascorpus.testsupport.IO*?	com.qualitascorpus.testsupport	Unknown	InvokeInterface	Method	print.BoardPrinter#public void printResult(com.qualitascorpus.testsupport.IO,int[]) {}	8,10,16	com.qualitascorpus.testsupport.IO#void println(java.lang.String) <>*	Private	None
+print.BoardPrinter	print	Class	public,abstract	java.lang.Object*	java.lang	Class	InvokeSuper	Method	print.BoardPrinter#public <init>() {}	1	java.lang.Object#public <init>() <>*	Private	None
+print.BoardPrinter	print	Class	public,abstract	int*		Primitive	Parameter	Method	print.BoardPrinter#protected int convertToPrintValue(int) {}	0	To whole module	Protected	None
+print.BoardPrinter	print	Class	public,abstract	int*		Primitive	Return	Method	print.BoardPrinter#protected int convertToPrintValue(int) {}		To whole module	Protected	None
+kalah.Kalah	kalah	Class	public	java.lang.Object*	java.lang	Class	Extends	Header			To whole module	Public	None
+kalah.Kalah	kalah	Class	public	java.lang.Object*	java.lang	Class	InvokeSuper	Method	kalah.Kalah#public <init>() {}	1	java.lang.Object#public <init>() <>*	Private	None
+kalah.Kalah	kalah	Class	public	java.lang.String*	java.lang	Class	Parameter	Method	kalah.Kalah#public static void main(java.lang.String[]) {}	0	To whole module	Public	None
+kalah.Kalah	kalah	Class	public	void*		Primitive	Return	Method	kalah.Kalah#public static void main(java.lang.String[]) {}		To whole module	Public	None
+kalah.Kalah	kalah	Class	public	kalah.Kalah	kalah	Class	InvokeSpecial	Method	kalah.Kalah#public static void main(java.lang.String[]) {}	1	kalah.Kalah#public <init>() {}	Private	None
+kalah.Kalah	kalah	Class	public	com.qualitascorpus.testsupport.MockIO*?	com.qualitascorpus.testsupport	Unknown	InvokeSpecial	Method	kalah.Kalah#public static void main(java.lang.String[]) {}	2	com.qualitascorpus.testsupport.MockIO#<init>() <>*	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Kalah	kalah	Class	InvokeInstance	Method	kalah.Kalah#public static void main(java.lang.String[]) {}	3	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	Private	None
+kalah.Kalah	kalah	Class	public	com.qualitascorpus.testsupport.IO*?	com.qualitascorpus.testsupport	Unknown	Parameter	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	0	To whole module	Public	None
+kalah.Kalah	kalah	Class	public	void*		Primitive	Return	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}		To whole module	Public	None
+kalah.Kalah	kalah	Class	public	int*		Primitive	Local	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	0	To whole module	Private	None
+kalah.Kalah	kalah	Class	public	print.BoardPrinter	print	Class	Local	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	1	To whole module	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Board	kalah	Class	Local	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	2	To whole module	Private	None
+kalah.Kalah	kalah	Class	public	print.TwoPlayerBoardPrinter	print	Class	InvokeSpecial	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	1	print.TwoPlayerBoardPrinter#public <init>() {}	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Board	kalah	Class	InvokeSpecial	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	2	kalah.Board#public <init>(int,int,int,print.BoardPrinter) {}	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Board	kalah	Class	InvokeInstance	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	3,15	kalah.Board#public void printState(com.qualitascorpus.testsupport.IO) {}	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Board	kalah	Class	InvokeInstance	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	4	kalah.Board#public boolean isGameOver() {}	Private	None
+kalah.Kalah	kalah	Class	public	com.qualitascorpus.testsupport.IO*?	com.qualitascorpus.testsupport	Unknown	InvokeInterface	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	5,14,17	com.qualitascorpus.testsupport.IO#void println(java.lang.String) <>*	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Board	kalah	Class	InvokeInstance	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	6	kalah.Board#public void printResult(com.qualitascorpus.testsupport.IO) {}	Private	None
+kalah.Kalah	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeSpecial	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	7	java.lang.StringBuilder#<init>() <>*	Private	None
+kalah.Kalah	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	8	java.lang.StringBuilder#java.lang.StringBuilder append(java.lang.String) <>*	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Board	kalah	Class	InvokeInstance	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	9	kalah.Board#public int getPlayer() {}	Private	None
+kalah.Kalah	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	10	java.lang.StringBuilder#java.lang.StringBuilder append(int) <>*	Private	None
+kalah.Kalah	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	12	java.lang.StringBuilder#java.lang.String toString() <>*	Private	None
+kalah.Kalah	kalah	Class	public	com.qualitascorpus.testsupport.IO*?	com.qualitascorpus.testsupport	Unknown	InvokeInterface	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	13	com.qualitascorpus.testsupport.IO#int readInteger(java.lang.String,int,int,int,java.lang.String) <>*	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Board	kalah	Class	InvokeInstance	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	16	kalah.Board#public boolean doMove(int) {}	Private	None
+kalah.Kalah	kalah	Class	public	java.lang.String*	java.lang	Class	Field	Field	kalah.Kalah#private static final java.lang.String QUIT_STRING		To whole module	Private	None
+kalah.Kalah	kalah	Class	public	int*		Primitive	Field	Field	kalah.Kalah#private static final int QUIT_VALUE		To whole module	Private	None
+kalah.Kalah	kalah	Class	public	int*		Primitive	Field	Field	kalah.Kalah#private static final int NUM_HOUSES		To whole module	Private	None
+kalah.Kalah	kalah	Class	public	int*		Primitive	Field	Field	kalah.Kalah#private static final int NUM_SEEDS		To whole module	Private	None
+kalah.Kalah	kalah	Class	public	int*		Primitive	Field	Field	kalah.Kalah#private static final int STARTING_PLAYER		To whole module	Private	None
+Main	null	Class	public	junit.framework.TestCase*?	junit.framework	Unknown	Extends	Header			To whole module	Public	None
+Main	null	Class	public	junit.framework.TestCase*?	junit.framework	Unknown	InvokeSuper	Method	Main#public <init>() {}	1	junit.framework.TestCase#<init>() <>*	Private	None
+Main	null	Class	public	java.lang.String*	java.lang	Class	Parameter	Method	Main#public static void main(java.lang.String[]) {}	0	To whole module	Public	None
+Main	null	Class	public	void*		Primitive	Return	Method	Main#public static void main(java.lang.String[]) {}		To whole module	Public	None
+Main	null	Class	public	junit.textui.TestRunner*?	junit.textui	Unknown	InvokeStatic	Method	Main#public static void main(java.lang.String[]) {}	1	junit.textui.TestRunner#void run(java.lang.Class) <>*	Private	None

@@ -1,0 +1,29 @@
+@startuml
+title design1034
+class kalah.Board
+class kalah.BoardSpot
+class kalah.House
+class kalah.Kalah
+class kalah.Player
+class kalah.Store
+class kalah.UI
+
+kalah.House --|>kalah.BoardSpot
+kalah.House -->kalah.Player
+kalah.BoardSpot -->kalah.Player
+kalah.UI -->kalah.Player
+kalah.Store --|>kalah.BoardSpot
+kalah.Store -->kalah.Player
+kalah.Player -->kalah.House
+kalah.Player -->kalah.BoardSpot
+kalah.Player -->kalah.Store
+kalah.Board -->kalah.House
+kalah.Board -->kalah.BoardSpot
+kalah.Board -->kalah.Store
+kalah.Board -->kalah.Player
+kalah.Kalah -->kalah.BoardSpot
+kalah.Kalah -->kalah.UI
+kalah.Kalah -->kalah.Store
+kalah.Kalah -->kalah.Player
+kalah.Kalah -->kalah.Board
+@enduml

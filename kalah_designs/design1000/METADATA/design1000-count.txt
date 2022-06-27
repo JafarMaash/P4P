@@ -1,0 +1,1 @@
+design1000	kalah.game.CaptureRule(19),kalah.game.EmptyStoreSow(19),kalah.game.House(228),kalah.game.IllegalMoveRule(19),kalah.game.KalahGameControl(19),kalah.game.Player(38),kalah.game.Store(38),kalah.ui.Board(19)	8	399

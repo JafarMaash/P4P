@@ -1,0 +1,362 @@
+# Dependencies for design1034
+# Analyse and report dependencies of modules.
+
+# Summary Information
+# Timestamp	Sun Apr 24 08:52:34 NZST 2022
+# Tool	mete-analysis(dependencies):20170202T1945
+# System	design1034
+# Codebase	./../grad006-03/design1034/design1034
+
+# Attribute Descriptions
+# 1	Source	The name of the module the dependency is from.
+# 2	Package	The package the source module belongs to. Provided for convenience as it is part of the source name
+# 3	Kind	Modules are classified into 1 of 5 'Kinds': Class, Interface, Enum, Annotation, Exception. 
+# 4	Modifiers	The modifiers for the source module (comma separated).
+# 5	Target	The name of the module the dependency is to.
+# 6	Package	The package the target module belongs to. Provided for convenience as it is part of the target name
+# 7	Kind	Modules are classified into 1 of 5 'Kinds': Class, Interface, Enum, Annotation, Exception. 
+# 8	Category	Dependencies are classified according to what kind of dependency they represent.
+# 9	Area	Classification of the area of the source module the dependency originates from.
+# 10	Details	More details of the origin of the dependency. Typically formatted text.
+# 11	Locations	Even more details of the origin of the dependency. Typically formatted text.
+# 12	Target	Information about the target of the dependency within the target module, if such makes sense.
+# 13	Visibility	The degree to which the dependency is visible outside the source module
+# 14	Inheritance	In what way is the dependency due to inheritance (if it is)
+
+# Data
+# Source	Package	Kind	Modifiers	Target	Package	Kind	Category	Area	Details	Locations	Target	Visibility	Inheritance
+kalah.House	kalah	Class	public	kalah.BoardSpot	kalah	Class	Extends	Header			To whole module	Public	None
+kalah.House	kalah	Class	public	kalah.Player	kalah	Class	Parameter	Constructor	kalah.House#public <init>(kalah.Player,int,int) {}	0	To whole module	Public	None
+kalah.House	kalah	Class	public	int*		Primitive	Parameter	Constructor	kalah.House#public <init>(kalah.Player,int,int) {}	1,2	To whole module	Public	None
+kalah.House	kalah	Class	public	kalah.BoardSpot	kalah	Class	InvokeSuper	Method	kalah.House#public <init>(kalah.Player,int,int) {}	1	kalah.BoardSpot#public <init>(kalah.Player,int) {}	Private	None
+kalah.House	kalah	Class	public	kalah.House	kalah	Class	Put	Method	kalah.House#public <init>(kalah.Player,int,int) {}	2	kalah.House#private int number	Private	None
+kalah.House	kalah	Class	public	int*		Primitive	Return	Method	kalah.House#public int getNumber() {}		To whole module	Public	None
+kalah.House	kalah	Class	public	kalah.House	kalah	Class	Get	Method	kalah.House#public int getNumber() {}	1	kalah.House#private int number	Private	None
+kalah.House	kalah	Class	public	int*		Primitive	Field	Field	kalah.House#private int number		To whole module	Private	None
+kalah.UI	kalah	Class	public	java.lang.Object*	java.lang	Class	Extends	Header			To whole module	Public	None
+kalah.UI	kalah	Class	public	com.qualitascorpus.testsupport.IO*?	com.qualitascorpus.testsupport	Unknown	Parameter	Constructor	kalah.UI#public <init>(com.qualitascorpus.testsupport.IO) {}	0	To whole module	Public	None
+kalah.UI	kalah	Class	public	java.lang.Object*	java.lang	Class	InvokeSuper	Method	kalah.UI#public <init>(com.qualitascorpus.testsupport.IO) {}	1	java.lang.Object#public <init>() <>*	Private	None
+kalah.UI	kalah	Class	public	kalah.UI	kalah	Class	Put	Method	kalah.UI#public <init>(com.qualitascorpus.testsupport.IO) {}	2	kalah.UI#private com.qualitascorpus.testsupport.IO io	Private	None
+kalah.UI	kalah	Class	public	kalah.Player	kalah	Class	Parameter	Method	kalah.UI#public void promptPlayer(kalah.Player) {}	0	To whole module	Public	None
+kalah.UI	kalah	Class	public	void*		Primitive	Return	Method	kalah.UI#public void promptPlayer(kalah.Player) {}		To whole module	Public	None
+kalah.UI	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeSpecial	Method	kalah.UI#public void promptPlayer(kalah.Player) {}	2	java.lang.StringBuilder#<init>() <>*	Private	None
+kalah.UI	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.UI#public void promptPlayer(kalah.Player) {}	3	java.lang.StringBuilder#java.lang.StringBuilder append(java.lang.String) <>*	Private	None
+kalah.UI	kalah	Class	public	kalah.Player	kalah	Class	InvokeInstance	Method	kalah.UI#public void promptPlayer(kalah.Player) {}	4	kalah.Player#public int getId() {}	Private	None
+kalah.UI	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.UI#public void promptPlayer(kalah.Player) {}	5	java.lang.StringBuilder#java.lang.StringBuilder append(int) <>*	Private	None
+kalah.UI	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.UI#public void promptPlayer(kalah.Player) {}	7	java.lang.StringBuilder#java.lang.String toString() <>*	Private	None
+kalah.UI	kalah	Class	public	com.qualitascorpus.testsupport.IO*?	com.qualitascorpus.testsupport	Unknown	InvokeInterface	Method	kalah.UI#public void promptPlayer(kalah.Player) {}	8	com.qualitascorpus.testsupport.IO#java.lang.String readFromKeyboard(java.lang.String) <>*	Private	None
+kalah.UI	kalah	Class	public	kalah.UI	kalah	Class	Put	Method	kalah.UI#public void promptPlayer(kalah.Player) {}	9	kalah.UI#private java.lang.String inputResponse	Private	None
+kalah.UI	kalah	Class	public	kalah.UI	kalah	Class	Get	Method	kalah.UI#public void promptPlayer(kalah.Player) {}	1	kalah.UI#private com.qualitascorpus.testsupport.IO io	Private	None
+kalah.UI	kalah	Class	public	java.lang.String*	java.lang	Class	Return	Method	kalah.UI#public java.lang.String getInputResponse() {}		To whole module	Public	None
+kalah.UI	kalah	Class	public	kalah.UI	kalah	Class	Get	Method	kalah.UI#public java.lang.String getInputResponse() {}	1	kalah.UI#private java.lang.String inputResponse	Private	None
+kalah.UI	kalah	Class	public	void*		Primitive	Return	Method	kalah.UI#public void gameOver() {}		To whole module	Public	None
+kalah.UI	kalah	Class	public	com.qualitascorpus.testsupport.IO*?	com.qualitascorpus.testsupport	Unknown	InvokeInterface	Method	kalah.UI#public void gameOver() {}	2	com.qualitascorpus.testsupport.IO#void println(java.lang.String) <>*	Private	None
+kalah.UI	kalah	Class	public	kalah.UI	kalah	Class	Get	Method	kalah.UI#public void gameOver() {}	1	kalah.UI#private com.qualitascorpus.testsupport.IO io	Private	None
+kalah.UI	kalah	Class	public	int*		Primitive	Parameter	Method	kalah.UI#public void finalScores(int,int) {}	0,1	To whole module	Public	None
+kalah.UI	kalah	Class	public	void*		Primitive	Return	Method	kalah.UI#public void finalScores(int,int) {}		To whole module	Public	None
+kalah.UI	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeSpecial	Method	kalah.UI#public void finalScores(int,int) {}	2,8	java.lang.StringBuilder#<init>() <>*	Private	None
+kalah.UI	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.UI#public void finalScores(int,int) {}	3,9	java.lang.StringBuilder#java.lang.StringBuilder append(java.lang.String) <>*	Private	None
+kalah.UI	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.UI#public void finalScores(int,int) {}	4,10	java.lang.StringBuilder#java.lang.StringBuilder append(int) <>*	Private	None
+kalah.UI	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.UI#public void finalScores(int,int) {}	5,11	java.lang.StringBuilder#java.lang.String toString() <>*	Private	None
+kalah.UI	kalah	Class	public	com.qualitascorpus.testsupport.IO*?	com.qualitascorpus.testsupport	Unknown	InvokeInterface	Method	kalah.UI#public void finalScores(int,int) {}	6,12,14,16,18	com.qualitascorpus.testsupport.IO#void println(java.lang.String) <>*	Private	None
+kalah.UI	kalah	Class	public	kalah.UI	kalah	Class	Get	Method	kalah.UI#public void finalScores(int,int) {}	1,7,13,15,17	kalah.UI#private com.qualitascorpus.testsupport.IO io	Private	None
+kalah.UI	kalah	Class	public	void*		Primitive	Return	Method	kalah.UI#public void invalidMove() {}		To whole module	Public	None
+kalah.UI	kalah	Class	public	com.qualitascorpus.testsupport.IO*?	com.qualitascorpus.testsupport	Unknown	InvokeInterface	Method	kalah.UI#public void invalidMove() {}	2	com.qualitascorpus.testsupport.IO#void println(java.lang.String) <>*	Private	None
+kalah.UI	kalah	Class	public	kalah.UI	kalah	Class	Get	Method	kalah.UI#public void invalidMove() {}	1	kalah.UI#private com.qualitascorpus.testsupport.IO io	Private	None
+kalah.UI	kalah	Class	public	int*		Primitive	Parameter	Method	kalah.UI#public void displayBoard(int,int[],int[],int,int) {}	0,1,2,3,4	To whole module	Public	None
+kalah.UI	kalah	Class	public	void*		Primitive	Return	Method	kalah.UI#public void displayBoard(int,int[],int[],int,int) {}		To whole module	Public	None
+kalah.UI	kalah	Class	public	java.lang.String*	java.lang	Class	Local	Method	kalah.UI#public void displayBoard(int,int[],int[],int,int) {}	0,1	To whole module	Private	None
+kalah.UI	kalah	Class	public	kalah.UI	kalah	Class	InvokeSpecial	Method	kalah.UI#public void displayBoard(int,int[],int[],int,int) {}	1	kalah.UI#private java.lang.String generateP1Row(int[],int,int) {}	Private	None
+kalah.UI	kalah	Class	public	kalah.UI	kalah	Class	InvokeSpecial	Method	kalah.UI#public void displayBoard(int,int[],int[],int,int) {}	2	kalah.UI#private java.lang.String generateP2Row(int[],int,int) {}	Private	None
+kalah.UI	kalah	Class	public	kalah.UI	kalah	Class	InvokeSpecial	Method	kalah.UI#public void displayBoard(int,int[],int[],int,int) {}	4,14	kalah.UI#private java.lang.String generateOuterBoard(int) {}	Private	None
+kalah.UI	kalah	Class	public	com.qualitascorpus.testsupport.IO*?	com.qualitascorpus.testsupport	Unknown	InvokeInterface	Method	kalah.UI#public void displayBoard(int,int[],int[],int,int) {}	5,7,10,12,15	com.qualitascorpus.testsupport.IO#void println(java.lang.String) <>*	Private	None
+kalah.UI	kalah	Class	public	kalah.UI	kalah	Class	InvokeSpecial	Method	kalah.UI#public void displayBoard(int,int[],int[],int,int) {}	9	kalah.UI#private java.lang.String generateInnerBoard(int) {}	Private	None
+kalah.UI	kalah	Class	public	kalah.UI	kalah	Class	Get	Method	kalah.UI#public void displayBoard(int,int[],int[],int,int) {}	3,6,8,11,13	kalah.UI#private com.qualitascorpus.testsupport.IO io	Private	None
+kalah.UI	kalah	Class	public	int*		Primitive	Parameter	Method	kalah.UI#private java.lang.String generateP1Row(int[],int,int) {}	0,1,2	To whole module	Private	None
+kalah.UI	kalah	Class	public	java.lang.String*	java.lang	Class	Return	Method	kalah.UI#private java.lang.String generateP1Row(int[],int,int) {}		To whole module	Private	None
+kalah.UI	kalah	Class	public	int*		Primitive	Local	Method	kalah.UI#private java.lang.String generateP1Row(int[],int,int) {}	0,1,2	To whole module	Private	None
+kalah.UI	kalah	Class	public	java.lang.String*	java.lang	Class	Local	Method	kalah.UI#private java.lang.String generateP1Row(int[],int,int) {}	3	To whole module	Private	None
+kalah.UI	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeSpecial	Method	kalah.UI#private java.lang.String generateP1Row(int[],int,int) {}	1,10,19	java.lang.StringBuilder#<init>() <>*	Private	None
+kalah.UI	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.UI#private java.lang.String generateP1Row(int[],int,int) {}	2,11,20	java.lang.StringBuilder#java.lang.StringBuilder append(java.lang.String) <>*	Private	None
+kalah.UI	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.UI#private java.lang.String generateP1Row(int[],int,int) {}	4,22	java.lang.StringBuilder#java.lang.StringBuilder append(int) <>*	Private	None
+kalah.UI	kalah	Class	public	kalah.UI	kalah	Class	InvokeSpecial	Method	kalah.UI#private java.lang.String generateP1Row(int[],int,int) {}	6,13,24	kalah.UI#private java.lang.String spaceNumber(int) {}	Private	None
+kalah.UI	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.UI#private java.lang.String generateP1Row(int[],int,int) {}	9,18,26	java.lang.StringBuilder#java.lang.String toString() <>*	Private	None
+kalah.UI	kalah	Class	public	int*		Primitive	Parameter	Method	kalah.UI#private java.lang.String generateP2Row(int[],int,int) {}	0,1,2	To whole module	Private	None
+kalah.UI	kalah	Class	public	java.lang.String*	java.lang	Class	Return	Method	kalah.UI#private java.lang.String generateP2Row(int[],int,int) {}		To whole module	Private	None
+kalah.UI	kalah	Class	public	int*		Primitive	Local	Method	kalah.UI#private java.lang.String generateP2Row(int[],int,int) {}	0,1,2	To whole module	Private	None
+kalah.UI	kalah	Class	public	java.lang.String*	java.lang	Class	Local	Method	kalah.UI#private java.lang.String generateP2Row(int[],int,int) {}	3	To whole module	Private	None
+kalah.UI	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeSpecial	Method	kalah.UI#private java.lang.String generateP2Row(int[],int,int) {}	1,9,19	java.lang.StringBuilder#<init>() <>*	Private	None
+kalah.UI	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.UI#private java.lang.String generateP2Row(int[],int,int) {}	2,10,20	java.lang.StringBuilder#java.lang.StringBuilder append(java.lang.String) <>*	Private	None
+kalah.UI	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.UI#private java.lang.String generateP2Row(int[],int,int) {}	4,22	java.lang.StringBuilder#java.lang.StringBuilder append(int) <>*	Private	None
+kalah.UI	kalah	Class	public	kalah.UI	kalah	Class	InvokeSpecial	Method	kalah.UI#private java.lang.String generateP2Row(int[],int,int) {}	6,12,24	kalah.UI#private java.lang.String spaceNumber(int) {}	Private	None
+kalah.UI	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.UI#private java.lang.String generateP2Row(int[],int,int) {}	8,18,26	java.lang.StringBuilder#java.lang.String toString() <>*	Private	None
+kalah.UI	kalah	Class	public	int*		Primitive	Parameter	Method	kalah.UI#private java.lang.String generateOuterBoard(int) {}	0	To whole module	Private	None
+kalah.UI	kalah	Class	public	java.lang.String*	java.lang	Class	Return	Method	kalah.UI#private java.lang.String generateOuterBoard(int) {}		To whole module	Private	None
+kalah.UI	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeSpecial	Method	kalah.UI#private java.lang.String generateOuterBoard(int) {}	1	java.lang.StringBuilder#<init>() <>*	Private	None
+kalah.UI	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.UI#private java.lang.String generateOuterBoard(int) {}	2	java.lang.StringBuilder#java.lang.StringBuilder append(java.lang.String) <>*	Private	None
+kalah.UI	kalah	Class	public	kalah.UI	kalah	Class	InvokeSpecial	Method	kalah.UI#private java.lang.String generateOuterBoard(int) {}	3	kalah.UI#private java.lang.String generateBoardPieces(int) {}	Private	None
+kalah.UI	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.UI#private java.lang.String generateOuterBoard(int) {}	6	java.lang.StringBuilder#java.lang.String toString() <>*	Private	None
+kalah.UI	kalah	Class	public	int*		Primitive	Parameter	Method	kalah.UI#private java.lang.String generateInnerBoard(int) {}	0	To whole module	Private	None
+kalah.UI	kalah	Class	public	java.lang.String*	java.lang	Class	Return	Method	kalah.UI#private java.lang.String generateInnerBoard(int) {}		To whole module	Private	None
+kalah.UI	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeSpecial	Method	kalah.UI#private java.lang.String generateInnerBoard(int) {}	1	java.lang.StringBuilder#<init>() <>*	Private	None
+kalah.UI	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.UI#private java.lang.String generateInnerBoard(int) {}	2	java.lang.StringBuilder#java.lang.StringBuilder append(java.lang.String) <>*	Private	None
+kalah.UI	kalah	Class	public	kalah.UI	kalah	Class	InvokeSpecial	Method	kalah.UI#private java.lang.String generateInnerBoard(int) {}	3	kalah.UI#private java.lang.String generateBoardPieces(int) {}	Private	None
+kalah.UI	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.UI#private java.lang.String generateInnerBoard(int) {}	6	java.lang.StringBuilder#java.lang.String toString() <>*	Private	None
+kalah.UI	kalah	Class	public	int*		Primitive	Parameter	Method	kalah.UI#private java.lang.String spaceNumber(int) {}	0	To whole module	Private	None
+kalah.UI	kalah	Class	public	java.lang.String*	java.lang	Class	Return	Method	kalah.UI#private java.lang.String spaceNumber(int) {}		To whole module	Private	None
+kalah.UI	kalah	Class	public	java.lang.String*	java.lang	Class	Local	Method	kalah.UI#private java.lang.String spaceNumber(int) {}	0	To whole module	Private	None
+kalah.UI	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeSpecial	Method	kalah.UI#private java.lang.String spaceNumber(int) {}	1	java.lang.StringBuilder#<init>() <>*	Private	None
+kalah.UI	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.UI#private java.lang.String spaceNumber(int) {}	2	java.lang.StringBuilder#java.lang.StringBuilder append(java.lang.String) <>*	Private	None
+kalah.UI	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.UI#private java.lang.String spaceNumber(int) {}	3	java.lang.StringBuilder#java.lang.StringBuilder append(int) <>*	Private	None
+kalah.UI	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.UI#private java.lang.String spaceNumber(int) {}	4	java.lang.StringBuilder#java.lang.String toString() <>*	Private	None
+kalah.UI	kalah	Class	public	int*		Primitive	Parameter	Method	kalah.UI#private java.lang.String generateBoardPieces(int) {}	0	To whole module	Private	None
+kalah.UI	kalah	Class	public	java.lang.String*	java.lang	Class	Return	Method	kalah.UI#private java.lang.String generateBoardPieces(int) {}		To whole module	Private	None
+kalah.UI	kalah	Class	public	int*		Primitive	Local	Method	kalah.UI#private java.lang.String generateBoardPieces(int) {}	0	To whole module	Private	None
+kalah.UI	kalah	Class	public	java.lang.String*	java.lang	Class	Local	Method	kalah.UI#private java.lang.String generateBoardPieces(int) {}	1	To whole module	Private	None
+kalah.UI	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeSpecial	Method	kalah.UI#private java.lang.String generateBoardPieces(int) {}	1,5	java.lang.StringBuilder#<init>() <>*	Private	None
+kalah.UI	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.UI#private java.lang.String generateBoardPieces(int) {}	2,6	java.lang.StringBuilder#java.lang.StringBuilder append(java.lang.String) <>*	Private	None
+kalah.UI	kalah	Class	public	java.lang.StringBuilder*	java.lang	Class	InvokeInstance	Method	kalah.UI#private java.lang.String generateBoardPieces(int) {}	4,8	java.lang.StringBuilder#java.lang.String toString() <>*	Private	None
+kalah.UI	kalah	Class	public	com.qualitascorpus.testsupport.IO*?	com.qualitascorpus.testsupport	Unknown	Field	Field	kalah.UI#private com.qualitascorpus.testsupport.IO io		To whole module	Private	None
+kalah.UI	kalah	Class	public	java.lang.String*	java.lang	Class	Field	Field	kalah.UI#private java.lang.String inputResponse		To whole module	Private	None
+kalah.BoardSpot	kalah	Class	public	java.lang.Object*	java.lang	Class	Extends	Header			To whole module	Public	None
+kalah.BoardSpot	kalah	Class	public	kalah.Player	kalah	Class	Parameter	Constructor	kalah.BoardSpot#public <init>(kalah.Player,int) {}	0	To whole module	Public	None
+kalah.BoardSpot	kalah	Class	public	int*		Primitive	Parameter	Constructor	kalah.BoardSpot#public <init>(kalah.Player,int) {}	1	To whole module	Public	None
+kalah.BoardSpot	kalah	Class	public	java.lang.Object*	java.lang	Class	InvokeSuper	Method	kalah.BoardSpot#public <init>(kalah.Player,int) {}	1	java.lang.Object#public <init>() <>*	Private	None
+kalah.BoardSpot	kalah	Class	public	kalah.BoardSpot	kalah	Class	Put	Method	kalah.BoardSpot#public <init>(kalah.Player,int) {}	2	kalah.BoardSpot#private int numSeeds	Private	None
+kalah.BoardSpot	kalah	Class	public	kalah.BoardSpot	kalah	Class	Put	Method	kalah.BoardSpot#public <init>(kalah.Player,int) {}	3	kalah.BoardSpot#private kalah.Player player	Private	None
+kalah.BoardSpot	kalah	Class	public	kalah.Player	kalah	Class	Return	Method	kalah.BoardSpot#public kalah.Player getPlayer() {}		To whole module	Public	None
+kalah.BoardSpot	kalah	Class	public	kalah.BoardSpot	kalah	Class	Get	Method	kalah.BoardSpot#public kalah.Player getPlayer() {}	1	kalah.BoardSpot#private kalah.Player player	Private	None
+kalah.BoardSpot	kalah	Class	public	int*		Primitive	Return	Method	kalah.BoardSpot#public int getNumSeeds() {}		To whole module	Public	None
+kalah.BoardSpot	kalah	Class	public	kalah.BoardSpot	kalah	Class	Get	Method	kalah.BoardSpot#public int getNumSeeds() {}	1	kalah.BoardSpot#private int numSeeds	Private	None
+kalah.BoardSpot	kalah	Class	public	void*		Primitive	Return	Method	kalah.BoardSpot#public void incrementSeeds() {}		To whole module	Public	None
+kalah.BoardSpot	kalah	Class	public	kalah.BoardSpot	kalah	Class	Put	Method	kalah.BoardSpot#public void incrementSeeds() {}	2	kalah.BoardSpot#private int numSeeds	Private	None
+kalah.BoardSpot	kalah	Class	public	kalah.BoardSpot	kalah	Class	Get	Method	kalah.BoardSpot#public void incrementSeeds() {}	1	kalah.BoardSpot#private int numSeeds	Private	None
+kalah.BoardSpot	kalah	Class	public	int*		Primitive	Parameter	Method	kalah.BoardSpot#public void addSeeds(int) {}	0	To whole module	Public	None
+kalah.BoardSpot	kalah	Class	public	void*		Primitive	Return	Method	kalah.BoardSpot#public void addSeeds(int) {}		To whole module	Public	None
+kalah.BoardSpot	kalah	Class	public	kalah.BoardSpot	kalah	Class	Put	Method	kalah.BoardSpot#public void addSeeds(int) {}	2	kalah.BoardSpot#private int numSeeds	Private	None
+kalah.BoardSpot	kalah	Class	public	kalah.BoardSpot	kalah	Class	Get	Method	kalah.BoardSpot#public void addSeeds(int) {}	1	kalah.BoardSpot#private int numSeeds	Private	None
+kalah.BoardSpot	kalah	Class	public	void*		Primitive	Return	Method	kalah.BoardSpot#public void clearSeeds() {}		To whole module	Public	None
+kalah.BoardSpot	kalah	Class	public	kalah.BoardSpot	kalah	Class	Put	Method	kalah.BoardSpot#public void clearSeeds() {}	1	kalah.BoardSpot#private int numSeeds	Private	None
+kalah.BoardSpot	kalah	Class	public	int*		Primitive	Field	Field	kalah.BoardSpot#private int numSeeds		To whole module	Private	None
+kalah.BoardSpot	kalah	Class	public	kalah.Player	kalah	Class	Field	Field	kalah.BoardSpot#private kalah.Player player		To whole module	Private	None
+kalah.Player	kalah	Class	public	java.lang.Object*	java.lang	Class	Extends	Header			To whole module	Public	None
+kalah.Player	kalah	Class	public	int*		Primitive	Parameter	Constructor	kalah.Player#public <init>(int,int,int) {}	0,1,2	To whole module	Public	None
+kalah.Player	kalah	Class	public	java.lang.Object*	java.lang	Class	InvokeSuper	Method	kalah.Player#public <init>(int,int,int) {}	1	java.lang.Object#public <init>() <>*	Private	None
+kalah.Player	kalah	Class	public	java.util.ArrayList*	java.util	Class	InvokeSpecial	Method	kalah.Player#public <init>(int,int,int) {}	2	java.util.ArrayList#<init>() <>*	Private	None
+kalah.Player	kalah	Class	public	kalah.Store	kalah	Class	InvokeSpecial	Method	kalah.Player#public <init>(int,int,int) {}	5	kalah.Store#public <init>(kalah.Player,int) {}	Private	None
+kalah.Player	kalah	Class	public	kalah.Player	kalah	Class	InvokeSpecial	Method	kalah.Player#public <init>(int,int,int) {}	7	kalah.Player#private void initHouses(int,int) {}	Private	None
+kalah.Player	kalah	Class	public	kalah.Player	kalah	Class	Put	Method	kalah.Player#public <init>(int,int,int) {}	3	kalah.Player#private java.util.List houses	Private	None
+kalah.Player	kalah	Class	public	kalah.Player	kalah	Class	Put	Method	kalah.Player#public <init>(int,int,int) {}	4	kalah.Player#private int id	Private	None
+kalah.Player	kalah	Class	public	kalah.Player	kalah	Class	Put	Method	kalah.Player#public <init>(int,int,int) {}	6	kalah.Player#private kalah.Store store	Private	None
+kalah.Player	kalah	Class	public	int*		Primitive	Parameter	Method	kalah.Player#private void initHouses(int,int) {}	0,1	To whole module	Private	None
+kalah.Player	kalah	Class	public	void*		Primitive	Return	Method	kalah.Player#private void initHouses(int,int) {}		To whole module	Private	None
+kalah.Player	kalah	Class	public	int*		Primitive	Local	Method	kalah.Player#private void initHouses(int,int) {}	0,1	To whole module	Private	None
+kalah.Player	kalah	Class	public	kalah.House	kalah	Class	InvokeSpecial	Method	kalah.Player#private void initHouses(int,int) {}	2	kalah.House#public <init>(kalah.Player,int,int) {}	Private	None
+kalah.Player	kalah	Class	public	java.util.List*	java.util	Interface	InvokeInterface	Method	kalah.Player#private void initHouses(int,int) {}	3	java.util.List#boolean add(java.lang.Object) <>*	Private	None
+kalah.Player	kalah	Class	public	kalah.Player	kalah	Class	Get	Method	kalah.Player#private void initHouses(int,int) {}	1	kalah.Player#private java.util.List houses	Private	None
+kalah.Player	kalah	Class	public	kalah.Store	kalah	Class	Return	Method	kalah.Player#public kalah.Store getStore() {}		To whole module	Public	None
+kalah.Player	kalah	Class	public	kalah.Player	kalah	Class	Get	Method	kalah.Player#public kalah.Store getStore() {}	1	kalah.Player#private kalah.Store store	Private	None
+kalah.Player	kalah	Class	public	int*		Primitive	Return	Method	kalah.Player#public int getTotalSeeds() {}		To whole module	Public	None
+kalah.Player	kalah	Class	public	kalah.House	kalah	Class	Local	Method	kalah.Player#public int getTotalSeeds() {}	0	To whole module	Private	None
+kalah.Player	kalah	Class	public	int*		Primitive	Local	Method	kalah.Player#public int getTotalSeeds() {}	1	To whole module	Private	None
+kalah.Player	kalah	Class	public	java.util.List*	java.util	Interface	InvokeInterface	Method	kalah.Player#public int getTotalSeeds() {}	2	java.util.List#java.util.Iterator iterator() <>*	Private	None
+kalah.Player	kalah	Class	public	java.util.Iterator*	java.util	Interface	InvokeInterface	Method	kalah.Player#public int getTotalSeeds() {}	3	java.util.Iterator#boolean hasNext() <>*	Private	None
+kalah.Player	kalah	Class	public	java.util.Iterator*	java.util	Interface	InvokeInterface	Method	kalah.Player#public int getTotalSeeds() {}	4	java.util.Iterator#java.lang.Object next() <>*	Private	None
+kalah.Player	kalah	Class	public	kalah.House	kalah	Class	InvokeInstance	Method	kalah.Player#public int getTotalSeeds() {}	6	kalah.House#int getNumSeeds() <>*	Private	None
+kalah.Player	kalah	Class	public	kalah.BoardSpot	kalah	Class	InvokeInstance	Method	kalah.Player#public int getTotalSeeds() {}	6,8	kalah.BoardSpot#public int getNumSeeds() {}	Private	Inherited
+kalah.Player	kalah	Class	public	kalah.Store	kalah	Class	InvokeInstance	Method	kalah.Player#public int getTotalSeeds() {}	8	kalah.Store#int getNumSeeds() <>*	Private	None
+kalah.Player	kalah	Class	public	kalah.Player	kalah	Class	Get	Method	kalah.Player#public int getTotalSeeds() {}	1	kalah.Player#private java.util.List houses	Private	None
+kalah.Player	kalah	Class	public	kalah.Player	kalah	Class	Get	Method	kalah.Player#public int getTotalSeeds() {}	7	kalah.Player#private kalah.Store store	Private	None
+kalah.Player	kalah	Class	public	kalah.House	kalah	Class	Cast	Method	kalah.Player#public int getTotalSeeds() {}	5	To whole module	Private	None
+kalah.Player	kalah	Class	public	kalah.Player	kalah	Class	Return	Method	kalah.Player#public kalah.Player getOpponent() {}		To whole module	Public	None
+kalah.Player	kalah	Class	public	kalah.Player	kalah	Class	Get	Method	kalah.Player#public kalah.Player getOpponent() {}	1	kalah.Player#private kalah.Player opponent	Private	None
+kalah.Player	kalah	Class	public	java.util.List*	java.util	Interface	Return	Method	kalah.Player#public java.util.List getHouses() {}		To whole module	Public	None
+kalah.Player	kalah	Class	public	kalah.Player	kalah	Class	Get	Method	kalah.Player#public java.util.List getHouses() {}	1	kalah.Player#private java.util.List houses	Private	None
+kalah.Player	kalah	Class	public	int*		Primitive	Return	Method	kalah.Player#public int getId() {}		To whole module	Public	None
+kalah.Player	kalah	Class	public	kalah.Player	kalah	Class	Get	Method	kalah.Player#public int getId() {}	1	kalah.Player#private int id	Private	None
+kalah.Player	kalah	Class	public	kalah.Player	kalah	Class	Parameter	Method	kalah.Player#public void setOpponent(kalah.Player) {}	0	To whole module	Public	None
+kalah.Player	kalah	Class	public	void*		Primitive	Return	Method	kalah.Player#public void setOpponent(kalah.Player) {}		To whole module	Public	None
+kalah.Player	kalah	Class	public	kalah.Player	kalah	Class	Put	Method	kalah.Player#public void setOpponent(kalah.Player) {}	1	kalah.Player#private kalah.Player opponent	Private	None
+kalah.Player	kalah	Class	public	int*		Primitive	Parameter	Method	kalah.Player#public boolean isEmptyHouse(int) {}	0	To whole module	Public	None
+kalah.Player	kalah	Class	public	boolean*		Primitive	Return	Method	kalah.Player#public boolean isEmptyHouse(int) {}		To whole module	Public	None
+kalah.Player	kalah	Class	public	java.util.List*	java.util	Interface	InvokeInterface	Method	kalah.Player#public boolean isEmptyHouse(int) {}	2	java.util.List#java.lang.Object get(int) <>*	Private	None
+kalah.Player	kalah	Class	public	kalah.House	kalah	Class	InvokeInstance	Method	kalah.Player#public boolean isEmptyHouse(int) {}	4	kalah.House#int getNumSeeds() <>*	Private	None
+kalah.Player	kalah	Class	public	kalah.BoardSpot	kalah	Class	InvokeInstance	Method	kalah.Player#public boolean isEmptyHouse(int) {}	4	kalah.BoardSpot#public int getNumSeeds() {}	Private	Inherited
+kalah.Player	kalah	Class	public	kalah.Player	kalah	Class	Get	Method	kalah.Player#public boolean isEmptyHouse(int) {}	1	kalah.Player#private java.util.List houses	Private	None
+kalah.Player	kalah	Class	public	kalah.House	kalah	Class	Cast	Method	kalah.Player#public boolean isEmptyHouse(int) {}	3	To whole module	Private	None
+kalah.Player	kalah	Class	public	boolean*		Primitive	Return	Method	kalah.Player#public boolean areHousesEmpty() {}		To whole module	Public	None
+kalah.Player	kalah	Class	public	kalah.House	kalah	Class	Local	Method	kalah.Player#public boolean areHousesEmpty() {}	0	To whole module	Private	None
+kalah.Player	kalah	Class	public	java.util.List*	java.util	Interface	InvokeInterface	Method	kalah.Player#public boolean areHousesEmpty() {}	2	java.util.List#java.util.Iterator iterator() <>*	Private	None
+kalah.Player	kalah	Class	public	java.util.Iterator*	java.util	Interface	InvokeInterface	Method	kalah.Player#public boolean areHousesEmpty() {}	3	java.util.Iterator#boolean hasNext() <>*	Private	None
+kalah.Player	kalah	Class	public	java.util.Iterator*	java.util	Interface	InvokeInterface	Method	kalah.Player#public boolean areHousesEmpty() {}	4	java.util.Iterator#java.lang.Object next() <>*	Private	None
+kalah.Player	kalah	Class	public	kalah.House	kalah	Class	InvokeInstance	Method	kalah.Player#public boolean areHousesEmpty() {}	6	kalah.House#int getNumSeeds() <>*	Private	None
+kalah.Player	kalah	Class	public	kalah.BoardSpot	kalah	Class	InvokeInstance	Method	kalah.Player#public boolean areHousesEmpty() {}	6	kalah.BoardSpot#public int getNumSeeds() {}	Private	Inherited
+kalah.Player	kalah	Class	public	kalah.Player	kalah	Class	Get	Method	kalah.Player#public boolean areHousesEmpty() {}	1	kalah.Player#private java.util.List houses	Private	None
+kalah.Player	kalah	Class	public	kalah.House	kalah	Class	Cast	Method	kalah.Player#public boolean areHousesEmpty() {}	5	To whole module	Private	None
+kalah.Player	kalah	Class	public	int*		Primitive	Return	Method	kalah.Player#public int[] getHouseValues() {}		To whole module	Public	None
+kalah.Player	kalah	Class	public	int*		Primitive	Local	Method	kalah.Player#public int[] getHouseValues() {}	0,1	To whole module	Private	None
+kalah.Player	kalah	Class	public	java.util.List*	java.util	Interface	InvokeInterface	Method	kalah.Player#public int[] getHouseValues() {}	2,4	java.util.List#int size() <>*	Private	None
+kalah.Player	kalah	Class	public	java.util.List*	java.util	Interface	InvokeInterface	Method	kalah.Player#public int[] getHouseValues() {}	6	java.util.List#java.lang.Object get(int) <>*	Private	None
+kalah.Player	kalah	Class	public	kalah.House	kalah	Class	InvokeInstance	Method	kalah.Player#public int[] getHouseValues() {}	8	kalah.House#int getNumSeeds() <>*	Private	None
+kalah.Player	kalah	Class	public	kalah.BoardSpot	kalah	Class	InvokeInstance	Method	kalah.Player#public int[] getHouseValues() {}	8	kalah.BoardSpot#public int getNumSeeds() {}	Private	Inherited
+kalah.Player	kalah	Class	public	kalah.Player	kalah	Class	Get	Method	kalah.Player#public int[] getHouseValues() {}	1,3,5	kalah.Player#private java.util.List houses	Private	None
+kalah.Player	kalah	Class	public	kalah.House	kalah	Class	Cast	Method	kalah.Player#public int[] getHouseValues() {}	7	To whole module	Private	None
+kalah.Player	kalah	Class	public	int*		Primitive	Field	Field	kalah.Player#private int id		To whole module	Private	None
+kalah.Player	kalah	Class	public	kalah.Player	kalah	Class	Field	Field	kalah.Player#private kalah.Player opponent		To whole module	Private	None
+kalah.Player	kalah	Class	public	kalah.Store	kalah	Class	Field	Field	kalah.Player#private kalah.Store store		To whole module	Private	None
+kalah.Player	kalah	Class	public	java.util.List*	java.util	Interface	Field	Field	kalah.Player#private java.util.List houses		To whole module	Private	None
+kalah.Kalah	kalah	Class	public	java.lang.Object*	java.lang	Class	Extends	Header			To whole module	Public	None
+kalah.Kalah	kalah	Class	public	java.lang.Object*	java.lang	Class	InvokeSuper	Method	kalah.Kalah#public <init>() {}	1	java.lang.Object#public <init>() <>*	Private	None
+kalah.Kalah	kalah	Class	public	java.lang.Boolean*	java.lang	Class	InvokeStatic	Method	kalah.Kalah#public <init>() {}	4	java.lang.Boolean#java.lang.Boolean valueOf(boolean) <>*	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Kalah	kalah	Class	Put	Method	kalah.Kalah#public <init>() {}	2	kalah.Kalah#private int initialNumSeeds	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Kalah	kalah	Class	Put	Method	kalah.Kalah#public <init>() {}	5	kalah.Kalah#private java.lang.Boolean keepPlaying	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Kalah	kalah	Class	Put	Method	kalah.Kalah#public <init>() {}	3	kalah.Kalah#private int numHouses	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Kalah	kalah	Class	Put	Method	kalah.Kalah#public <init>() {}	6	kalah.Kalah#private java.lang.String quitCode	Private	None
+kalah.Kalah	kalah	Class	public	java.lang.String*	java.lang	Class	Parameter	Method	kalah.Kalah#public static void main(java.lang.String[]) {}	0	To whole module	Public	None
+kalah.Kalah	kalah	Class	public	void*		Primitive	Return	Method	kalah.Kalah#public static void main(java.lang.String[]) {}		To whole module	Public	None
+kalah.Kalah	kalah	Class	public	kalah.Kalah	kalah	Class	InvokeSpecial	Method	kalah.Kalah#public static void main(java.lang.String[]) {}	1	kalah.Kalah#public <init>() {}	Private	None
+kalah.Kalah	kalah	Class	public	com.qualitascorpus.testsupport.MockIO*?	com.qualitascorpus.testsupport	Unknown	InvokeSpecial	Method	kalah.Kalah#public static void main(java.lang.String[]) {}	2	com.qualitascorpus.testsupport.MockIO#<init>() <>*	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Kalah	kalah	Class	InvokeInstance	Method	kalah.Kalah#public static void main(java.lang.String[]) {}	3	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	Private	None
+kalah.Kalah	kalah	Class	public	com.qualitascorpus.testsupport.IO*?	com.qualitascorpus.testsupport	Unknown	Parameter	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	0	To whole module	Public	None
+kalah.Kalah	kalah	Class	public	void*		Primitive	Return	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}		To whole module	Public	None
+kalah.Kalah	kalah	Class	public	kalah.UI	kalah	Class	InvokeSpecial	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	1	kalah.UI#public <init>(com.qualitascorpus.testsupport.IO) {}	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Kalah	kalah	Class	InvokeSpecial	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	3	kalah.Kalah#private void init() {}	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Kalah	kalah	Class	InvokeSpecial	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	5,19,31,37,53	kalah.Kalah#private void displayBoard(kalah.UI) {}	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Board	kalah	Class	InvokeInstance	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	8,48,56	kalah.Board#public kalah.Player getCurrentPlayer() {}	Private	None
+kalah.Kalah	kalah	Class	public	kalah.UI	kalah	Class	InvokeInstance	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	9,49,57	kalah.UI#public void promptPlayer(kalah.Player) {}	Private	None
+kalah.Kalah	kalah	Class	public	java.lang.Boolean*	java.lang	Class	InvokeInstance	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	11	java.lang.Boolean#boolean booleanValue() <>*	Private	None
+kalah.Kalah	kalah	Class	public	kalah.UI	kalah	Class	InvokeInstance	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	13,24,28	kalah.UI#public java.lang.String getInputResponse() {}	Private	None
+kalah.Kalah	kalah	Class	public	java.lang.String*	java.lang	Class	InvokeInstance	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	15	java.lang.String#boolean equals(java.lang.Object) <>*	Private	None
+kalah.Kalah	kalah	Class	public	kalah.UI	kalah	Class	InvokeInstance	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	17,35	kalah.UI#public void gameOver() {}	Private	None
+kalah.Kalah	kalah	Class	public	java.lang.Boolean*	java.lang	Class	InvokeStatic	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	20,44	java.lang.Boolean#java.lang.Boolean valueOf(boolean) <>*	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Board	kalah	Class	InvokeInstance	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	25	kalah.Board#public boolean isValidMove(java.lang.String) {}	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Board	kalah	Class	InvokeInstance	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	29	kalah.Board#public void makeMove(java.lang.String) {}	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Board	kalah	Class	InvokeInstance	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	33	kalah.Board#public boolean isGameOver() {}	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Player	kalah	Class	InvokeInstance	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	40	kalah.Player#public int getTotalSeeds() {}	Private	None
+kalah.Kalah	kalah	Class	public	kalah.UI	kalah	Class	InvokeInstance	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	43	kalah.UI#public void finalScores(int,int) {}	Private	None
+kalah.Kalah	kalah	Class	public	kalah.UI	kalah	Class	InvokeInstance	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	51	kalah.UI#public void invalidMove() {}	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Kalah	kalah	Class	Get	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	22,26,32,47,55,7	kalah.Kalah#private kalah.Board board	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Kalah	kalah	Class	Put	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	45,21	kalah.Kalah#private java.lang.Boolean keepPlaying	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Kalah	kalah	Class	Get	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	10	kalah.Kalah#private java.lang.Boolean keepPlaying	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Kalah	kalah	Class	Get	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	39	kalah.Kalah#private kalah.Player player1	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Kalah	kalah	Class	Get	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	41	kalah.Kalah#private kalah.Player player2	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Kalah	kalah	Class	Get	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	14	kalah.Kalah#private java.lang.String quitCode	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Kalah	kalah	Class	Put	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	2	kalah.Kalah#private kalah.UI ui	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Kalah	kalah	Class	Get	Method	kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}	23,27,30,34,36,38,46,50,52,54,4,6,12,16,18	kalah.Kalah#private kalah.UI ui	Private	None
+kalah.Kalah	kalah	Class	public	void*		Primitive	Return	Method	kalah.Kalah#private void init() {}		To whole module	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Player	kalah	Class	InvokeSpecial	Method	kalah.Kalah#private void init() {}	3,7	kalah.Player#public <init>(int,int,int) {}	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Player	kalah	Class	InvokeInstance	Method	kalah.Kalah#private void init() {}	11,14	kalah.Player#public void setOpponent(kalah.Player) {}	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Board	kalah	Class	InvokeSpecial	Method	kalah.Kalah#private void init() {}	17	kalah.Board#public <init>(int,kalah.Player) {}	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Kalah	kalah	Class	Put	Method	kalah.Kalah#private void init() {}	18	kalah.Kalah#private kalah.Board board	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Kalah	kalah	Class	Get	Method	kalah.Kalah#private void init() {}	1,5	kalah.Kalah#private int initialNumSeeds	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Kalah	kalah	Class	Get	Method	kalah.Kalah#private void init() {}	2,6,15	kalah.Kalah#private int numHouses	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Kalah	kalah	Class	Put	Method	kalah.Kalah#private void init() {}	4	kalah.Kalah#private kalah.Player player1	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Kalah	kalah	Class	Get	Method	kalah.Kalah#private void init() {}	9,13,16	kalah.Kalah#private kalah.Player player1	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Kalah	kalah	Class	Put	Method	kalah.Kalah#private void init() {}	8	kalah.Kalah#private kalah.Player player2	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Kalah	kalah	Class	Get	Method	kalah.Kalah#private void init() {}	10,12	kalah.Kalah#private kalah.Player player2	Private	None
+kalah.Kalah	kalah	Class	public	kalah.UI	kalah	Class	Parameter	Method	kalah.Kalah#private void displayBoard(kalah.UI) {}	0	To whole module	Private	None
+kalah.Kalah	kalah	Class	public	void*		Primitive	Return	Method	kalah.Kalah#private void displayBoard(kalah.UI) {}		To whole module	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Player	kalah	Class	InvokeInstance	Method	kalah.Kalah#private void displayBoard(kalah.UI) {}	3	kalah.Player#public int[] getHouseValues() {}	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Player	kalah	Class	InvokeInstance	Method	kalah.Kalah#private void displayBoard(kalah.UI) {}	7	kalah.Player#public kalah.Store getStore() {}	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Store	kalah	Class	InvokeInstance	Method	kalah.Kalah#private void displayBoard(kalah.UI) {}	8	kalah.Store#int getNumSeeds() <>*	Private	None
+kalah.Kalah	kalah	Class	public	kalah.BoardSpot	kalah	Class	InvokeInstance	Method	kalah.Kalah#private void displayBoard(kalah.UI) {}	8	kalah.BoardSpot#public int getNumSeeds() {}	Private	Inherited
+kalah.Kalah	kalah	Class	public	kalah.UI	kalah	Class	InvokeInstance	Method	kalah.Kalah#private void displayBoard(kalah.UI) {}	12	kalah.UI#public void displayBoard(int,int[],int[],int,int) {}	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Kalah	kalah	Class	Get	Method	kalah.Kalah#private void displayBoard(kalah.UI) {}	1	kalah.Kalah#private int numHouses	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Kalah	kalah	Class	Get	Method	kalah.Kalah#private void displayBoard(kalah.UI) {}	6,2	kalah.Kalah#private kalah.Player player1	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Kalah	kalah	Class	Get	Method	kalah.Kalah#private void displayBoard(kalah.UI) {}	4,9	kalah.Kalah#private kalah.Player player2	Private	None
+kalah.Kalah	kalah	Class	public	int*		Primitive	Field	Field	kalah.Kalah#private int initialNumSeeds		To whole module	Private	None
+kalah.Kalah	kalah	Class	public	int*		Primitive	Field	Field	kalah.Kalah#private int numHouses		To whole module	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Player	kalah	Class	Field	Field	kalah.Kalah#private kalah.Player player1		To whole module	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Player	kalah	Class	Field	Field	kalah.Kalah#private kalah.Player player2		To whole module	Private	None
+kalah.Kalah	kalah	Class	public	kalah.Board	kalah	Class	Field	Field	kalah.Kalah#private kalah.Board board		To whole module	Private	None
+kalah.Kalah	kalah	Class	public	java.lang.Boolean*	java.lang	Class	Field	Field	kalah.Kalah#private java.lang.Boolean keepPlaying		To whole module	Private	None
+kalah.Kalah	kalah	Class	public	java.lang.String*	java.lang	Class	Field	Field	kalah.Kalah#private java.lang.String quitCode		To whole module	Private	None
+kalah.Kalah	kalah	Class	public	kalah.UI	kalah	Class	Field	Field	kalah.Kalah#private kalah.UI ui		To whole module	Private	None
+kalah.Board	kalah	Class	public	java.lang.Object*	java.lang	Class	Extends	Header			To whole module	Public	None
+kalah.Board	kalah	Class	public	kalah.Player	kalah	Class	Return	Method	kalah.Board#public kalah.Player getCurrentPlayer() {}		To whole module	Public	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#public kalah.Player getCurrentPlayer() {}	1	kalah.Board#private kalah.Player currentPlayer	Private	None
+kalah.Board	kalah	Class	public	java.lang.String*	java.lang	Class	Parameter	Method	kalah.Board#public boolean isValidMove(java.lang.String) {}	0	To whole module	Public	None
+kalah.Board	kalah	Class	public	boolean*		Primitive	Return	Method	kalah.Board#public boolean isValidMove(java.lang.String) {}		To whole module	Public	None
+kalah.Board	kalah	Class	public	java.lang.Integer*	java.lang	Class	InvokeStatic	Method	kalah.Board#public boolean isValidMove(java.lang.String) {}	2	java.lang.Integer#int parseInt(java.lang.String) <>*	Private	None
+kalah.Board	kalah	Class	public	kalah.Player	kalah	Class	InvokeInstance	Method	kalah.Board#public boolean isValidMove(java.lang.String) {}	3	kalah.Player#public boolean isEmptyHouse(int) {}	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#public boolean isValidMove(java.lang.String) {}	1	kalah.Board#private kalah.Player currentPlayer	Private	None
+kalah.Board	kalah	Class	public	java.lang.String*	java.lang	Class	Parameter	Method	kalah.Board#public void makeMove(java.lang.String) {}	0	To whole module	Public	None
+kalah.Board	kalah	Class	public	void*		Primitive	Return	Method	kalah.Board#public void makeMove(java.lang.String) {}		To whole module	Public	None
+kalah.Board	kalah	Class	public	int*		Primitive	Local	Method	kalah.Board#public void makeMove(java.lang.String) {}	0,2	To whole module	Private	None
+kalah.Board	kalah	Class	public	kalah.House	kalah	Class	Local	Method	kalah.Board#public void makeMove(java.lang.String) {}	1	To whole module	Private	None
+kalah.Board	kalah	Class	public	java.lang.Integer*	java.lang	Class	InvokeStatic	Method	kalah.Board#public void makeMove(java.lang.String) {}	1	java.lang.Integer#int parseInt(java.lang.String) <>*	Private	None
+kalah.Board	kalah	Class	public	kalah.Player	kalah	Class	InvokeInstance	Method	kalah.Board#public void makeMove(java.lang.String) {}	3	kalah.Player#public java.util.List getHouses() {}	Private	None
+kalah.Board	kalah	Class	public	java.util.List*	java.util	Interface	InvokeInterface	Method	kalah.Board#public void makeMove(java.lang.String) {}	4	java.util.List#java.lang.Object get(int) <>*	Private	None
+kalah.Board	kalah	Class	public	kalah.House	kalah	Class	InvokeInstance	Method	kalah.Board#public void makeMove(java.lang.String) {}	6	kalah.House#int getNumSeeds() <>*	Private	None
+kalah.Board	kalah	Class	public	kalah.BoardSpot	kalah	Class	InvokeInstance	Method	kalah.Board#public void makeMove(java.lang.String) {}	6	kalah.BoardSpot#public int getNumSeeds() {}	Private	Inherited
+kalah.Board	kalah	Class	public	kalah.House	kalah	Class	InvokeInstance	Method	kalah.Board#public void makeMove(java.lang.String) {}	7	kalah.House#void clearSeeds() <>*	Private	None
+kalah.Board	kalah	Class	public	kalah.BoardSpot	kalah	Class	InvokeInstance	Method	kalah.Board#public void makeMove(java.lang.String) {}	7	kalah.BoardSpot#public void clearSeeds() {}	Private	Inherited
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	InvokeSpecial	Method	kalah.Board#public void makeMove(java.lang.String) {}	8	kalah.Board#private void spreadSeeds(int,int) {}	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#public void makeMove(java.lang.String) {}	2	kalah.Board#private kalah.Player currentPlayer	Private	None
+kalah.Board	kalah	Class	public	kalah.House	kalah	Class	Cast	Method	kalah.Board#public void makeMove(java.lang.String) {}	5	To whole module	Private	None
+kalah.Board	kalah	Class	public	boolean*		Primitive	Return	Method	kalah.Board#public boolean isGameOver() {}		To whole module	Public	None
+kalah.Board	kalah	Class	public	kalah.Player	kalah	Class	InvokeInstance	Method	kalah.Board#public boolean isGameOver() {}	2	kalah.Player#public boolean areHousesEmpty() {}	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#public boolean isGameOver() {}	1	kalah.Board#private kalah.Player currentPlayer	Private	None
+kalah.Board	kalah	Class	public	int*		Primitive	Parameter	Constructor	kalah.Board#public <init>(int,kalah.Player) {}	0	To whole module	Public	None
+kalah.Board	kalah	Class	public	kalah.Player	kalah	Class	Parameter	Constructor	kalah.Board#public <init>(int,kalah.Player) {}	1	To whole module	Public	None
+kalah.Board	kalah	Class	public	java.lang.Object*	java.lang	Class	InvokeSuper	Method	kalah.Board#public <init>(int,kalah.Player) {}	1	java.lang.Object#public <init>() <>*	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Put	Method	kalah.Board#public <init>(int,kalah.Player) {}	3	kalah.Board#private kalah.Player currentPlayer	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Put	Method	kalah.Board#public <init>(int,kalah.Player) {}	2	kalah.Board#private int numHouses	Private	None
+kalah.Board	kalah	Class	public	void*		Primitive	Return	Method	kalah.Board#public void updateCurrentPlayer() {}		To whole module	Public	None
+kalah.Board	kalah	Class	public	kalah.Player	kalah	Class	InvokeInstance	Method	kalah.Board#public void updateCurrentPlayer() {}	2	kalah.Player#public kalah.Player getOpponent() {}	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Put	Method	kalah.Board#public void updateCurrentPlayer() {}	3	kalah.Board#private kalah.Player currentPlayer	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#public void updateCurrentPlayer() {}	1	kalah.Board#private kalah.Player currentPlayer	Private	None
+kalah.Board	kalah	Class	public	int*		Primitive	Parameter	Method	kalah.Board#private void spreadSeeds(int,int) {}	0,1	To whole module	Private	None
+kalah.Board	kalah	Class	public	void*		Primitive	Return	Method	kalah.Board#private void spreadSeeds(int,int) {}		To whole module	Private	None
+kalah.Board	kalah	Class	public	kalah.BoardSpot	kalah	Class	Local	Method	kalah.Board#private void spreadSeeds(int,int) {}	0	To whole module	Private	None
+kalah.Board	kalah	Class	public	java.util.List*	java.util	Interface	Local	Method	kalah.Board#private void spreadSeeds(int,int) {}	1	To whole module	Private	None
+kalah.Board	kalah	Class	public	kalah.Player	kalah	Class	Local	Method	kalah.Board#private void spreadSeeds(int,int) {}	2	To whole module	Private	None
+kalah.Board	kalah	Class	public	int*		Primitive	Local	Method	kalah.Board#private void spreadSeeds(int,int) {}	3	To whole module	Private	None
+kalah.Board	kalah	Class	public	java.util.ArrayList*	java.util	Class	InvokeSpecial	Method	kalah.Board#private void spreadSeeds(int,int) {}	1	java.util.ArrayList#<init>() <>*	Private	None
+kalah.Board	kalah	Class	public	kalah.Player	kalah	Class	InvokeInstance	Method	kalah.Board#private void spreadSeeds(int,int) {}	3	kalah.Player#public kalah.Player getOpponent() {}	Private	None
+kalah.Board	kalah	Class	public	kalah.Player	kalah	Class	InvokeInstance	Method	kalah.Board#private void spreadSeeds(int,int) {}	5,10	kalah.Player#public java.util.List getHouses() {}	Private	None
+kalah.Board	kalah	Class	public	java.util.List*	java.util	Interface	InvokeInterface	Method	kalah.Board#private void spreadSeeds(int,int) {}	6,11	java.util.List#boolean addAll(java.util.Collection) <>*	Private	None
+kalah.Board	kalah	Class	public	kalah.Player	kalah	Class	InvokeInstance	Method	kalah.Board#private void spreadSeeds(int,int) {}	8,12	kalah.Player#public kalah.Store getStore() {}	Private	None
+kalah.Board	kalah	Class	public	java.util.List*	java.util	Interface	InvokeInterface	Method	kalah.Board#private void spreadSeeds(int,int) {}	9,13	java.util.List#boolean add(java.lang.Object) <>*	Private	None
+kalah.Board	kalah	Class	public	java.util.List*	java.util	Interface	InvokeInterface	Method	kalah.Board#private void spreadSeeds(int,int) {}	14	java.util.List#java.lang.Object get(int) <>*	Private	None
+kalah.Board	kalah	Class	public	kalah.BoardSpot	kalah	Class	InvokeInstance	Method	kalah.Board#private void spreadSeeds(int,int) {}	17	kalah.BoardSpot#public kalah.Player getPlayer() {}	Private	None
+kalah.Board	kalah	Class	public	kalah.BoardSpot	kalah	Class	InvokeInstance	Method	kalah.Board#private void spreadSeeds(int,int) {}	18	kalah.BoardSpot#public void incrementSeeds() {}	Private	None
+kalah.Board	kalah	Class	public	java.util.List*	java.util	Interface	InvokeInterface	Method	kalah.Board#private void spreadSeeds(int,int) {}	19	java.util.List#int size() <>*	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	InvokeSpecial	Method	kalah.Board#private void spreadSeeds(int,int) {}	21	kalah.Board#private void handlePotentialCapture(kalah.BoardSpot) {}	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	InvokeInstance	Method	kalah.Board#private void spreadSeeds(int,int) {}	22	kalah.Board#public void updateCurrentPlayer() {}	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#private void spreadSeeds(int,int) {}	2,4,7	kalah.Board#private kalah.Player currentPlayer	Private	None
+kalah.Board	kalah	Class	public	kalah.BoardSpot	kalah	Class	Cast	Method	kalah.Board#private void spreadSeeds(int,int) {}	15	To whole module	Private	None
+kalah.Board	kalah	Class	public	kalah.House	kalah	Class	InstanceOf	Method	kalah.Board#private void spreadSeeds(int,int) {}	20	To whole module	Private	None
+kalah.Board	kalah	Class	public	kalah.BoardSpot	kalah	Class	Parameter	Method	kalah.Board#private void handlePotentialCapture(kalah.BoardSpot) {}	0	To whole module	Private	None
+kalah.Board	kalah	Class	public	void*		Primitive	Return	Method	kalah.Board#private void handlePotentialCapture(kalah.BoardSpot) {}		To whole module	Private	None
+kalah.Board	kalah	Class	public	int*		Primitive	Local	Method	kalah.Board#private void handlePotentialCapture(kalah.BoardSpot) {}	0,1,3	To whole module	Private	None
+kalah.Board	kalah	Class	public	kalah.House	kalah	Class	Local	Method	kalah.Board#private void handlePotentialCapture(kalah.BoardSpot) {}	2	To whole module	Private	None
+kalah.Board	kalah	Class	public	boolean*		Primitive	Local	Method	kalah.Board#private void handlePotentialCapture(kalah.BoardSpot) {}	4,5	To whole module	Private	None
+kalah.Board	kalah	Class	public	kalah.BoardSpot	kalah	Class	InvokeInstance	Method	kalah.Board#private void handlePotentialCapture(kalah.BoardSpot) {}	2	kalah.BoardSpot#public kalah.Player getPlayer() {}	Private	None
+kalah.Board	kalah	Class	public	kalah.BoardSpot	kalah	Class	InvokeInstance	Method	kalah.Board#private void handlePotentialCapture(kalah.BoardSpot) {}	3,14	kalah.BoardSpot#public int getNumSeeds() {}	Private	None
+kalah.Board	kalah	Class	public	kalah.House	kalah	Class	InvokeInstance	Method	kalah.Board#private void handlePotentialCapture(kalah.BoardSpot) {}	6	kalah.House#public int getNumber() {}	Private	None
+kalah.Board	kalah	Class	public	kalah.Player	kalah	Class	InvokeInstance	Method	kalah.Board#private void handlePotentialCapture(kalah.BoardSpot) {}	8	kalah.Player#public kalah.Player getOpponent() {}	Private	None
+kalah.Board	kalah	Class	public	kalah.Player	kalah	Class	InvokeInstance	Method	kalah.Board#private void handlePotentialCapture(kalah.BoardSpot) {}	9	kalah.Player#public java.util.List getHouses() {}	Private	None
+kalah.Board	kalah	Class	public	java.util.List*	java.util	Interface	InvokeInterface	Method	kalah.Board#private void handlePotentialCapture(kalah.BoardSpot) {}	10	java.util.List#java.lang.Object get(int) <>*	Private	None
+kalah.Board	kalah	Class	public	kalah.House	kalah	Class	InvokeInstance	Method	kalah.Board#private void handlePotentialCapture(kalah.BoardSpot) {}	12	kalah.House#int getNumSeeds() <>*	Private	None
+kalah.Board	kalah	Class	public	kalah.BoardSpot	kalah	Class	InvokeInstance	Method	kalah.Board#private void handlePotentialCapture(kalah.BoardSpot) {}	12	kalah.BoardSpot#public int getNumSeeds() {}	Private	Inherited
+kalah.Board	kalah	Class	public	kalah.House	kalah	Class	InvokeInstance	Method	kalah.Board#private void handlePotentialCapture(kalah.BoardSpot) {}	13	kalah.House#void clearSeeds() <>*	Private	None
+kalah.Board	kalah	Class	public	kalah.BoardSpot	kalah	Class	InvokeInstance	Method	kalah.Board#private void handlePotentialCapture(kalah.BoardSpot) {}	13	kalah.BoardSpot#public void clearSeeds() {}	Private	Inherited
+kalah.Board	kalah	Class	public	kalah.BoardSpot	kalah	Class	InvokeInstance	Method	kalah.Board#private void handlePotentialCapture(kalah.BoardSpot) {}	15	kalah.BoardSpot#public void clearSeeds() {}	Private	None
+kalah.Board	kalah	Class	public	kalah.Player	kalah	Class	InvokeInstance	Method	kalah.Board#private void handlePotentialCapture(kalah.BoardSpot) {}	17	kalah.Player#public kalah.Store getStore() {}	Private	None
+kalah.Board	kalah	Class	public	kalah.Store	kalah	Class	InvokeInstance	Method	kalah.Board#private void handlePotentialCapture(kalah.BoardSpot) {}	18	kalah.Store#void addSeeds(int) <>*	Private	None
+kalah.Board	kalah	Class	public	kalah.BoardSpot	kalah	Class	InvokeInstance	Method	kalah.Board#private void handlePotentialCapture(kalah.BoardSpot) {}	18	kalah.BoardSpot#public void addSeeds(int) {}	Private	Inherited
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#private void handlePotentialCapture(kalah.BoardSpot) {}	1,7,16	kalah.Board#private kalah.Player currentPlayer	Private	None
+kalah.Board	kalah	Class	public	kalah.Board	kalah	Class	Get	Method	kalah.Board#private void handlePotentialCapture(kalah.BoardSpot) {}	4	kalah.Board#private int numHouses	Private	None
+kalah.Board	kalah	Class	public	kalah.House	kalah	Class	Cast	Method	kalah.Board#private void handlePotentialCapture(kalah.BoardSpot) {}	11	To whole module	Private	None
+kalah.Board	kalah	Class	public	int*		Primitive	Field	Field	kalah.Board#private int numHouses		To whole module	Private	None
+kalah.Board	kalah	Class	public	kalah.Player	kalah	Class	Field	Field	kalah.Board#private kalah.Player currentPlayer		To whole module	Private	None
+kalah.Store	kalah	Class	public	kalah.BoardSpot	kalah	Class	Extends	Header			To whole module	Public	None
+kalah.Store	kalah	Class	public	kalah.Player	kalah	Class	Parameter	Constructor	kalah.Store#public <init>(kalah.Player,int) {}	0	To whole module	Public	None
+kalah.Store	kalah	Class	public	int*		Primitive	Parameter	Constructor	kalah.Store#public <init>(kalah.Player,int) {}	1	To whole module	Public	None
+kalah.Store	kalah	Class	public	kalah.BoardSpot	kalah	Class	InvokeSuper	Method	kalah.Store#public <init>(kalah.Player,int) {}	1	kalah.BoardSpot#public <init>(kalah.Player,int) {}	Private	None
+Main	null	Class	public	junit.framework.TestCase*?	junit.framework	Unknown	Extends	Header			To whole module	Public	None
+Main	null	Class	public	junit.framework.TestCase*?	junit.framework	Unknown	InvokeSuper	Method	Main#public <init>() {}	1	junit.framework.TestCase#<init>() <>*	Private	None
+Main	null	Class	public	java.lang.String*	java.lang	Class	Parameter	Method	Main#public static void main(java.lang.String[]) {}	0	To whole module	Public	None
+Main	null	Class	public	void*		Primitive	Return	Method	Main#public static void main(java.lang.String[]) {}		To whole module	Public	None
+Main	null	Class	public	junit.textui.TestRunner*?	junit.textui	Unknown	InvokeStatic	Method	Main#public static void main(java.lang.String[]) {}	1	junit.textui.TestRunner#void run(java.lang.Class) <>*	Private	None

@@ -1,0 +1,21 @@
+#TITLE	NCLOC for design1034
+#SUMMARY	Non-comment non-blank lines of code per top-level module
+
+##Dataset attributes
+Timestamp	20220424 08:47:58 NZST
+Tool	loc.pl 20170704T0800
+System	design1034
+Codebase	../grad006-03/design1034/src
+
+##Measurements
+#Metadata
+NCLOC	UnboundedCount	Non-comment non-blank lines of code for module (first line with simple name to line with closing brace)
+#Data
+#Entity	NCLOC
+kalah.Board	69
+kalah.BoardSpot	23
+kalah.House	10
+kalah.Kalah	53
+kalah.Player	57
+kalah.Store	5
+kalah.UI	89

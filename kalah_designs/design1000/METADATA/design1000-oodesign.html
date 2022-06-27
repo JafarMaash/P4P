@@ -1,0 +1,3149 @@
+<html>
+<head>
+<style>
+  .stripe tbody tr:nth-child(even) td {background-color:#f2f2f2;}
+  div.scrollable { width: 100%; max-height: 100px; margin: 0; padding: 0; overflow: auto;}
+</style>
+</head>
+</html>
+<body>
+<h1>OO Measurements</h1>
+<p>Description of static structure of system. Includes measurements of individual modules and measurements of the overall design.</p>
+<h3>Dataset attributes</h3>
+<table style="empty-cells: show" border>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+Timestamp
+</div></th>
+    <td><div class="scrollable">
+Sun Apr 24 08:48:00 NZST 2022
+</div></td>
+    <td><div class="scrollable">
+
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+Tool
+</div></th>
+    <td><div class="scrollable">
+mete-analysis(static structure):20211117T0000
+</div></td>
+    <td><div class="scrollable">
+
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+System
+</div></th>
+    <td><div class="scrollable">
+design1000
+</div></td>
+    <td><div class="scrollable">
+
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+Codebase
+</div></th>
+    <td><div class="scrollable">
+../grad006-03/design1000/design1000
+</div></td>
+    <td><div class="scrollable">
+
+</div></td>
+  </tr>
+</table>
+<h3>Module Attributes</h3>
+<h4>Metadata<h4>
+<table style="empty-cells: show" border>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+Ce
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Efferent coupling - Total number of user-defined modules (including inherited) this module has a dependency on
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+Ca
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Afferent coupling - Total number of user-defined modules (including inherited) that are dependent on this module
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+CON
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Total number of constructors in module
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+DIF
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Total number of instance fields DECLARED in module
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+DIM
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Total number of instance methods DECLARED in module
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+DSF
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Total number of NON FINAL static fields DECLARED in module
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+DSM
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Total number of static methods (not counting main()) DECLARED in module
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+DSFF
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Total number of FINAL static fields DECLARED in module
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+MIF
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Module Instance Fields - Total number of instance fields in module (ie including inherited, not including libraries)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+MIM
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Module Instance Methods - Total number of instance methods in module (ie including inherited, not including libaries)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+MSF
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Module Static Fields - Total number of NON FINAL static fields in module (ie including inherited, not including libraries)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+MSM
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Module Static Methods - Total number of static methods (not counting main()) in module (ie including inherited, not including libraries)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+MAIN
+</div></td>
+    <td><div class="scrollable">
+Flag[0|1]
+</div></td>
+    <td><div class="scrollable">
+Module has main() entry-point method
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+CLS
+</div></td>
+    <td><div class="scrollable">
+Flag[0|1]
+</div></td>
+    <td><div class="scrollable">
+Module is a class (and not an enum or exception)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+INT
+</div></td>
+    <td><div class="scrollable">
+Flag[0|1]
+</div></td>
+    <td><div class="scrollable">
+Module is interface
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+ENM
+</div></td>
+    <td><div class="scrollable">
+Flag[0|1]
+</div></td>
+    <td><div class="scrollable">
+Module is enum
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+ANN
+</div></td>
+    <td><div class="scrollable">
+Flag[0|1]
+</div></td>
+    <td><div class="scrollable">
+Module is annotation
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+EXP
+</div></td>
+    <td><div class="scrollable">
+Flag[0|1]
+</div></td>
+    <td><div class="scrollable">
+Modules is exception
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+NST
+</div></td>
+    <td><div class="scrollable">
+Flag[0|1]
+</div></td>
+    <td><div class="scrollable">
+Module is nested
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+EXT
+</div></td>
+    <td><div class="scrollable">
+Flag[0|1]
+</div></td>
+    <td><div class="scrollable">
+Module extends another (excluding Object)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+IMP
+</div></td>
+    <td><div class="scrollable">
+Flag[0|1]
+</div></td>
+    <td><div class="scrollable">
+Module (class) implements at least one (interface)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+MDUInh
+</div></td>
+    <td><div class="scrollable">
+Flag[0|1]
+</div></td>
+    <td><div class="scrollable">
+Module is defined using inheritance (non exception that extends or implements something that is not java.lang.Object
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+MInhF
+</div></td>
+    <td><div class="scrollable">
+Flag[0|1]
+</div></td>
+    <td><div class="scrollable">
+Some other module inherits from (implements or extends) this module
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+CeR
+</div></td>
+    <td><div class="scrollable">
+BoundedReal[0.0-1.0]
+</div></td>
+    <td><div class="scrollable">
+Ratio of Ce to Total_Modules
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="25"><div class="scrollable">
+CaR
+</div></td>
+    <td><div class="scrollable">
+BoundedReal[0.0-1.0]
+</div></td>
+    <td><div class="scrollable">
+Ratio of Ca to Total_Modules
+</div></td>
+  </tr>
+</table>
+<h4>Data<h4>
+<div class="stripe">
+<table style="empty-cells: show" border>
+  <tr valign=top>
+    <th><div class="scrollable">
+Entity
+</div></th>
+    <th><div class="scrollable">
+Ce
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+Ca
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+CON
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+DIF
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+DIM
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+DSF
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+DSM
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+DSFF
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+MIF
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+MIM
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+MSF
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+MSM
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+MAIN
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+CLS
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+INT
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+ENM
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+ANN
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+EXP
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+NST
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+EXT
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+IMP
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+MDUInh
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+MInhF
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+CeR
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+    <th><div class="scrollable">
+CaR
+</div></th>
+    <th><div class="scrollable">
+Evidence
+</div></th>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.Kalah
+</div></td>
+    <td><div class="scrollable">
+6
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl, kalah.game.IPlayer, kalah.game.GameControl, kalah.game.Player, kalah.ui.GameInterface, kalah.ui.Board]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.Kalah#public <init>() {}>java.lang.Object#public <init>() <>*:[1]]
+</div></td>
+    <td><div class="scrollable">
+4
+</div></td>
+    <td><div class="scrollable">
+[kalah.Kalah#private kalah.ui.GameInterface board, kalah.Kalah#private kalah.game.IPlayer p2, kalah.Kalah#private kalah.game.IPlayer p1, kalah.Kalah#private kalah.game.GameControl gameControl]
+</div></td>
+    <td><div class="scrollable">
+3
+</div></td>
+    <td><div class="scrollable">
+[kalah.Kalah#public void stopGame() {}, kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}, kalah.Kalah#public void startNewGame() {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+4
+</div></td>
+    <td><div class="scrollable">
+[kalah.Kalah#private kalah.ui.GameInterface board, kalah.Kalah#private kalah.game.IPlayer p2, kalah.Kalah#private kalah.game.IPlayer p1, kalah.Kalah#private kalah.game.GameControl gameControl]
+</div></td>
+    <td><div class="scrollable">
+3
+</div></td>
+    <td><div class="scrollable">
+[kalah.Kalah#public void stopGame() {}, kalah.Kalah#public void play(com.qualitascorpus.testsupport.IO) {}, kalah.Kalah#public void startNewGame() {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.Kalah]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.Kalah]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0.400
+</div></td>
+    <td><div class="scrollable">
+f(6)
+</div></td>
+    <td><div class="scrollable">
+0.000
+</div></td>
+    <td><div class="scrollable">
+f(0)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.game.CaptureRule
+</div></td>
+    <td><div class="scrollable">
+7
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.IPlayer, kalah.game.Player, kalah.game.GameState, kalah.game.SeedContainer, kalah.game.House, kalah.game.Store, kalah.game.GameRules]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.CaptureRule#public <init>() {}>java.lang.Object#public <init>() <>*:[1]]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.CaptureRule#public kalah.game.GameState executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState) {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.CaptureRule#public kalah.game.GameState executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState) {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.CaptureRule]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.CaptureRule]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.CaptureRule]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0.467
+</div></td>
+    <td><div class="scrollable">
+f(7)
+</div></td>
+    <td><div class="scrollable">
+0.067
+</div></td>
+    <td><div class="scrollable">
+f(1)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.game.EmptyStoreSow
+</div></td>
+    <td><div class="scrollable">
+4
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.IPlayer, kalah.game.Player, kalah.game.GameState, kalah.game.GameRules]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.EmptyStoreSow#public <init>() {}>java.lang.Object#public <init>() <>*:[1]]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.EmptyStoreSow#public kalah.game.GameState executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState) {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.EmptyStoreSow#public kalah.game.GameState executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState) {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.EmptyStoreSow]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.EmptyStoreSow]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.EmptyStoreSow]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0.267
+</div></td>
+    <td><div class="scrollable">
+f(4)
+</div></td>
+    <td><div class="scrollable">
+0.067
+</div></td>
+    <td><div class="scrollable">
+f(1)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.game.GameControl
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.IPlayer]
+</div></td>
+    <td><div class="scrollable">
+2
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl, kalah.Kalah]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+6
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.GameControl#public abstract void quitGame() <>, kalah.game.GameControl#public abstract void changeTurn() <>, kalah.game.GameControl#public abstract void gameOver() <>, kalah.game.GameControl#public abstract void chooseStartingPlayer(kalah.game.IPlayer) <>, kalah.game.GameControl#public abstract void addGameRules() <>, kalah.game.GameControl#public abstract void start() <>]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+6
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.GameControl#public abstract void quitGame() <>, kalah.game.GameControl#public abstract void changeTurn() <>, kalah.game.GameControl#public abstract void gameOver() <>, kalah.game.GameControl#public abstract void chooseStartingPlayer(kalah.game.IPlayer) <>, kalah.game.GameControl#public abstract void addGameRules() <>, kalah.game.GameControl#public abstract void start() <>]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.GameControl]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.GameControl]
+</div></td>
+    <td><div class="scrollable">
+0.067
+</div></td>
+    <td><div class="scrollable">
+f(1)
+</div></td>
+    <td><div class="scrollable">
+0.133
+</div></td>
+    <td><div class="scrollable">
+f(2)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.game.GameRules
+</div></td>
+    <td><div class="scrollable">
+2
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.IPlayer, kalah.game.GameState]
+</div></td>
+    <td><div class="scrollable">
+4
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl, kalah.game.EmptyStoreSow, kalah.game.IllegalMoveRule, kalah.game.CaptureRule]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.GameRules#public abstract kalah.game.GameState executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState) <>]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.GameRules#public abstract kalah.game.GameState executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState) <>]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.GameRules]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.GameRules]
+</div></td>
+    <td><div class="scrollable">
+0.133
+</div></td>
+    <td><div class="scrollable">
+f(2)
+</div></td>
+    <td><div class="scrollable">
+0.267
+</div></td>
+    <td><div class="scrollable">
+f(4)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.game.GameState
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+7
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl, kalah.game.EmptyStoreSow, kalah.game.IllegalMoveRule, kalah.ui.GameInterface, kalah.ui.Board, kalah.game.CaptureRule, kalah.game.GameRules]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.GameState#private <init>(java.lang.String,int) {}>java.lang.Enum#<init>(java.lang.String,int) <>*:[1]]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+2
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.GameState#public static kalah.game.GameState[] values() {}, kalah.game.GameState#public static kalah.game.GameState valueOf(java.lang.String) {}]
+</div></td>
+    <td><div class="scrollable">
+8
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.GameState#public static final kalah.game.GameState QUIT_GAME, kalah.game.GameState#public static final kalah.game.GameState CHECK_EMPTY_STORE_SOW, kalah.game.GameState#public static final kalah.game.GameState CONTINUE_GAME, kalah.game.GameState#public static final kalah.game.GameState CHECK_ILLEGAL_MOVE, kalah.game.GameState#public static final kalah.game.GameState EMPTY_STORE_SOWED, kalah.game.GameState#public static final kalah.game.GameState EMPTY_HOUSE_SELECTED, kalah.game.GameState#public static final kalah.game.GameState CHECK_CAPTURE, kalah.game.GameState#public static final kalah.game.GameState CAPTURED]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+2
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.GameState#public static kalah.game.GameState[] values() {}, kalah.game.GameState#public static kalah.game.GameState valueOf(java.lang.String) {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.GameState]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.GameState]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.GameState]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0.000
+</div></td>
+    <td><div class="scrollable">
+f(0)
+</div></td>
+    <td><div class="scrollable">
+0.467
+</div></td>
+    <td><div class="scrollable">
+f(7)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.game.House
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.SeedContainer]
+</div></td>
+    <td><div class="scrollable">
+5
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl, kalah.game.Player, kalah.game.IllegalMoveRule, kalah.ui.Board, kalah.game.CaptureRule]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.House#public <init>(int) {}>java.lang.Object#public <init>() <>*:[1]]
+</div></td>
+    <td><div class="scrollable">
+2
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.House#private int houseIndex, kalah.game.House#private int seeds]
+</div></td>
+    <td><div class="scrollable">
+7
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.House#public int getSeeds() {}, kalah.game.House#public boolean isEmpty() {}, kalah.game.House#public void setSeeds(int) {}, kalah.game.House#public void addSeeds(int) {}, kalah.game.House#public int getHouseIndex() {}, kalah.game.House#public int getNumStartingSeeds() {}, kalah.game.House#public java.lang.String getRepresentation() {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.House#private static final int NUM_STARTING_SEEDS]
+</div></td>
+    <td><div class="scrollable">
+2
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.House#private int houseIndex, kalah.game.House#private int seeds]
+</div></td>
+    <td><div class="scrollable">
+7
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.House#public int getSeeds() {}, kalah.game.House#public boolean isEmpty() {}, kalah.game.House#public void setSeeds(int) {}, kalah.game.House#public void addSeeds(int) {}, kalah.game.House#public int getHouseIndex() {}, kalah.game.House#public int getNumStartingSeeds() {}, kalah.game.House#public java.lang.String getRepresentation() {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.House]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.House]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.House]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0.067
+</div></td>
+    <td><div class="scrollable">
+f(1)
+</div></td>
+    <td><div class="scrollable">
+0.333
+</div></td>
+    <td><div class="scrollable">
+f(5)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.game.IPlayer
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.SeedContainer]
+</div></td>
+    <td><div class="scrollable">
+9
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl, kalah.game.GameControl, kalah.game.EmptyStoreSow, kalah.game.Player, kalah.game.IllegalMoveRule, kalah.Kalah, kalah.ui.Board, kalah.game.CaptureRule, kalah.game.GameRules]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+10
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.IPlayer#public abstract java.lang.String getName() <>, kalah.game.IPlayer#public abstract void setName(java.lang.String) <>, kalah.game.IPlayer#public abstract int shiftSeeds(int,int) <>, kalah.game.IPlayer#public abstract int getTotalNumSeeds() <>, kalah.game.IPlayer#public abstract kalah.game.SeedContainer getStore() <>, kalah.game.IPlayer#public abstract void setTurn(boolean) <>, kalah.game.IPlayer#public abstract java.util.List getHouses() <>, kalah.game.IPlayer#public abstract boolean getTurn() <>, kalah.game.IPlayer#public abstract int getId() <>, kalah.game.IPlayer#public abstract boolean checkIfPlayerHousesEmpty() <>]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+10
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.IPlayer#public abstract java.lang.String getName() <>, kalah.game.IPlayer#public abstract void setName(java.lang.String) <>, kalah.game.IPlayer#public abstract int shiftSeeds(int,int) <>, kalah.game.IPlayer#public abstract int getTotalNumSeeds() <>, kalah.game.IPlayer#public abstract kalah.game.SeedContainer getStore() <>, kalah.game.IPlayer#public abstract void setTurn(boolean) <>, kalah.game.IPlayer#public abstract java.util.List getHouses() <>, kalah.game.IPlayer#public abstract boolean getTurn() <>, kalah.game.IPlayer#public abstract int getId() <>, kalah.game.IPlayer#public abstract boolean checkIfPlayerHousesEmpty() <>]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.IPlayer]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.IPlayer]
+</div></td>
+    <td><div class="scrollable">
+0.067
+</div></td>
+    <td><div class="scrollable">
+f(1)
+</div></td>
+    <td><div class="scrollable">
+0.600
+</div></td>
+    <td><div class="scrollable">
+f(9)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.game.IllegalMoveRule
+</div></td>
+    <td><div class="scrollable">
+7
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.IPlayer, kalah.game.Player, kalah.game.GameState, kalah.game.SeedContainer, kalah.game.House, kalah.game.Store, kalah.game.GameRules]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.IllegalMoveRule#public <init>() {}>java.lang.Object#public <init>() <>*:[1]]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+2
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.IllegalMoveRule#public boolean emptyHouseSelected(kalah.game.IPlayer,int) {}, kalah.game.IllegalMoveRule#public kalah.game.GameState executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState) {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+2
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.IllegalMoveRule#public boolean emptyHouseSelected(kalah.game.IPlayer,int) {}, kalah.game.IllegalMoveRule#public kalah.game.GameState executeRule(kalah.game.IPlayer,kalah.game.IPlayer,int,kalah.game.GameState) {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.IllegalMoveRule]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.IllegalMoveRule]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.IllegalMoveRule]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0.467
+</div></td>
+    <td><div class="scrollable">
+f(7)
+</div></td>
+    <td><div class="scrollable">
+0.067
+</div></td>
+    <td><div class="scrollable">
+f(1)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.game.KalahGameControl
+</div></td>
+    <td><div class="scrollable">
+13
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.GameControl, kalah.game.EmptyStoreSow, kalah.game.GameState, kalah.game.CaptureRule, kalah.game.IPlayer, kalah.game.Player, kalah.game.SeedContainer, kalah.game.IllegalMoveRule, kalah.ui.GameInterface, kalah.game.House, kalah.ui.Board, kalah.game.Store, kalah.game.GameRules]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.Kalah]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl#public <init>(kalah.ui.GameInterface,kalah.game.IPlayer,kalah.game.IPlayer) {}>java.lang.Object#public <init>() <>*:[1]]
+</div></td>
+    <td><div class="scrollable">
+4
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl#private java.util.List kalahRules, kalah.game.KalahGameControl#private kalah.ui.GameInterface board, kalah.game.KalahGameControl#private kalah.game.IPlayer p1, kalah.game.KalahGameControl#private kalah.game.IPlayer p2]
+</div></td>
+    <td><div class="scrollable">
+10
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl#public void quitGame() {}, kalah.game.KalahGameControl#public kalah.game.GameState applyGameRules(kalah.game.IPlayer,kalah.game.IPlayer,kalah.game.GameState,int) {}, kalah.game.KalahGameControl#public int sowSeeds(kalah.game.IPlayer,kalah.game.IPlayer,int) {}, kalah.game.KalahGameControl#public kalah.game.GameState playerTurn(kalah.game.IPlayer,kalah.game.IPlayer) {}, kalah.game.KalahGameControl#public void changeTurn() {}, kalah.game.KalahGameControl#public void addGameRules() {}, kalah.game.KalahGameControl#public void gameOver() {}, kalah.game.KalahGameControl#public kalah.game.GameState executePlayerTurn(kalah.game.IPlayer,kalah.game.IPlayer) {}, kalah.game.KalahGameControl#public void start() {}, kalah.game.KalahGameControl#public void chooseStartingPlayer(kalah.game.IPlayer) {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl#private static final int QUIT_GAME_SIGNAL]
+</div></td>
+    <td><div class="scrollable">
+4
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl#private java.util.List kalahRules, kalah.game.KalahGameControl#private kalah.ui.GameInterface board, kalah.game.KalahGameControl#private kalah.game.IPlayer p1, kalah.game.KalahGameControl#private kalah.game.IPlayer p2]
+</div></td>
+    <td><div class="scrollable">
+10
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl#public void quitGame() {}, kalah.game.KalahGameControl#public kalah.game.GameState applyGameRules(kalah.game.IPlayer,kalah.game.IPlayer,kalah.game.GameState,int) {}, kalah.game.KalahGameControl#public int sowSeeds(kalah.game.IPlayer,kalah.game.IPlayer,int) {}, kalah.game.KalahGameControl#public kalah.game.GameState playerTurn(kalah.game.IPlayer,kalah.game.IPlayer) {}, kalah.game.KalahGameControl#public void changeTurn() {}, kalah.game.KalahGameControl#public void addGameRules() {}, kalah.game.KalahGameControl#public void gameOver() {}, kalah.game.KalahGameControl#public kalah.game.GameState executePlayerTurn(kalah.game.IPlayer,kalah.game.IPlayer) {}, kalah.game.KalahGameControl#public void start() {}, kalah.game.KalahGameControl#public void chooseStartingPlayer(kalah.game.IPlayer) {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0.867
+</div></td>
+    <td><div class="scrollable">
+f(13)
+</div></td>
+    <td><div class="scrollable">
+0.067
+</div></td>
+    <td><div class="scrollable">
+f(1)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.game.Player
+</div></td>
+    <td><div class="scrollable">
+4
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.IPlayer, kalah.game.SeedContainer, kalah.game.House, kalah.game.Store]
+</div></td>
+    <td><div class="scrollable">
+6
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl, kalah.game.EmptyStoreSow, kalah.game.IllegalMoveRule, kalah.Kalah, kalah.ui.Board, kalah.game.CaptureRule]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.Player#public <init>(java.lang.String,int) {}>java.lang.Object#public <init>() <>*:[1]]
+</div></td>
+    <td><div class="scrollable">
+5
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.Player#private int id, kalah.game.Player#private java.util.List houses, kalah.game.Player#private boolean isTurn, kalah.game.Player#private java.lang.String name, kalah.game.Player#private kalah.game.SeedContainer store]
+</div></td>
+    <td><div class="scrollable">
+11
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.Player#public java.util.List getHouses() {}, kalah.game.Player#public boolean getTurn() {}, kalah.game.Player#public int shiftSeeds(int,int) {}, kalah.game.Player#public void setTurn(boolean) {}, kalah.game.Player#public kalah.game.SeedContainer getStore() {}, kalah.game.Player#public java.lang.String getName() {}, kalah.game.Player#private java.util.List initHouses() {}, kalah.game.Player#public int getTotalNumSeeds() {}, kalah.game.Player#public boolean checkIfPlayerHousesEmpty() {}, kalah.game.Player#public void setName(java.lang.String) {}, kalah.game.Player#public int getId() {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.Player#private static final int NUM_HOUSES]
+</div></td>
+    <td><div class="scrollable">
+5
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.Player#private int id, kalah.game.Player#private java.util.List houses, kalah.game.Player#private boolean isTurn, kalah.game.Player#private java.lang.String name, kalah.game.Player#private kalah.game.SeedContainer store]
+</div></td>
+    <td><div class="scrollable">
+11
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.Player#public java.util.List getHouses() {}, kalah.game.Player#public boolean getTurn() {}, kalah.game.Player#public int shiftSeeds(int,int) {}, kalah.game.Player#public void setTurn(boolean) {}, kalah.game.Player#public kalah.game.SeedContainer getStore() {}, kalah.game.Player#public java.lang.String getName() {}, kalah.game.Player#private java.util.List initHouses() {}, kalah.game.Player#public int getTotalNumSeeds() {}, kalah.game.Player#public boolean checkIfPlayerHousesEmpty() {}, kalah.game.Player#public void setName(java.lang.String) {}, kalah.game.Player#public int getId() {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.Player]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.Player]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.Player]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0.267
+</div></td>
+    <td><div class="scrollable">
+f(4)
+</div></td>
+    <td><div class="scrollable">
+0.400
+</div></td>
+    <td><div class="scrollable">
+f(6)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.game.SeedContainer
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+8
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.IPlayer, kalah.game.KalahGameControl, kalah.game.Player, kalah.game.IllegalMoveRule, kalah.game.House, kalah.game.Store, kalah.ui.Board, kalah.game.CaptureRule]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+5
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.SeedContainer#public abstract void addSeeds(int) <>, kalah.game.SeedContainer#public abstract boolean isEmpty() <>, kalah.game.SeedContainer#public abstract void setSeeds(int) <>, kalah.game.SeedContainer#public abstract java.lang.String getRepresentation() <>, kalah.game.SeedContainer#public abstract int getSeeds() <>]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+5
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.SeedContainer#public abstract void addSeeds(int) <>, kalah.game.SeedContainer#public abstract boolean isEmpty() <>, kalah.game.SeedContainer#public abstract void setSeeds(int) <>, kalah.game.SeedContainer#public abstract java.lang.String getRepresentation() <>, kalah.game.SeedContainer#public abstract int getSeeds() <>]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.SeedContainer]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.SeedContainer]
+</div></td>
+    <td><div class="scrollable">
+0.000
+</div></td>
+    <td><div class="scrollable">
+f(0)
+</div></td>
+    <td><div class="scrollable">
+0.533
+</div></td>
+    <td><div class="scrollable">
+f(8)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.game.Store
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.SeedContainer]
+</div></td>
+    <td><div class="scrollable">
+5
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl, kalah.game.Player, kalah.game.IllegalMoveRule, kalah.ui.Board, kalah.game.CaptureRule]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.Store#public <init>() {}>java.lang.Object#public <init>() <>*:[1]]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.Store#private int seeds]
+</div></td>
+    <td><div class="scrollable">
+5
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.Store#public boolean isEmpty() {}, kalah.game.Store#public int getSeeds() {}, kalah.game.Store#public void addSeeds(int) {}, kalah.game.Store#public void setSeeds(int) {}, kalah.game.Store#public java.lang.String getRepresentation() {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.Store#private int seeds]
+</div></td>
+    <td><div class="scrollable">
+5
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.Store#public boolean isEmpty() {}, kalah.game.Store#public int getSeeds() {}, kalah.game.Store#public void addSeeds(int) {}, kalah.game.Store#public void setSeeds(int) {}, kalah.game.Store#public java.lang.String getRepresentation() {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.Store]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.Store]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.Store]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0.067
+</div></td>
+    <td><div class="scrollable">
+f(1)
+</div></td>
+    <td><div class="scrollable">
+0.333
+</div></td>
+    <td><div class="scrollable">
+f(5)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.ui.Board
+</div></td>
+    <td><div class="scrollable">
+7
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.IPlayer, kalah.game.Player, kalah.game.SeedContainer, kalah.game.GameState, kalah.ui.GameInterface, kalah.game.House, kalah.game.Store]
+</div></td>
+    <td><div class="scrollable">
+2
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl, kalah.Kalah]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.ui.Board#public <init>(com.qualitascorpus.testsupport.IO,kalah.game.IPlayer,kalah.game.IPlayer) {}>java.lang.Object#public <init>() <>*:[1]]
+</div></td>
+    <td><div class="scrollable">
+4
+</div></td>
+    <td><div class="scrollable">
+[kalah.ui.Board#private kalah.game.IPlayer p1, kalah.ui.Board#private final java.lang.String BOARD_MID_BORDER, kalah.ui.Board#private final java.lang.String BOARD_BORDER, kalah.ui.Board#private kalah.game.IPlayer p2]
+</div></td>
+    <td><div class="scrollable">
+8
+</div></td>
+    <td><div class="scrollable">
+[kalah.ui.Board#public void outputGameOver(boolean) {}, kalah.ui.Board#public void outputErrorMessage(kalah.game.GameState) {}, kalah.ui.Board#public java.lang.String getPlayerRepresentation(kalah.game.IPlayer) {}, kalah.ui.Board#public void outputBoard() {}, kalah.ui.Board#public void outputEmptyHouseError() {}, kalah.ui.Board#private java.lang.String buildBoardTop() {}, kalah.ui.Board#public int getPlayerInput(java.lang.String) {}, kalah.ui.Board#private java.lang.String buildBoardBottom() {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.ui.Board#private static final java.lang.String EMPTY_HOUSE_ERROR_MESSAGE]
+</div></td>
+    <td><div class="scrollable">
+4
+</div></td>
+    <td><div class="scrollable">
+[kalah.ui.Board#private kalah.game.IPlayer p1, kalah.ui.Board#private final java.lang.String BOARD_MID_BORDER, kalah.ui.Board#private final java.lang.String BOARD_BORDER, kalah.ui.Board#private kalah.game.IPlayer p2]
+</div></td>
+    <td><div class="scrollable">
+8
+</div></td>
+    <td><div class="scrollable">
+[kalah.ui.Board#public void outputGameOver(boolean) {}, kalah.ui.Board#public void outputErrorMessage(kalah.game.GameState) {}, kalah.ui.Board#public java.lang.String getPlayerRepresentation(kalah.game.IPlayer) {}, kalah.ui.Board#public void outputBoard() {}, kalah.ui.Board#public void outputEmptyHouseError() {}, kalah.ui.Board#private java.lang.String buildBoardTop() {}, kalah.ui.Board#public int getPlayerInput(java.lang.String) {}, kalah.ui.Board#private java.lang.String buildBoardBottom() {}]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.ui.Board]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.ui.Board]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.ui.Board]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0.467
+</div></td>
+    <td><div class="scrollable">
+f(7)
+</div></td>
+    <td><div class="scrollable">
+0.133
+</div></td>
+    <td><div class="scrollable">
+f(2)
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td><div class="scrollable">
+kalah.ui.GameInterface
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.GameState]
+</div></td>
+    <td><div class="scrollable">
+3
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.KalahGameControl, kalah.Kalah, kalah.ui.Board]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+4
+</div></td>
+    <td><div class="scrollable">
+[kalah.ui.GameInterface#public abstract void outputGameOver(boolean) <>, kalah.ui.GameInterface#public abstract void outputBoard() <>, kalah.ui.GameInterface#public abstract int getPlayerInput(java.lang.String) <>, kalah.ui.GameInterface#public abstract void outputErrorMessage(kalah.game.GameState) <>]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+4
+</div></td>
+    <td><div class="scrollable">
+[kalah.ui.GameInterface#public abstract void outputGameOver(boolean) <>, kalah.ui.GameInterface#public abstract void outputBoard() <>, kalah.ui.GameInterface#public abstract int getPlayerInput(java.lang.String) <>, kalah.ui.GameInterface#public abstract void outputErrorMessage(kalah.game.GameState) <>]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.ui.GameInterface]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.ui.GameInterface]
+</div></td>
+    <td><div class="scrollable">
+0.067
+</div></td>
+    <td><div class="scrollable">
+f(1)
+</div></td>
+    <td><div class="scrollable">
+0.200
+</div></td>
+    <td><div class="scrollable">
+f(3)
+</div></td>
+  </tr>
+</table>
+</div>
+<h3>Design Attributes</h3>
+<h4>Metadata<h4>
+<table style="empty-cells: show" border>
+  <tr valign=top>
+    <td colspan="14"><div class="scrollable">
+Total_Modules
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Number of modules
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="14"><div class="scrollable">
+#CLS
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Number of modules that are CLS in Module Attributes
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="14"><div class="scrollable">
+#INT
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Number of modules that are INT in Module Attributes
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="14"><div class="scrollable">
+#ENM
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Number of modules that are ENM in Module Attributes
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="14"><div class="scrollable">
+#ANN
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Number of modules that are ANN in Module Attributes
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="14"><div class="scrollable">
+#EXP
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Number of modules that are EXP in Module Attributes
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="14"><div class="scrollable">
+#NST
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Number of modules that are NST in Module Attributes
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="14"><div class="scrollable">
+#MAIN
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Number of modules that are MAIN in Module Attributes
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="14"><div class="scrollable">
+DUI
+</div></td>
+    <td><div class="scrollable">
+BoundedReal[0.0-1.0]
+</div></td>
+    <td><div class="scrollable">
+Proportion of user-defined modules defined using inheritance
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="14"><div class="scrollable">
+IF
+</div></td>
+    <td><div class="scrollable">
+BoundedReal[0.0-1.0]
+</div></td>
+    <td><div class="scrollable">
+Proportion of user-defined modules that are inherited from
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="14"><div class="scrollable">
+#IND
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Number of modules that are independent, depend on no other user-defined type
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="14"><div class="scrollable">
+#NDP
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Number of modules that have no other modules depend on them
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="14"><div class="scrollable">
+NoInstanceMethods
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Number of modules with no instance methods
+</div></td>
+  </tr>
+  <tr valign=top>
+    <td colspan="14"><div class="scrollable">
+NoInstanceFields
+</div></td>
+    <td><div class="scrollable">
+UnboundedCount
+</div></td>
+    <td><div class="scrollable">
+Number of modules with no instance fields
+</div></td>
+  </tr>
+</table>
+<h4>Data<h4>
+<table style="empty-cells: show" border>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+design1000
+</div></th>
+    <td><div class="scrollable">
+
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+Total_Modules
+</div></th>
+    <td><div class="scrollable">
+15
+</div></td>
+    <td><div class="scrollable">
+[kalah.Kalah, kalah.game.CaptureRule, kalah.game.EmptyStoreSow, kalah.game.GameControl, kalah.game.GameRules, kalah.game.GameState, kalah.game.House, kalah.game.IPlayer, kalah.game.IllegalMoveRule, kalah.game.KalahGameControl, kalah.game.Player, kalah.game.SeedContainer, kalah.game.Store, kalah.ui.Board, kalah.ui.GameInterface]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+#CLS
+</div></th>
+    <td><div class="scrollable">
+9
+</div></td>
+    <td><div class="scrollable">
+[kalah.Kalah, kalah.game.CaptureRule, kalah.game.EmptyStoreSow, kalah.game.House, kalah.game.IllegalMoveRule, kalah.game.KalahGameControl, kalah.game.Player, kalah.game.Store, kalah.ui.Board]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+#INT
+</div></th>
+    <td><div class="scrollable">
+5
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.GameControl, kalah.game.GameRules, kalah.game.IPlayer, kalah.game.SeedContainer, kalah.ui.GameInterface]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+#ENM
+</div></th>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.GameState]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+#ANN
+</div></th>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+#EXP
+</div></th>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+#NST
+</div></th>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+#MAIN
+</div></th>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.Kalah]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+DUI
+</div></th>
+    <td><div class="scrollable">
+0.600
+</div></td>
+    <td><div class="scrollable">
+9/15
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+IF
+</div></th>
+    <td><div class="scrollable">
+0.333
+</div></td>
+    <td><div class="scrollable">
+5/15
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+#IND
+</div></th>
+    <td><div class="scrollable">
+2
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.GameState, kalah.game.SeedContainer]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+#NDP
+</div></th>
+    <td><div class="scrollable">
+1
+</div></td>
+    <td><div class="scrollable">
+[kalah.Kalah]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+NoInstanceMethods
+</div></th>
+    <td><div class="scrollable">
+0
+</div></td>
+    <td><div class="scrollable">
+[]
+</div></td>
+  </tr>
+  <tr valign=top>
+    <th style="text-align:left"><div class="scrollable">
+NoInstanceFields
+</div></th>
+    <td><div class="scrollable">
+3
+</div></td>
+    <td><div class="scrollable">
+[kalah.game.CaptureRule, kalah.game.EmptyStoreSow, kalah.game.IllegalMoveRule]
+</div></td>
+  </tr>
+</table>
+</body>
+</html>
+<h3>Relationships</h3>
+<img src="design1000-classdiagram.png">

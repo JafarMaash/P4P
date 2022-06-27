@@ -1,0 +1,26 @@
+#TITLE	CK Metrics
+#SUMMARY	Measurements for an interpretation of the metrics from the CK metrics suite
+
+##Dataset attributes
+Timestamp	Sun Apr 24 08:49:09 NZST 2022
+Tool	mete-analysis(ck metrics):20180206T1230
+System	design1034
+Codebase	../grad006-03/design1034/design1034
+
+##Measurements
+#Metadata
+CKCBO (Coupling)	UnboundedCount	(trgtdcl) Only record dependencies to target modules whose declarations have been seen; (srcsttc) Record dependencies with respect to both instance and static fields and methods in the source module; (trgtsttic) Record dependencies to both instance and static fields and methods in the target module; (srccons) Consider constructors as invokers as creating coupling; (trgtcons) Record both invoking methods and calling construtors as creating dependencies; (type) Record dependencies between all types, including interfaces, enums, an annotations; (anc) Include dependencies to ancestors of source; (desc) Include descendants to ancestors of source; (inh) Include dependencies on targets whose accessed members were inherited; (poly) Include dependencies on targets whose members were accessed via polymorphism; (bidir) Dependencies are recorded as bi-directional. If A has a dependency to B, then B has a dependency to A; (fanout) Record only dependencies from source to target (no-op when bidir); (mod) Record dependencies between modules (as opposed to between packages); (pres) Record only the presence (or not) of an occurrence of a dependency between entities; (nest) Consider nested or enclosing types are separate; (raw) Do not record dependencies due to synthetic constructs
+WMC (Size)	UnboundedCount	(srcsttc) Record dependencies with respect to both instance and static fields and methods in the source module; (srccons) Consider constructors as invokers as creating coupling; (init) Record all dependencies including those in all initialisers; (raw) Do not record dependencies due to synthetic constructs; (srcmem) Include dependencies to members of all visibilities in source
+NOC (Inheritance)	UnboundedCount	(srcsttc) Record dependencies with respect to both instance and static fields and methods in the source module; (srccons) Consider constructors as invokers as creating coupling; (init) Record all dependencies including those in all initialisers; (raw) Do not record dependencies due to synthetic constructs; (srcmem) Include dependencies to members of all visibilities in source
+DIT (Inheritance)	UnboundedCount	(srcsttc) Record dependencies with respect to both instance and static fields and methods in the source module; (srccons) Consider constructors as invokers as creating coupling; (init) Record all dependencies including those in all initialisers; (raw) Do not record dependencies due to synthetic constructs; (srcmem) Include dependencies to members of all visibilities in source
+LCOM2 (Cohesion)	UnboundedCount	(srcsttc) Record dependencies with respect to both instance and static fields and methods in the source module; (srcmeth) Do not consider constructors as invokers as creating coupling; (init) Record all dependencies including those in all initialisers; (srcmem) Include dependencies to members of all visibilities in source
+RFC (Coupling)	UnboundedCount	(trgtall) Record dependencies to target modules whether or not the declarations have been seen; (srcsttc) Record dependencies with respect to both instance and static fields and methods in the source module; (trgtsttic) Record dependencies to both instance and static fields and methods in the target module; (trgtcons) Record both invoking methods and calling construtors as creating dependencies; (type) Record dependencies between all types, including interfaces, enums, an annotations
+#Data
+#Entity	CKCBO (Coupling)	WMC (Size)	NOC (Inheritance)	DIT (Inheritance)	LCOM2 (Cohesion)	RFC (Coupling)
+kalah.Board	5	8	0	1	0	40
+kalah.BoardSpot	5	6	2	1	0	7
+kalah.House	3	2	0	2	0	3
+kalah.Kalah	5	5	0	1	0	27
+kalah.Player	6	11	0	1	11	33
+kalah.Store	4	1	0	2	0	2
+kalah.UI	2	13	0	1	44	38
