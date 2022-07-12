@@ -1,22 +1,30 @@
 import java.nio.file.Path;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.VariableDeclarator;
+import com.github.javaparser.ast.expr.Name;
+import com.github.javaparser.ast.expr.SimpleName;
 import com.github.javaparser.ast.expr.VariableDeclarationExpr;
 import com.github.javaparser.ast.type.ClassOrInterfaceType;
 import com.github.javaparser.ast.type.PrimitiveType;
+import com.github.javaparser.ast.type.Type;
 import com.github.javaparser.ast.visitor.VoidVisitor;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
+import com.github.javaparser.metamodel.VariableDeclaratorMetaModel;
 import com.github.javaparser.resolution.UnsolvedSymbolException;
 
 public class JavaParserIdentifiers {
     public static void main(String[] args) throws Exception {
+        int numViolations = 0;
         String rootPath = "kalah_designs";
         String src1 = rootPath + "/design1041/src/kalah/TestingParser";
         Analyser analyser = new Analyser();
         analyser.addSourcePath(src1);
         Set<Path> paths = Utility.findAllJavaSourceFilesFromRoots(rootPath);
+        Map<String, Type> identifiers = new HashMap<String, Type>();
 
         // Current hacky move: singling out Kalah class from design 1041 to check its variables
         // Prints all identifiers declared inside Kalah.java as of right now
@@ -30,7 +38,10 @@ public class JavaParserIdentifiers {
                 public void visit(VariableDeclarator n, Object arg) {
                     super.visit(n, arg);
 //                    System.out.println("VariableDeclarator");
-                    System.out.println(n.getType() + ": " + n.getName());
+                    System.out.println(n.getType() + ": " + n.getName().toString());
+                    identifiers.put( n.getName().toString(), n.getType());
+//                    System.out.println(n.getParentNode());
+                    VariableDeclaratorMetaModel x = n.getMetaModel();
 //                    System.out.println("Type: "+ n.getType());
 //                    System.out.println(" - " + n);
 //                    if (n.resolve().isType()) {
@@ -66,6 +77,9 @@ public class JavaParserIdentifiers {
             };
             System.out.println("MODULES");
             visitor.visit(compilationUnit, null);
+            TypographyGuidelines typographyGuidelines = new TypographyGuidelines(identifiers);
+            numViolations += typographyGuidelines.checkUnderscores();
+            System.out.println("num violations: " + numViolations);
 //        }
 
     }
