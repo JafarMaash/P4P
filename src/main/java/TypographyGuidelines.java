@@ -1,30 +1,49 @@
 /*
 * This class will check identifiers against typography ("the style and appearance of printed matter")
 * guidelines in the literature,i.e. casing, underscores, etc.
+*
+* The current plan is each method loops through the identifiers and checks them against one guideline.
+* This should probably be refactored to one method that checks all guidelines in a single for loop,
+* to reduce iterations and improve performance.
+*
+* A few other typographic rules are more comparative (e.g. two identifiers should not differ only by a number).
+* I'll implement these later, as I imagine their operations will be a bit more expensive.
 * */
 
+import com.github.javaparser.ast.Modifier;
 import com.github.javaparser.ast.expr.SimpleName;
 import com.github.javaparser.ast.type.Type;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 public class TypographyGuidelines {
 
-    private Map<String,Type> identifiers;
-    public TypographyGuidelines(Map<String, Type> identifiers){
+    private Map<String, Map.Entry<Type, Modifier>> identifiers;
+    private Map<String,Type> methods;
+
+    public TypographyGuidelines(Map<String, Entry<Type, Modifier>> identifiers, Map<String, Type> methods){
         this.identifiers = identifiers;
+        this.methods = methods;
     }
 
     /*
     * Checks Relf's guideleines (2004):
     * no outside underscore characters (e.g. _Apple_Count)
     * no multiple underscore characters (e.g. Apple__Count)
+    *
+    * Also checks Java docs guidelines for constant/final variable naming (should be e.g. APPLE_COUNT)
     * */
     public int checkUnderscores(){
         int numViolations = 0;
-        for(String identifier : identifiers.keySet()){
-            char[] charArray = identifier.toCharArray();
+        for(Entry<String, Entry<Type, Modifier>> entry: identifiers.entrySet()){
+            if (entry.getValue().getValue() == Modifier.finalModifier()){ //
+                numViolations += followsConstantTypography(entry.getKey()) ? 0 : 1;
+
+            }
+            char[] charArray = entry.getKey().toCharArray();
             if (Arrays.asList(charArray[charArray.length - 1], charArray[0]).contains('_')){ // outside underscores
                 numViolations++;
             }
@@ -33,6 +52,61 @@ public class TypographyGuidelines {
                     numViolations++; // multiple i.e contiguous underscores
                 }
             }
+        }
+        return numViolations;
+    }
+
+    /*Java specification guideline
+    * The names of constants in interface types should be, and final variables of class types
+    * may conventionally be, a sequence of one or more words, acronyms, or abbreviations,
+    * all uppercase, with components separated by underscore "_" characters
+    * */
+    private boolean followsConstantTypography(String identifier) {
+        String constantPattern = "^[A-Z]+(?:_[A-Z]+)*$";
+        return identifier.matches(constantPattern);
+    }
+
+    /*Per the Java spec
+    * Names of fields that are not final (and methods) should be in mixed case with a lowercase first letter
+    * and the first letters of subsequent words capitalized.
+    * */
+    public int checkCamelCase(){
+        int numViolations = 0;
+        for(Entry<String, Entry<Type, Modifier>> entry: identifiers.entrySet()){
+            if (entry.getValue().getValue() == Modifier.finalModifier()){ // if identifier is final, does not need to follow camelcase
+                // Constant typography violation is checked for in checkUnderscores, so no need to double count them in the line below.
+                // numViolations += followsConstantTypography(entry.getKey()) ? 0 : 1;
+                continue;
+            }
+            else {
+                numViolations += isCamelCase(entry.getKey()) ? 0 : 1;
+            }
+        }
+        for(String method : methods.keySet()){
+            numViolations += isCamelCase(method) ? 0 : 1;
+        }
+        return numViolations;
+    }
+
+    /*
+     *Helper function for checkCamelCase()
+     *   * */
+    private boolean isCamelCase(String identifier){
+        String camelCasePattern = "([a-z]+[A-Z]+\\w+)+";
+        if (identifier.matches(camelCasePattern)){
+            return true;
+        }
+        return false;
+    }
+
+    public int shorterThanTwentyCharacters(){
+        int numViolations = 0;
+        for(String method : methods.keySet()){
+            numViolations += (method.length() <= 20) ? 0 : 1;
+        }
+
+        for(String identifier : identifiers.keySet()){
+            numViolations += (identifier.length() <= 20) ? 0 : 1;
         }
         return numViolations;
     }

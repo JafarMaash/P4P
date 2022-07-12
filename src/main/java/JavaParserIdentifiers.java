@@ -1,19 +1,23 @@
 import java.nio.file.Path;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
+import java.util.Map.Entry;
+import java.util.AbstractMap.SimpleEntry;
 
+import com.github.javaparser.TokenRange;
 import com.github.javaparser.ast.CompilationUnit;
+import com.github.javaparser.ast.Modifier;
+import com.github.javaparser.ast.Node;
+import com.github.javaparser.ast.body.FieldDeclaration;
+import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.body.VariableDeclarator;
-import com.github.javaparser.ast.expr.Name;
-import com.github.javaparser.ast.expr.SimpleName;
-import com.github.javaparser.ast.expr.VariableDeclarationExpr;
+import com.github.javaparser.ast.expr.*;
 import com.github.javaparser.ast.type.ClassOrInterfaceType;
 import com.github.javaparser.ast.type.PrimitiveType;
 import com.github.javaparser.ast.type.Type;
 import com.github.javaparser.ast.visitor.VoidVisitor;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 import com.github.javaparser.metamodel.VariableDeclaratorMetaModel;
+
 import com.github.javaparser.resolution.UnsolvedSymbolException;
 
 public class JavaParserIdentifiers {
@@ -23,8 +27,11 @@ public class JavaParserIdentifiers {
         String src1 = rootPath + "/design1041/src/kalah/TestingParser";
         Analyser analyser = new Analyser();
         analyser.addSourcePath(src1);
+        Modifier FINAL = Modifier.finalModifier();
         Set<Path> paths = Utility.findAllJavaSourceFilesFromRoots(rootPath);
-        Map<String, Type> identifiers = new HashMap<String, Type>();
+        Map<String, Entry<Type, Modifier>> identifiers = new HashMap<>();
+        Map<String, Type> methods = new HashMap<>(); // key method name, value return type
+
 
         // Current hacky move: singling out Kalah class from design 1041 to check its variables
         // Prints all identifiers declared inside Kalah.java as of right now
@@ -38,10 +45,12 @@ public class JavaParserIdentifiers {
                 public void visit(VariableDeclarator n, Object arg) {
                     super.visit(n, arg);
 //                    System.out.println("VariableDeclarator");
-                    System.out.println(n.getType() + ": " + n.getName().toString());
-                    identifiers.put( n.getName().toString(), n.getType());
+//                    SimpleName sn = n.getName();
+//                    System.out.println(n.getType() + ": " + n.getName().toString());
+//                    Optional<TokenRange> tr = sn.getTokenRange();
+//                    identifiers.put( n.getName().toString(), n.getType());
+//                    identifiers.put( n.getName().toString(), new AbstractMap.SimpleEntry<>(n.getType(), ));
 //                    System.out.println(n.getParentNode());
-                    VariableDeclaratorMetaModel x = n.getMetaModel();
 //                    System.out.println("Type: "+ n.getType());
 //                    System.out.println(" - " + n);
 //                    if (n.resolve().isType()) {
@@ -54,9 +63,46 @@ public class JavaParserIdentifiers {
                 @Override
                 public void visit(VariableDeclarationExpr n, Object arg) {
                     super.visit(n, arg);
+                    VariableDeclarator vd = n.getVariable(0);
+                    String name = vd.getNameAsString();
+                    Type type = vd.getType();
+                    identifiers.put(vd.getNameAsString(), new SimpleEntry<>(vd.getType(), null));
+
+//                    System.out.println("VARIABLE DECLARATOR EXPRESSION");
+//                    System.out.println("variables: "+ n.getVariables());
+//                    System.out.println("modifiers: " + n.getModifiers());
                     //JavaParserSimpleFile.listNodes(n);
 //                    System.out.println("VariableDeclarationExpr");
 //                    System.out.println(" - " + n);
+                }
+
+                @Override
+                public void visit(FieldDeclaration n, Object arg) {
+                    super.visit(n, arg);
+
+
+//                    System.out.println("VARIABLE DECLARATOR EXPRESSION");
+                    System.out.println("expr: "+ n.toString());
+                    System.out.println("variables: "+ n.getVariables());
+                    VariableDeclarator vd = n.getVariable(0);
+                    System.out.println("modifiers: " + n.getModifiers());
+                    Modifier mod = null;
+                    if (n.getModifiers().contains(FINAL)){
+                        mod = FINAL;
+                    }
+                    identifiers.put( vd.getNameAsString(), new AbstractMap.SimpleEntry<>(vd.getType(), mod ));
+
+                    //JavaParserSimpleFile.listNodes(n);
+//                    System.out.println("VariableDeclarationExpr");
+//                    System.out.println(" - " + n);
+                }
+
+                @Override
+                public void visit(MethodDeclaration md, Object arg) {
+                    super.visit(md, arg);
+                    System.out.println("METHOD NAME " + md.getName());
+                    System.out.println("METHOD TYPE " + md.getType());
+                    methods.put(md.getNameAsString(), md.getType());
                 }
 
                 @Override
@@ -77,7 +123,7 @@ public class JavaParserIdentifiers {
             };
             System.out.println("MODULES");
             visitor.visit(compilationUnit, null);
-            TypographyGuidelines typographyGuidelines = new TypographyGuidelines(identifiers);
+            TypographyGuidelines typographyGuidelines = new TypographyGuidelines(identifiers, methods);
             numViolations += typographyGuidelines.checkUnderscores();
             System.out.println("num violations: " + numViolations);
 //        }
