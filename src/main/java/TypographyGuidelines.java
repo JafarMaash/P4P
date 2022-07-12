@@ -1,4 +1,4 @@
-/*
+/**
 * This class will check identifiers against typography ("the style and appearance of printed matter")
 * guidelines in the literature,i.e. casing, underscores, etc.
 *
@@ -29,7 +29,7 @@ public class TypographyGuidelines {
         this.methods = methods;
     }
 
-    /*
+    /**
     * Checks Relf's guideleines (2004):
     * no outside underscore characters (e.g. _Apple_Count)
     * no multiple underscore characters (e.g. Apple__Count)
@@ -41,7 +41,7 @@ public class TypographyGuidelines {
         for(Entry<String, Entry<Type, Modifier>> entry: identifiers.entrySet()){
             if (entry.getValue().getValue() == Modifier.finalModifier()){ //
                 numViolations += followsConstantTypography(entry.getKey()) ? 0 : 1;
-
+                // java docs guidelines for constants/final variables
             }
             char[] charArray = entry.getKey().toCharArray();
             if (Arrays.asList(charArray[charArray.length - 1], charArray[0]).contains('_')){ // outside underscores
@@ -56,7 +56,8 @@ public class TypographyGuidelines {
         return numViolations;
     }
 
-    /*Java specification guideline
+    /**
+    * Java specification guideline
     * The names of constants in interface types should be, and final variables of class types
     * may conventionally be, a sequence of one or more words, acronyms, or abbreviations,
     * all uppercase, with components separated by underscore "_" characters
@@ -66,7 +67,8 @@ public class TypographyGuidelines {
         return identifier.matches(constantPattern);
     }
 
-    /*Per the Java spec
+    /**
+    * Per the Java spec
     * Names of fields that are not final (and methods) should be in mixed case with a lowercase first letter
     * and the first letters of subsequent words capitalized.
     * */
@@ -88,9 +90,9 @@ public class TypographyGuidelines {
         return numViolations;
     }
 
-    /*
-     *Helper function for checkCamelCase()
-     *   * */
+    /**
+     * Helper function for checkCamelCase()
+     */
     private boolean isCamelCase(String identifier){
         String camelCasePattern = "([a-z]+[A-Z]+\\w+)+";
         if (identifier.matches(camelCasePattern)){
@@ -99,7 +101,11 @@ public class TypographyGuidelines {
         return false;
     }
 
-    public int shorterThanTwentyCharacters(){
+    /**
+     * Per Relf's guidelines (2004)
+     * [No] Long Identifier Names i.e., an identifier name longer than twenty characters
+     * */
+    public int longerThanTwentyCharacters(){
         int numViolations = 0;
         for(String method : methods.keySet()){
             numViolations += (method.length() <= 20) ? 0 : 1;

@@ -20,6 +20,18 @@ import com.github.javaparser.metamodel.VariableDeclaratorMetaModel;
 
 import com.github.javaparser.resolution.UnsolvedSymbolException;
 
+/**
+ * Here's the class for extracting identifiers from classes.
+ * Right now it only gets variable and method names from one class, and stores them in separate hashmaps,
+ * along with their variable/method return type.
+ * Then it calls a guideline checker, which returns the number of violations (no further details/info on the violations,
+ * but could easily add that).
+ *
+ * Next steps here are to expand the extraction from one class out to a whole app, and other stuff that will come to mind
+ * as we continue to work on this.
+ * Also need to get rid of all the commented out unused stuff in here, will do that later when it becomes more clear what we need
+ * and don't need.
+ * */
 public class JavaParserIdentifiers {
     public static void main(String[] args) throws Exception {
         int numViolations = 0;
