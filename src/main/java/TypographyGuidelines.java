@@ -14,6 +14,7 @@ import com.github.javaparser.ast.Modifier;
 import com.github.javaparser.ast.expr.SimpleName;
 import com.github.javaparser.ast.type.Type;
 
+import java.net.URL;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -82,10 +83,16 @@ public class TypographyGuidelines {
             }
             else {
                 numViolations += isCamelCase(entry.getKey()) ? 0 : 1;
+                if (!isCamelCase(entry.getKey())) {
+                    System.out.println("entry key: " + entry.getKey());
+                }
             }
         }
         for(String method : methods.keySet()){
             numViolations += isCamelCase(method) ? 0 : 1;
+            if (!isCamelCase(method)) {
+                System.out.println("entry key: " + method);
+            }
         }
         return numViolations;
     }
@@ -95,10 +102,7 @@ public class TypographyGuidelines {
      */
     private boolean isCamelCase(String identifier){
         String camelCasePattern = "([a-z]+[A-Z]+\\w+)+";
-        if (identifier.matches(camelCasePattern)){
-            return true;
-        }
-        return false;
+        return identifier.matches(camelCasePattern);
     }
 
     /**
