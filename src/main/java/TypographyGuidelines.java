@@ -17,6 +17,7 @@ import com.github.javaparser.ast.type.Type;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -25,9 +26,12 @@ public class TypographyGuidelines {
     private Map<String, Map.Entry<Type, Modifier>> identifiers;
     private Map<String,Type> methods;
 
-    public TypographyGuidelines(Map<String, Entry<Type, Modifier>> identifiers, Map<String, Type> methods){
+    private HashSet<String> dictionary;
+
+    public TypographyGuidelines(Map<String, Entry<Type, Modifier>> identifiers, Map<String, Type> methods, HashSet<String> dictionary){
         this.identifiers = identifiers;
         this.methods = methods;
+        this.dictionary = dictionary;
     }
 
     /**
@@ -80,18 +84,19 @@ public class TypographyGuidelines {
                 // Constant typography violation is checked for in checkUnderscores, so no need to double count them in the line below.
                 // numViolations += followsConstantTypography(entry.getKey()) ? 0 : 1;
                 continue;
-            }
-            else {
+            } else {
+                //TODO: split camel case, if isCamelCase returns false then attempt to tokenize, if more than 1 word is outputted then add violation.
                 numViolations += isCamelCase(entry.getKey()) ? 0 : 1;
                 if (!isCamelCase(entry.getKey())) {
-                    System.out.println("entry key: " + entry.getKey());
+                    //TODO: call recursive methods for prefix/suffix, if it tokenizes then add violation
                 }
             }
         }
+        //TODO: apply same logic from identifiers
         for(String method : methods.keySet()){
             numViolations += isCamelCase(method) ? 0 : 1;
             if (!isCamelCase(method)) {
-                System.out.println("entry key: " + method);
+//                System.out.println("entry key: " + method);
             }
         }
         return numViolations;
@@ -120,4 +125,8 @@ public class TypographyGuidelines {
         }
         return numViolations;
     }
+
+    /**
+     * Check prefix
+     */
 }

@@ -1,5 +1,4 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.*;
 import java.net.URL;
 import java.nio.file.Path;
 import java.util.*;
@@ -49,13 +48,21 @@ public class JavaParserIdentifiers {
         Map<String, Entry<Type, Modifier>> identifiers = new HashMap<>();
         Map<String, Type> methods = new HashMap<>(); // key method name, value return type
 
+        File file = new File("toSplit.txt");
+        if(!(file.exists() && !file.isDirectory())) {
+            FileWriter fw = new FileWriter("toSplit.txt", false);
+            PrintWriter pw = new PrintWriter(fw, false);
+            pw.flush();
+            pw.close();
+            fw.close();
+        }
 
         // Current hacky move: singling out Kalah class from design 1041 to check its variables
         // Prints all identifiers declared inside Kalah.java as of right now
         // Currently commenting out all the visit functionality we don't need: just printing identifier type and name.
         Path[] pathsList = paths.toArray(new Path[paths.size()]);
-        Path path = pathsList[23];
-//        for (Path path: paths) {
+//        Path path = pathsList[23];
+        for (Path path: paths) {
             CompilationUnit compilationUnit = analyser.getCompilationUnitForPath(path);
             VoidVisitor<Object> visitor = new VoidVisitorAdapter<Object>() {
                 @Override
@@ -82,9 +89,17 @@ public class JavaParserIdentifiers {
                 public void visit(VariableDeclarationExpr n, Object arg) {
                     super.visit(n, arg);
                     VariableDeclarator vd = n.getVariable(0);
-                    String name = vd.getNameAsString();
-                    Type type = vd.getType();
                     identifiers.put(vd.getNameAsString(), new SimpleEntry<>(vd.getType(), null));
+                    FileWriter fr = null;
+                    try {
+                        fr = new FileWriter(file, true);
+                        BufferedWriter br = new BufferedWriter(fr);
+                        br.write(vd.getNameAsString() + "\t" + vd.getType() + "\n");
+                        br.close();
+                        fr.close();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
 
 //                    System.out.println("VARIABLE DECLARATOR EXPRESSION");
 //                    System.out.println("variables: "+ n.getVariables());
@@ -97,8 +112,6 @@ public class JavaParserIdentifiers {
                 @Override
                 public void visit(FieldDeclaration n, Object arg) {
                     super.visit(n, arg);
-
-
 //                    System.out.println("VARIABLE DECLARATOR EXPRESSION");
                     System.out.println("expr: "+ n.toString());
                     System.out.println("variables: "+ n.getVariables());
@@ -109,6 +122,18 @@ public class JavaParserIdentifiers {
                         mod = FINAL;
                     }
                     identifiers.put( vd.getNameAsString(), new AbstractMap.SimpleEntry<>(vd.getType(), mod ));
+                    System.out.println("IDENTIFIER NAME " + vd.getNameAsString());
+                    System.out.println("IDENTIFIER TYPE " + vd.getType());
+                    FileWriter fr = null;
+                    try {
+                        fr = new FileWriter(file, true);
+                        BufferedWriter br = new BufferedWriter(fr);
+                        br.write(vd.getNameAsString() + "\t" + vd.getType() + "\t" + mod + "\n");
+                        br.close();
+                        fr.close();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
 
                     //JavaParserSimpleFile.listNodes(n);
 //                    System.out.println("VariableDeclarationExpr");
@@ -141,23 +166,29 @@ public class JavaParserIdentifiers {
             };
             System.out.println("MODULE for " + path);
             visitor.visit(compilationUnit, null);
-            TypographyGuidelines typographyGuidelines = new TypographyGuidelines(identifiers, methods);
-            numViolations += typographyGuidelines.checkUnderscores();
-            numCamel += typographyGuidelines.checkCamelCase();
-            overTwenty += typographyGuidelines.longerThanTwentyCharacters();
-            System.out.println("num underscores: " + numViolations);
-            System.out.println("num camel case: " + numCamel);
-            System.out.println("over twenty chars: " + overTwenty);
+
+            HashSet<String> dict = new HashSet();
             BufferedReader br = new BufferedReader(new FileReader("src/main/dictionaries/en_US.dic"));
             String line;
             while ((line = br.readLine()) != null) {
                 if (line.contains("/")) {
-                    System.out.println(line.split("/")[0]);
+                    dict.add(line.split("/")[0]);
                 } else {
-                    System.out.println(line);
+                    dict.add(line);
                 }
             }
+
+            TypographyGuidelines typographyGuidelines = new TypographyGuidelines(identifiers, methods, dict);
+
+            numViolations += typographyGuidelines.checkUnderscores();
+            numCamel += typographyGuidelines.checkCamelCase();
+            overTwenty += typographyGuidelines.longerThanTwentyCharacters();
+            System.out.println("underscores: " + numViolations);
+            System.out.println("camel case violations: " + numCamel);
+            System.out.println("over twenty chars: " + overTwenty);
+
+
 //            URL dicDic = TypographyGuidelines.class.getResource("src/main/dictionaries/en_US.dic");
         }
-//    }
+    }
 }
