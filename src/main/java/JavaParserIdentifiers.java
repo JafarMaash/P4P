@@ -48,14 +48,6 @@ public class JavaParserIdentifiers {
         Map<String, Entry<Type, Modifier>> identifiers = new HashMap<>();
         Map<String, Type> methods = new HashMap<>(); // key method name, value return type
 
-        File file = new File("toSplit.txt");
-        if(!(file.exists() && !file.isDirectory())) {
-            FileWriter fw = new FileWriter("toSplit.txt", false);
-            PrintWriter pw = new PrintWriter(fw, false);
-            pw.flush();
-            pw.close();
-            fw.close();
-        }
 
         // Current hacky move: singling out Kalah class from design 1041 to check its variables
         // Prints all identifiers declared inside Kalah.java as of right now
@@ -68,20 +60,6 @@ public class JavaParserIdentifiers {
                 @Override
                 public void visit(VariableDeclarator n, Object arg) {
                     super.visit(n, arg);
-//                    System.out.println("VariableDeclarator");
-//                    SimpleName sn = n.getName();
-//                    System.out.println(n.getType() + ": " + n.getName().toString());
-//                    Optional<TokenRange> tr = sn.getTokenRange();
-//                    identifiers.put( n.getName().toString(), n.getType());
-//                    identifiers.put( n.getName().toString(), new AbstractMap.SimpleEntry<>(n.getType(), ));
-//                    System.out.println(n.getParentNode());
-//                    System.out.println("Type: "+ n.getType());
-//                    System.out.println(" - " + n);
-//                    if (n.resolve().isType()) {
-//                        System.out.println("   FQN (type):" + n.resolve().getType());
-//                    } else {
-//                        System.out.println("   FQN (not type):" + n.resolve().getName());
-//                    }
                 }
 
 
@@ -90,23 +68,6 @@ public class JavaParserIdentifiers {
                     super.visit(n, arg);
                     VariableDeclarator vd = n.getVariable(0);
                     identifiers.put(vd.getNameAsString(), new SimpleEntry<>(vd.getType(), null));
-                    FileWriter fr = null;
-                    try {
-                        fr = new FileWriter(file, true);
-                        BufferedWriter br = new BufferedWriter(fr);
-                        br.write(vd.getNameAsString() + "\t" + vd.getType() + "\n");
-                        br.close();
-                        fr.close();
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
-
-//                    System.out.println("VARIABLE DECLARATOR EXPRESSION");
-//                    System.out.println("variables: "+ n.getVariables());
-//                    System.out.println("modifiers: " + n.getModifiers());
-                    //JavaParserSimpleFile.listNodes(n);
-//                    System.out.println("VariableDeclarationExpr");
-//                    System.out.println(" - " + n);
                 }
 
                 @Override
@@ -124,20 +85,6 @@ public class JavaParserIdentifiers {
                     identifiers.put( vd.getNameAsString(), new AbstractMap.SimpleEntry<>(vd.getType(), mod ));
                     System.out.println("IDENTIFIER NAME " + vd.getNameAsString());
                     System.out.println("IDENTIFIER TYPE " + vd.getType());
-                    FileWriter fr = null;
-                    try {
-                        fr = new FileWriter(file, true);
-                        BufferedWriter br = new BufferedWriter(fr);
-                        br.write(vd.getNameAsString() + "\t" + vd.getType() + "\t" + mod + "\n");
-                        br.close();
-                        fr.close();
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
-
-                    //JavaParserSimpleFile.listNodes(n);
-//                    System.out.println("VariableDeclarationExpr");
-//                    System.out.println(" - " + n);
                 }
 
                 @Override
@@ -151,17 +98,11 @@ public class JavaParserIdentifiers {
                 @Override
                 public void visit(PrimitiveType n, Object arg) {
                     super.visit(n, arg);
-//                    System.out.println("PrimitiveType: " + n.resolve());
                 }
 
                 @Override
                 public void visit(ClassOrInterfaceType n, Object arg) {
                     super.visit(n, arg);
-//                    try {
-//                        System.out.println("ClassOrInterfaceType: " + n.resolve().asReferenceType().getQualifiedName());
-//                    } catch (UnsolvedSymbolException usex) {
-//                        System.out.println("  -> Unrecognised:" + n.getNameAsString());
-//                    }
                 }
             };
             System.out.println("MODULE for " + path);
@@ -184,11 +125,7 @@ public class JavaParserIdentifiers {
             numCamel += typographyGuidelines.checkCamelCase();
             overTwenty += typographyGuidelines.longerThanTwentyCharacters();
             System.out.println("underscores: " + numViolations);
-            System.out.println("camel case violations: " + numCamel);
             System.out.println("over twenty chars: " + overTwenty);
-
-
-//            URL dicDic = TypographyGuidelines.class.getResource("src/main/dictionaries/en_US.dic");
         }
     }
 }
