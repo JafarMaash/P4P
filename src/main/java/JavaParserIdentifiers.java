@@ -44,6 +44,9 @@ public class JavaParserIdentifiers {
         Map<String, Entry<Type, Modifier>> identifiers = new HashMap<>();
         Map<String, Type> methods = new HashMap<>(); // key method name, value return type
 
+// Put all of that stuff weve found (the maps) in a new class
+        // identifierinfo.java
+        //
 
         // Current hacky move: singling out Kalah class from design 1041 to check its variables
         // Prints all identifiers declared inside Kalah.java as of right now
@@ -52,7 +55,7 @@ public class JavaParserIdentifiers {
         Path path = pathsList[23];
 //        for (Path path: paths) {
             CompilationUnit compilationUnit = analyser.getCompilationUnitForPath(path);
-            VoidVisitor<Object> visitor = new VoidVisitorAdapter<Object>() {
+            VoidVisitor<Object> visitor = new VoidVisitorAdapter<Object>() { // change <Object> to identifierinfo
                 @Override
                 public void visit(VariableDeclarator n, Object arg) {
                     super.visit(n, arg);
@@ -124,7 +127,7 @@ public class JavaParserIdentifiers {
                 }
 
                 @Override
-                public void visit(ClassOrInterfaceType n, Object arg) {
+                public void visit(ClassOrInterfaceType n, Object arg) { // change object to identifierinfo
                     super.visit(n, arg);
 //                    try {
 //                        System.out.println("ClassOrInterfaceType: " + n.resolve().asReferenceType().getQualifiedName());
@@ -134,6 +137,7 @@ public class JavaParserIdentifiers {
                 }
             };
             System.out.println("MODULES");
+            // create a new identifierinfo object here, pass it to the visitor as the 2nd arg instead of null
             visitor.visit(compilationUnit, null);
             TypographyGuidelines typographyGuidelines = new TypographyGuidelines(identifiers, methods);
             numViolations += typographyGuidelines.checkUnderscores();

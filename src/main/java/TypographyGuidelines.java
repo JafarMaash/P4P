@@ -8,6 +8,8 @@
 *
 * A few other typographic rules are more comparative (e.g. two identifiers should not differ only by a number).
 * I'll implement these later, as I imagine their operations will be a bit more expensive.
+ *
+ * add numviolations into an identifierinfo class, play around with it in there.
 * */
 
 import com.github.javaparser.ast.Modifier;
@@ -58,7 +60,8 @@ public class TypographyGuidelines {
 
     /**
     * Java specification guideline
-    * The names of constants in interface types should be, and final variables of class types
+    * Currently called from inside checkUnderscores()
+    * The names of constants in interface types should be, and *final variables of class types*
     * may conventionally be, a sequence of one or more words, acronyms, or abbreviations,
     * all uppercase, with components separated by underscore "_" characters
     * */
@@ -104,6 +107,7 @@ public class TypographyGuidelines {
     /**
      * Per Relf's guidelines (2004)
      * [No] Long Identifier Names i.e., an identifier name longer than twenty characters
+     * Probably won't check for short identifier names (at least for now), as this is debated in the literature.
      * */
     public int longerThanTwentyCharacters(){
         int numViolations = 0;
