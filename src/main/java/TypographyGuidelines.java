@@ -13,13 +13,10 @@
 * */
 
 import com.github.javaparser.ast.Modifier;
-import com.github.javaparser.ast.expr.SimpleName;
 import com.github.javaparser.ast.type.Type;
 
 import java.io.*;
-import java.net.URL;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -56,10 +53,13 @@ public class TypographyGuidelines {
             char[] charArray = entry.getKey().toCharArray();
             if (Arrays.asList(charArray[charArray.length - 1], charArray[0]).contains('_')){ // outside underscores
                 numViolations++;
+                System.out.println("underscore vio: " + entry.getKey());
             }
             for (int i = 0; i < charArray.length; i++){
                 if(charArray[i] == '_' && charArray[i+1] == '_'){
                     numViolations++; // multiple i.e contiguous underscores
+                    System.out.println("underscore vio: " + entry.getKey());
+                    //todo write all these violations to different folders to later examine?
                 }
             }
         }
@@ -149,15 +149,16 @@ public class TypographyGuidelines {
      * [No] Long Identifier Names i.e., an identifier name longer than twenty characters
      * Probably won't check for short identifier names (at least for now), as this is debated in the literature.
      * */
-    public int longerThanTwentyCharacters(){
-        int numViolations = 0;
+    public int[] longerThanTwentyCharacters(){
+        int methodViolations = 0;
+        int identifierViolations = 0;
         for(String method : methods.keySet()){
-            numViolations += (method.length() <= 20) ? 0 : 1;
+            methodViolations += (method.length() <= 20) ? 0 : 1;
         }
 
         for(String identifier : identifiers.keySet()){
-            numViolations += (identifier.length() <= 20) ? 0 : 1;
+            identifierViolations += (identifier.length() <= 20) ? 0 : 1;
         }
-        return numViolations;
+        return new int[] {identifierViolations, methodViolations };
     }
 }
