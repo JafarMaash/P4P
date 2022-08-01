@@ -90,7 +90,7 @@ public class TypographyGuidelines {
     * Names of fields that are not final (and methods) should be in mixed case with a lowercase first letter
     * and the first letters of subsequent words capitalized.
     * */
-    public String checkCamelCase() throws Exception {
+    public String checkCaseTypes() throws Exception {
 
         File file = new File("toSplit.txt");
         if(!(file.exists() && !file.isDirectory())) {
@@ -141,7 +141,7 @@ public class TypographyGuidelines {
     }
 
     /**
-     * Helper function for checkCamelCase()
+     * Helper functions for checkCaseTypes()
      */
     private boolean isCamelCase(String identifier){
         String camelCasePattern = "([a-z]+[A-Z]+\\w+)+";
@@ -182,6 +182,11 @@ public class TypographyGuidelines {
         return new int[] {identifierViolations, methodViolations };
     }
 
+    /**
+     * Method to check for different case types
+     * @param identifier the identifier to be checked
+     * @return true if it matches a naming guideline, false if not
+     */
     private boolean followsGuideline(String identifier) {
         if (isCamelCase(identifier)) {
             camelCaseUses += 1;

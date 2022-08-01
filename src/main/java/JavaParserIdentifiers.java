@@ -116,7 +116,7 @@ public class JavaParserIdentifiers {
         TypographyGuidelines typographyGuidelines = new TypographyGuidelines(identifiers, methods, dict);
 
         numViolations += typographyGuidelines.checkUnderscores();
-        String caseCheckResults = typographyGuidelines.checkCamelCase();
+        String caseCheckResults = typographyGuidelines.checkCaseTypes();
         overTwenty = typographyGuidelines.longerThanTwentyCharacters();
         System.out.println("underscores: " + numViolations);
         System.out.println("Number of identifiers: " + identifiers.size());
