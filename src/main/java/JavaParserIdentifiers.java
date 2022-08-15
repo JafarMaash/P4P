@@ -37,7 +37,7 @@ public class JavaParserIdentifiers {
         int numViolations = 0;
         int numCamel = 0;
         int[] overTwenty;
-        String rootPath = "kalah_designs";
+        String rootPath = "test_repos";
         String src1 = rootPath + "/design1000/";
         Analyser analyser = new Analyser();
         analyser.addSourcePath(src1);
