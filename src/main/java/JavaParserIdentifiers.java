@@ -38,7 +38,7 @@ public class JavaParserIdentifiers {
         int numCamel = 0;
         int[] overTwenty;
         String rootPath = "test_repos";
-        String src1 = rootPath + "/apache-ant-1.10.12-src/";
+        String src1 = rootPath + "/design1000/";
         Analyser analyser = new Analyser();
         analyser.addSourcePath(src1);
         Modifier FINAL = Modifier.finalModifier();
@@ -116,12 +116,13 @@ public class JavaParserIdentifiers {
         TypographyGuidelines typographyGuidelines = new TypographyGuidelines(identifiers, methods, dict);
 
         numViolations += typographyGuidelines.checkUnderscores();
-        numCamel += typographyGuidelines.checkCamelCase();
+        String caseCheckResults = typographyGuidelines.checkCaseTypes();
         overTwenty = typographyGuidelines.longerThanTwentyCharacters();
         System.out.println("underscores: " + numViolations);
         System.out.println("Number of identifiers: " + identifiers.size());
         System.out.println("Long identifiers " + overTwenty[0]);
-        System.out.println("Long methods " + overTwenty[1]);
         System.out.println("Number of methods: " + methods.size());
+        System.out.println("Long methods " + overTwenty[1]);
+        System.out.println(caseCheckResults);
     }
 }
