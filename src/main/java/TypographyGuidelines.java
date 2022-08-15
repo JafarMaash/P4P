@@ -28,6 +28,13 @@ public class TypographyGuidelines {
 
     private HashSet<String> dictionary;
 
+    private int camelCaseUses = 0;
+
+    private int pascalCaseUses = 0;
+
+    private int snakeCaseUses = 0;
+
+    private int kebabCaseUses = 0;
 
     public TypographyGuidelines(Map<String, Entry<Type, Modifier>> identifiers, Map<String, Type> methods, HashSet<String> dictionary){
         this.identifiers = identifiers;
@@ -83,7 +90,7 @@ public class TypographyGuidelines {
     * Names of fields that are not final (and methods) should be in mixed case with a lowercase first letter
     * and the first letters of subsequent words capitalized.
     * */
-    public int checkCamelCase() throws Exception {
+    public String checkCaseTypes() throws Exception {
 
         File file = new File("toSplit.txt");
         if(!(file.exists() && !file.isDirectory())) {
@@ -94,15 +101,14 @@ public class TypographyGuidelines {
             fw.close();
         }
 
-        int numViolations = 0;
+//        int numViolations = 0;
         for(Entry<String, Entry<Type, Modifier>> entry: identifiers.entrySet()){
             if (entry.getValue().getValue() != null){ // if identifier is final, does not need to follow camelcase
                 // Constant typography violation is checked for in checkUnderscores, so no need to double count them in the line below.
-                // numViolations += followsConstantTypography(entry.getKey()) ? 0 : 1;
                 continue;
             } else {
-                if (!isCamelCase(entry.getKey())) {
-                    //write to file
+                if (!followsGuideline(entry.getKey())) {
+                    //write to file if no case type matches
                     FileWriter fr = null;
                     try {
                         fr = new FileWriter(file, true);
@@ -116,10 +122,8 @@ public class TypographyGuidelines {
                 }
             }
         }
-        //TODO: apply same logic from identifiers
         for(Entry<String, Type> method : methods.entrySet()){
-            numViolations += isCamelCase(method.getKey()) ? 0 : 1;
-            if (!isCamelCase(method.getKey())) {
+            if (!followsGuideline(method.getKey())) {
                 //write to file
                 FileWriter fr = null;
                 try {
@@ -133,16 +137,32 @@ public class TypographyGuidelines {
                 }
             }
         }
-        return numViolations;
+        return "camel case usages: " + camelCaseUses + "\npascal case usages: " + pascalCaseUses + "\nsnake case usages: " + snakeCaseUses + "\nkebab case usages: " + kebabCaseUses;
     }
 
     /**
-     * Helper function for checkCamelCase()
+     * Helper functions for checkCaseTypes()
      */
     private boolean isCamelCase(String identifier){
         String camelCasePattern = "([a-z]+[A-Z]+\\w+)+";
         return identifier.matches(camelCasePattern);
     }
+
+    private boolean isPascalCase(String identifier) {
+        String pascalCase = "(?:[A-Z][a-z0-9]+)(?:[A-Z]+[a-z0-9]*)*";
+        return identifier.matches(pascalCase);
+    }
+
+    private boolean isSnakeCase(String identifier) {
+        String snakeCasePattern = "^(?:[a-z]++_)*+[a-z]++$";
+        return identifier.matches(snakeCasePattern);
+    }
+
+    private boolean isKebabCase(String identifier) {
+        String kebabCasePattern = "[a-z0-9]+(?:-[a-z0-9]+)*";
+        return identifier.matches(kebabCasePattern);
+    }
+
 
     /**
      * Per Relf's guidelines (2004)
@@ -160,5 +180,28 @@ public class TypographyGuidelines {
             identifierViolations += (identifier.length() <= 20) ? 0 : 1;
         }
         return new int[] {identifierViolations, methodViolations };
+    }
+
+    /**
+     * Method to check for different case types
+     * @param identifier the identifier to be checked
+     * @return true if it matches a naming guideline, false if not
+     */
+    private boolean followsGuideline(String identifier) {
+        if (isCamelCase(identifier)) {
+            camelCaseUses += 1;
+            return true;
+        } else if (isPascalCase(identifier)) {
+            pascalCaseUses += 1;
+            return true;
+        } else if (isSnakeCase(identifier) && identifier.contains("_")) {
+            snakeCaseUses += 1;
+            return true;
+        } else if (isKebabCase(identifier) && identifier.contains("-")) {
+            kebabCaseUses += 1;
+            return true;
+        } else {
+            return false;
+        }
     }
 }
