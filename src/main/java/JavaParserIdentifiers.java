@@ -114,7 +114,7 @@ public class JavaParserIdentifiers {
 
         }
         TypographyGuidelines typographyGuidelines = new TypographyGuidelines(identifiers, methods, dict);
-
+        // todo put all the identifiers/methods into one big txt, to pass into python and check for PoS
         numViolations += typographyGuidelines.checkUnderscores();
         String caseCheckResults = typographyGuidelines.checkCaseTypes();
         overTwenty = typographyGuidelines.longerThanTwentyCharacters();

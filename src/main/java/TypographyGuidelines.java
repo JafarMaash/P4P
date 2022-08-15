@@ -92,9 +92,18 @@ public class TypographyGuidelines {
     * */
     public String checkCaseTypes() throws Exception {
 
-        File file = new File("toSplit.txt");
-        if(!(file.exists() && !file.isDirectory())) {
+        File caseViolationsFile = new File("toSplit.txt");
+        if(!(caseViolationsFile.exists() && !caseViolationsFile.isDirectory())) {
             FileWriter fw = new FileWriter("toSplit.txt", false);
+            PrintWriter pw = new PrintWriter(fw, false);
+            pw.flush();
+            pw.close();
+            fw.close();
+        }
+
+        File allIdsFile = new File("python_parsing/allIdentifiers.txt");
+        if(!(allIdsFile.exists() && !allIdsFile.isDirectory())) {
+            FileWriter fw = new FileWriter("python_parsing/allIdentifiers.txt", false);
             PrintWriter pw = new PrintWriter(fw, false);
             pw.flush();
             pw.close();
@@ -103,19 +112,30 @@ public class TypographyGuidelines {
 
 //        int numViolations = 0;
         for(Entry<String, Entry<Type, Modifier>> entry: identifiers.entrySet()){
+            // todo refactor this to a method to reduce duplicate code
+            FileWriter fw1 = null;
+            try {
+                fw1 = new FileWriter(allIdsFile, true);
+                BufferedWriter br = new BufferedWriter(fw1);
+                br.write("IDENTIFIER" + "\t" + entry.getKey() + "\t" + entry.getValue() + "\n");
+                br.close();
+                fw1.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
             if (entry.getValue().getValue() != null){ // if identifier is final, does not need to follow camelcase
                 // Constant typography violation is checked for in checkUnderscores, so no need to double count them in the line below.
                 continue;
             } else {
                 if (!followsGuideline(entry.getKey())) {
-                    //write to file if no case type matches
-                    FileWriter fr = null;
+                    //write to caseViolationsFile if no case type matches
+                    FileWriter fw = null;
                     try {
-                        fr = new FileWriter(file, true);
-                        BufferedWriter br = new BufferedWriter(fr);
+                        fw = new FileWriter(caseViolationsFile, true);
+                        BufferedWriter br = new BufferedWriter(fw);
                         br.write("IDENTIFIER" + "\t" + entry.getKey() + "\t" + entry.getValue() + "\n");
                         br.close();
-                        fr.close();
+                        fw.close();
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
@@ -123,15 +143,26 @@ public class TypographyGuidelines {
             }
         }
         for(Entry<String, Type> method : methods.entrySet()){
+            FileWriter fw1 = null;
+            try {
+                // every id gets written to allidsfile before we check if it follows any guideline
+                fw1 = new FileWriter(allIdsFile, true);
+                BufferedWriter br = new BufferedWriter(fw1);
+                br.write("METHOD" + "\t" + method.getKey() + "\t" + method.getValue() + "\n");
+                br.close();
+                fw1.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
             if (!followsGuideline(method.getKey())) {
-                //write to file
-                FileWriter fr = null;
+                //write to caseViolationsFile
+                FileWriter fw = null;
                 try {
-                    fr = new FileWriter(file, true);
-                    BufferedWriter br = new BufferedWriter(fr);
+                    fw = new FileWriter(caseViolationsFile, true);
+                    BufferedWriter br = new BufferedWriter(fw);
                     br.write("METHOD" + "\t" + method.getKey() + "\t" + method.getValue() + "\n");
                     br.close();
-                    fr.close();
+                    fw.close();
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
