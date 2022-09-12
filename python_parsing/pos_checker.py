@@ -1,29 +1,46 @@
-# Hucka, M. (2018). Spiral: splitters for identifiers in source code files.
-# Journal of Open Source Software, 3(24), 653, https://doi.org/10.21105/joss.00653
+import spacy
 
-from calendar import c
-from curses.ascii import FF
-from fcntl import F_FULLFSYNC
-from os import fchdir
-from regex import F
 from spiral import ronin
-from torch import ccol_indices_copy
 
-with open('toSplit.txt') as file:
-    identifierViolations = 0
-    methodViolations = 0
+nlp  = spacy.load('en_core_web_lg')
+with open('test.txt') as file:
     for line in file:
         # read replace the string and write to output file
         split = (line.replace('\\n', '\n').replace('\\t', '\t').split('\t'))
         spiralSplit = ronin.split(split[1])
-        # check the words of the identifier (spiralSplit) for PoS and then apply rules
-    print("identifier camel case violations: " + str(identifierViolations))
-    print("method camel case violations: " + str(methodViolations))
+        identifier_type = split[0]
+        identifier = split[1]
+        type = split[2].split("=")[0]
+        posOutput = " ".join(spiralSplit)
+        doc = nlp(posOutput)
+        
+     
+        if identifier_type == "IDENTIFIER": # 2011 B,H,&L POS rule #1 
+            if type != "boolean":
+                for token in doc:
+                    # print(token.text, token.tag_)
+                    if token.tag_ in ["VBZ", "VBP", "VBG", "VB"]:
+                        print("Violation: non boolean field with present tense verb |", type + ": " + "'" + identifier + "'")
+                        print(identifier) 
+            else: 
+                for token in doc:
+                    if token.tag_ in ["MD"]
+                # boolean field names should contain 3person forms of the verb to be or should 
 
 
-    # extract identifiers from java 
-    # check in java for casing violations (camel, kebab, snake etc.)
-    # pass violating identifiers into python using toSplit.txt
-    # e.g. IDENTIFIER id_name Type=[modifier null/final] -- the = is irrelevant
-    # split them into their words within each identifier 
-    # 
+        
+         
+        if identifier_type == "IDENTIFIER" and len(doc) == 1 : # 2011 B,H,&L POS rule #2
+            if doc[0].pos_ == "VERB":
+                print("Violation: field names should never be only a verb |", type + ": " + "'" + identifier + "'")
+                print(identifier) 
+            
+            if doc[0].pos_ == "ADJ": # 2011 B,H,&L POS rule #3 
+                print("Violation: field names should never be only a adjective |", type + ": " + "'" + identifier + "'")
+                print(identifier) 
+        
+
+         
+        # print(type)
+        # print(split)
+        # print(doc)
