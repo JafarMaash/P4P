@@ -16,8 +16,8 @@ with open('toSplit.txt') as file:
                 print( split[1] + ": ", spiralSplit)
             else:
                 methodViolations += 1
-    print("identifier camel case violations: " + str(identifierViolations))
-    print("method camel case violations: " + str(methodViolations))
+    print("identifier case violations: " + str(identifierViolations))
+    print("method case violations: " + str(methodViolations))
 
 
     # extract identifiers from java 
