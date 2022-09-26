@@ -9,6 +9,8 @@ with open('allIdentifiers.txt') as file:
     boolWithout3PVerb = 0
     onlyVerb = 0
     onlyAdj = 0
+    tooManyOrFewWords = 0
+    numericWordsInIdentifier = 0
     verbAndVerbPhrase = 0
     booleanIs = 0
     for line in file:
@@ -22,30 +24,43 @@ with open('allIdentifiers.txt') as file:
         doc = nlp(posOutput)
 
         if identifier_type == "IDENTIFIER": # 2011 B,H,&L POS rule #1 
-            if any(token.pos_ == "NOUN" for token in doc):
+            if any(token.pos_ in ["NOUN","PROPN"] for token in doc):
                 pass
             else:
                 notANoun += 1
-                print("Java spec Violation: fields should have names that are nouns, noun phrases, or abbreviations for nouns",
-                type + ": " + "'" + identifier + "'")
-                print(identifier)
+                # print("Java spec Violation: fields should have names that are nouns, noun phrases, or abbreviations for nouns",
+                # type + ": " + "'" + identifier + "'")
+                # print(identifier)
+                # print(doc)
+                # print([(token.text, token.pos_) for token in doc])
 
             if "boolean" not in type:
                 for token in doc:
                     if token.tag_ in ["VBZ", "VBP", "VBG", "VB"]:
                         nonBoolPTVerb += 1
-                        print("Violation: non boolean field with present tense verb |", type + ": " + "'" + identifier + "'")
-                        print(identifier) 
+                        # print("Violation: non boolean field with present tense verb |", type + ": " + "'" + identifier + "'")
+                        # print(identifier) 
             else: 
                 if not any(item in ["is", "was", "should"] for item in spiralSplit):
                     boolWithout3PVerb += 1
-                    print("Violation: boolean field names should contain 3rd person forms of the verb \"to be\" or \"should\"  |", 
-                    type + ": " + "'" + identifier + "'")
-                    print(identifier) 
+                    # print("Violation: boolean field names should contain 3rd person forms of the verb \"to be\" or \"should\"  |", 
+                    # type + ": " + "'" + identifier + "'")
+                    # print(identifier) 
+
+            if len(spiralSplit) not in [2,3,4]:
+                print("Violation: identifier should consist of 2, 3, or 4 words", type + ": " + "'" + identifier + "'")
+                print(identifier)
+                tooManyOrFewWords += 1
+                
+            
+            if not any(token.pos_ not in ["NUM"] for token in doc):
+                print("Violation: Identifier name made up only of numeric words and/or values", type + ": " + "'" + identifier + "'")
+                print(identifier)
+                numericWordsInIdentifier += 1
 
                 
          
-        if identifier_type == "IDENTIFIER" and len(doc) == 1 : # 2011 Binklie et al. "field names should never only be a verb/adjective"
+        if identifier_type == "IDENTIFIER" and len(spiralSplit) == 1 : # 2011 Binklie et al. "field names should never only be a verb/adjective"
             if doc[0].pos_ == "VERB":
                 onlyVerb += 1
                 print("Violation: field names should never be only a verb |", type + ": " + "'" + identifier + "'")
@@ -57,7 +72,7 @@ with open('allIdentifiers.txt') as file:
                 print(identifier) 
         
         if identifier_type == "METHOD":
-            if any(token.pos_ == "VERB" for token in doc):
+            if any(token.pos_ in ["VERB","AUX"]  for token in doc):
                     pass
             else:
                 verbAndVerbPhrase += 1
@@ -81,3 +96,6 @@ print("non boolean field with present tense verb, TOTAL: " + str(nonBoolPTVerb))
 print("Violation: boolean field names should contain 3rd person forms of the verb \"to be\" or \"should\", TOTAL: " + str(boolWithout3PVerb))
 print("Violation: field names should never be only a verb, TOTAL: " + str(onlyVerb))
 print("Violation: field names should never be only a adjective , TOTAL: " + str(onlyAdj))
+print("Relf violations:")
+print("Violation: Identifier made up only of numeric words/constants, TOTAL: " + str(numericWordsInIdentifier))
+print("Violation: Identifier not made up of 2,3, or 4 words, TOTAL: " + str(tooManyOrFewWords))
