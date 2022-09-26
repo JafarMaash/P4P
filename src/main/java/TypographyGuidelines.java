@@ -61,12 +61,20 @@ public class TypographyGuidelines {
             if (Arrays.asList(charArray[charArray.length - 1], charArray[0]).contains('_')){ // outside underscores
                 numViolations++;
                 System.out.println("underscore vio: " + entry.getKey());
+                continue;
             }
             for (int i = 0; i < charArray.length; i++){
-                if(charArray[i] == '_' && charArray[i+1] == '_'){
-                    numViolations++; // multiple i.e contiguous underscores
-                    System.out.println("underscore vio: " + entry.getKey());
-                    //todo write all these violations to different folders to later examine?
+                try {
+                    if (charArray[i] == '_' && charArray[i + 1] == '_') {
+                        numViolations++; // multiple i.e contiguous underscores
+                        System.out.println("underscore vio: " + entry.getKey());
+                        //todo write all these violations to different folders to later examine?
+                    }
+                }
+                catch(Exception e){
+                    System.out.println(e);
+                    System.out.println("exception: " + entry.getKey());
+
                 }
             }
         }
@@ -92,9 +100,9 @@ public class TypographyGuidelines {
     * */
     public String checkCaseTypes() throws Exception {
 
-        File caseViolationsFile = new File("toSplit.txt");
+        File caseViolationsFile = new File("python_parsing/toSplit.txt");
         if(!(caseViolationsFile.exists() && !caseViolationsFile.isDirectory())) {
-            FileWriter fw = new FileWriter("toSplit.txt", false);
+            FileWriter fw = new FileWriter("python_parsing/toSplit.txt", false);
             PrintWriter pw = new PrintWriter(fw, false);
             pw.flush();
             pw.close();
