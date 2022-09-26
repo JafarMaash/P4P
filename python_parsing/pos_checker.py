@@ -1,6 +1,7 @@
 import spacy
 
 from spiral import ronin
+import csv
 
 nlp = spacy.load('en_core_web_lg')
 with open('allIdentifiers.txt') as file:
@@ -99,3 +100,23 @@ print("Violation: field names should never be only a adjective , TOTAL: " + str(
 print("Relf violations:")
 print("Violation: Identifier made up only of numeric words/constants, TOTAL: " + str(numericWordsInIdentifier))
 print("Violation: Identifier not made up of 2,3, or 4 words, TOTAL: " + str(tooManyOrFewWords))
+
+with  open("csv_data.csv", 'a', newline="") as csv_output: 
+    writer = csv.writer(csv_output)
+    writer.writerow(["POS"])
+    writer.writerow(["Java spec violations"])
+    writer.writerow(["Fields not a noun", str(notANoun)])
+    writer.writerow(["Methods not a verb", str(verbAndVerbPhrase)])
+    writer.writerow(["boolean method without \'is\'", str(booleanIs)])
+    writer.writerow(["\n"])
+    writer.writerow(["Binkley violations", ""])
+    writer.writerow(["non bool present tense verb", str(nonBoolPTVerb)])
+    writer.writerow(["bool field non 3rd person verb", str(boolWithout3PVerb)])
+    writer.writerow(["field names only verb", str(onlyVerb)])
+    writer.writerow(["field names only adjective", str(onlyAdj)])
+    writer.writerow(["\n"])
+    writer.writerow(["Relf violations", ""])
+    writer.writerow(["Identifiers with numeric words/constants", str(numericWordsInIdentifier)])
+    writer.writerow(["Identifiers not made up of 2-4 words", str(tooManyOrFewWords)])
+
+

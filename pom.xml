@@ -33,6 +33,11 @@
             <artifactId>javaparser-symbol-solver-core</artifactId>
             <version>LATEST</version>
         </dependency>
+        <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>4.1</version>
+        </dependency>
     </dependencies>
 
 </project>

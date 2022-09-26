@@ -9,9 +9,9 @@ import com.github.javaparser.ast.type.PrimitiveType;
 import com.github.javaparser.ast.type.Type;
 import com.github.javaparser.ast.visitor.VoidVisitor;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
+import com.opencsv.CSVWriter;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.*;
 import java.nio.file.Path;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.HashMap;
@@ -38,7 +38,7 @@ public class JavaParserIdentifiers {
         int numCamel = 0;
         int[] overTwenty;
         String rootPath = "test_repos";
-        String src1 = rootPath + "/design1000/";
+        String src1 = rootPath + "/greenwall-master/";
         Analyser analyser = new Analyser();
         analyser.addSourcePath(src1);
         Modifier FINAL = Modifier.finalModifier();
@@ -48,7 +48,9 @@ public class JavaParserIdentifiers {
 
         HashSet<String> dict = null;
         for (Path path : paths) {
+            try{
             CompilationUnit compilationUnit = analyser.getCompilationUnitForPath(path);
+
             VoidVisitor<Object> visitor = new VoidVisitorAdapter<Object>() {
                 @Override
                 public void visit(VariableDeclarator n, Object arg) {
@@ -111,6 +113,10 @@ public class JavaParserIdentifiers {
                     dict.add(line);
                 }
             }
+        }
+            catch(Exception e){
+            System.out.println(path);
+        }
 
         }
         TypographyGuidelines typographyGuidelines = new TypographyGuidelines(identifiers, methods, dict);
@@ -124,5 +130,41 @@ public class JavaParserIdentifiers {
         System.out.println("Number of methods: " + methods.size());
         System.out.println("Long methods " + overTwenty[1]);
         System.out.println(caseCheckResults);
+
+        File file = new File("python_parsing/csv_data.csv");
+        try {
+            // create FileWriter object with file as parameter
+            FileWriter outputfile = new FileWriter(file);
+
+            // create CSVWriter object filewriter object as parameter
+            CSVWriter writer = new CSVWriter(outputfile);
+
+            // adding header to csv
+            String[] header = { "Repo name" };
+            writer.writeNext(header);
+
+            // add data to csv
+            String[] data1 = { "Total methods", String.valueOf(methods.size())};
+            writer.writeNext(data1);
+            String[] data2 = { "Method violations (length)", String.valueOf(overTwenty[1]) };
+            writer.writeNext(data2);
+            String[] data3 = { "Method violations (case)", "0" };
+            writer.writeNext(data3);
+            String[] data4 = { "Total identifiers", String.valueOf(identifiers.size())};
+            writer.writeNext(data4);
+            String[] data5 = { "Identifier violations (length)", String.valueOf(overTwenty[0]) };
+            writer.writeNext(data5);
+            String[] data6 = { "Identifier violations (case)", "0" };
+            writer.writeNext(data6);
+            String[] data7 = { "Primary case type", "Insert here" };
+            writer.writeNext(data7);
+
+            // closing writer connection
+            writer.close();
+        }
+        catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 }
