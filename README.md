@@ -74,6 +74,10 @@ Those identifiers which split into multiple words are then recorded as case viol
 
 ## The Python part
 This is where the identifiers are split, and semantic guidelines are applied.
+You may need to install spiral and spacy in order to run this part, which can be found [here](https://github.com/casics/spiral) and [here](https://spacy.io/usage) respectively.
+Spiral also had an issue when we first installed pertaining to outdated python libraries being used. For more information see the `splitter.py` section below or [this stackoverflow post](https://stackoverflow.com/questions/53978542/how-to-use-collections-abc-from-both-python-3-8-and-python-2-7/53978543#53978543).
+
+
 
 Relevant files:
 - `splitter.py`
@@ -81,7 +85,7 @@ Relevant files:
 - `pos_tagger.py`
 
 ### `splitter.py`
-This file splits identifiers which don’t superficially follow a casing convention into their constituent words, in order to evaluate whether or not they committed casing violations. It uses the **spiral** library, which can be found and installed [here](https://github.com/casics/spiral). There was an issue about collections library and python version or something like that. If you're reading this I didn't update the readme with details. To put it briefly, it requires going into spiral's source code and adding `abc.collections` in some file instead of `collections`.  
+This file splits identifiers which don’t superficially follow a casing convention into their constituent words, in order to evaluate whether or not they committed casing violations. It uses the **spiral** library, which can be found and installed [here](https://github.com/casics/spiral). There was an issue about collections library and python version or something like that. If you're reading this I didn't update the readme with details. To put it briefly, it requires going into spiral's source code and adding `abc.collections` in some file instead of `collections`. See [this stackoverflow post](https://stackoverflow.com/questions/53978542/how-to-use-collections-abc-from-both-python-3-8-and-python-2-7/53978543#53978543).
 
 ### `pos_checker.py`
 Splits every identifier into its constituent words, evaluating them against semantic identifier naming guidelines. This uses spiral to split the words and spaCy as a Natural Language Parser in order to identify the part of speech of every word. More information on spaCy can be found [here](https://spacy.io/usage).
