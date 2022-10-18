@@ -119,3 +119,10 @@ In the data spreadsheet, semantic rules are numbered as follows:
 In addition, we used to track what case conventions every repository followed, which you'll see in the spreadsheet.
 Virtually every repo was around 99% camelCase so we stopped.
 
+## Additional information
+Much more additional information such as literature reviews, links to every repository tested, in depth research methods, and potential future work can be found in the project report and/or compendium report. 
+
+In the code you will also find a few todos describing ideas for how to add functionality to the code or do things more efficiently. If this project is ever built on those would probably be a good place to start. Ctrl+f-ing "todo" should reveal all of them.  
+
+## Acknowledgements
+Special, special thanks to Professor Ewan Tempero for all his help and support in this project, and for being such a great supervisor.
