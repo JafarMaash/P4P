@@ -37,8 +37,8 @@ public class JavaParserIdentifiers {
     public static void main(String[] args) throws Exception {
         int numViolations = 0;
         int[] overTwenty; // [num fields > 20 chars, num methods > 20 chars]
-        String rootPath = "test_repos";
-        String src1 = rootPath + "/pixel-dungeon-master"; // insert repo path here
+        String rootPath = "kalah_designs";
+        String src1 = rootPath + "/design1000"; // insert repo path here
         Analyser analyser = new Analyser();
         analyser.addSourcePath(src1);
         Modifier FINAL = Modifier.finalModifier();
