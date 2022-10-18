@@ -10,13 +10,13 @@ Identifiers are a key source of information for developers when understanding co
 
 The result of this is a source code tool which extracts identifier names from a repository, splits them into their constituent words, and then assesses them against 9 different semantic guidelines as well as around 5 typographic guidelines (i.e. casing, underscores, etc). 
 
-# Project setup
+## Project setup
 
 This project can be split into two major components: 
 - The Java part (`P4P/src/main/java`), which uses JavaParser to extract identifiers and evaluate them typographically.
 - The Python part (`P4P/python_parsing`), which uses an identifier splitter and Natural Language Parser (NLP) to evaluate them semantically. 
 
-# General flow for evaluating a repository
+## General flow for evaluating a repository (overview of instructions for how to run)
 - Download a repository's source code and extract the source files to a folder 
 - Edit the path variable inside `JavaParserIdentifiers.java` for the desired repository and run it to extract the identifiers from the repository
   - `toSplit.txt`, `allIdentifiers.txt`, and `csv_data.csv` are produced
@@ -26,6 +26,17 @@ This project can be split into two major components:
 - Run `pos_checker.py`
   - Semantic violations are outputted in the console (and `csv_data.csv`)
 - Record all this data, delete `toSplit.txt`, `allIdentifiers.txt`, and `csv_data.csv`, and repeat on a new repository. 
+
+In addition, 3 files are created with every run:
+- `allIdentifiers.txt`
+  - Every identifier in a repo, whether it's a field or method, its type/return type, and (if it's a field) whether or not it has a final modifier
+  - Used for semantic guidelines
+- `toSplit.txt`
+  - Every identifier which doesn't follow a casing convention regex pattern
+  - Run through the splitter to identify true casing violations
+- `csv_data.csv`
+  - Temporary csv file which outputs most of the violation statistics which can be then easily copy pasted into a spreadsheet to save time 
+
 
 **NOTE: Sometimes, identifiers recorded in the txt files also carry over comments with them - I don't know why. These will break the Python scripts, 
 so if you want, before you run them, you can ctrl+f "/" in `allIdentifiers.txt` and `toSplit.txt` and remove any comments and ensure the file is formatted properly.**
@@ -46,7 +57,7 @@ It loops through every path/file in a repository, and adds the identifiers for a
 - `fields` stores (key, value) pairs where the value is an Entry object. Overall a `fields` entry looks like (field name, <type, modifier>).
 The hashmap is set up like this in order to keep track of the modifiers fields have, as if they are `final` then different guidelines apply to them (see Every Guideline Implemented). 
 
-<br> After recording every identifier in a repository, a `TypographyGuidelines` object is created and is passed these hashmaps. It then (you guessed it) assesses the identifiers against typography guidelines and returns the results. 
+After recording every identifier in a repository, a `TypographyGuidelines` object is created and is passed these hashmaps. It then (you guessed it) assesses the identifiers against typography guidelines and returns the results. 
 The results are then printed from within `JavaParserIdentifiers`. 
 
 ### `TypographyGuidelines.java`
@@ -60,6 +71,24 @@ Those identifiers which split into multiple words are then recorded as case viol
 
  ### `Analyser.java` and `Utility.java`
  We didn't touch these classes, so will not comment on them. They were copied over from Ewan's example use of JavaParser. They **are** necessary though so probably don't touch them, idk.  
+
+## The Python part
+This is where the identifiers are split, and semantic guidelines are applied.
+
+Relevant files:
+- `splitter.py`
+- `pos_checker.py`
+- `pos_tagger.py`
+
+### `splitter.py`
+This file splits identifiers which don’t superficially follow a casing convention into their constituent words, in order to evaluate whether or not they committed casing violations. It uses the **spiral** library, which can be found and installed [here](https://github.com/casics/spiral). There was an issue about collections library and python version or something like that. If you're reading this I didn't update the readme with details. To put it briefly, it requires going into spiral's source code and adding `abc.collections` in some file instead of `collections`.  
+
+### `pos_checker.py`
+Splits every identifier into its constituent words, evaluating them against semantic identifier naming guidelines. This uses spiral to split the words and spaCy as a Natural Language Parser in order to identify the part of speech of every word. More information on spaCy can be found [here](https://spacy.io/usage).
+
+### `pos_tagger.py`
+This file is not relevant to the repo evaluation process. It can be used for internal testing purposes, to observe how spaCy processes certain individual words. 
+
 
 ## Every Guideline Implemented
 
@@ -76,7 +105,7 @@ Those identifiers which split into multiple words are then recorded as case viol
 ![image](https://user-images.githubusercontent.com/62087759/196416727-a5004efc-6991-45c7-8676-0b1aa40c465a.png)
 ![image](https://user-images.githubusercontent.com/62087759/196416762-6f0c838e-66d6-466c-9f27-c4de2fadb490.png)
 
-Accepted Cases:
+### Accepted Cases:
 - camelCase
 - PascalCase
 - snake_case
