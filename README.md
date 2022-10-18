@@ -120,7 +120,7 @@ In addition, we used to track what case conventions every repository followed, w
 Virtually every repo was around 99% camelCase so we stopped.
 
 ## Additional information
-Much more additional information such as literature reviews, links to every repository tested, in depth research methods, and potential future work can be found in the project report and/or compendium report. 
+Much more additional information such as literature reviews, links to every repository tested, in depth research methods, and potential future work can be found in the project report, compendium, and compendium report. 
 
 In the code you will also find a few todos describing ideas for how to add functionality to the code or do things more efficiently. If this project is ever built on those would probably be a good place to start. Ctrl+f-ing "todo" should reveal all of them.  
 
