@@ -2,4 +2,6 @@
 /target/
 test_repos/
 /test_repos/
-toSplit.txt
+python_parsing/toSplit.txt
+python_parsing/allIdentifiers.txt
+python_parsing/csv_data.csv

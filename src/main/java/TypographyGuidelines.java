@@ -7,9 +7,9 @@
 * to reduce iterations and improve performance.
 *
 * A few other typographic rules are more comparative (e.g. two identifiers should not differ only by a number).
-* I'll implement these later, as I imagine their operations will be a bit more expensive.
+* These have not been implemented in the interest of time and efficiency, but are a future work point to consider.
  *
- * add numviolations into an identifierinfo class, play around with it in there.
+ * TODO: could add numViolations into an IdentifierInfo class, and play around with it in there.
 * */
 
 import com.github.javaparser.ast.Modifier;
@@ -17,34 +17,27 @@ import com.github.javaparser.ast.type.Type;
 
 import java.io.*;
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
 
 public class TypographyGuidelines {
 
-    private Map<String, Map.Entry<Type, Modifier>> identifiers;
+    private Map<String, Map.Entry<Type, Modifier>> fields;
     private Map<String,Type> methods;
 
-    private HashSet<String> dictionary;
-
     private int camelCaseUses = 0;
-
     private int pascalCaseUses = 0;
-
     private int snakeCaseUses = 0;
-
     private int kebabCaseUses = 0;
 
-    public TypographyGuidelines(Map<String, Entry<Type, Modifier>> identifiers, Map<String, Type> methods, HashSet<String> dictionary){
-        this.identifiers = identifiers;
+    public TypographyGuidelines(Map<String, Entry<Type, Modifier>> fields, Map<String, Type> methods){
+        this.fields = fields;
         this.methods = methods;
-        this.dictionary = dictionary;
 
     }
 
     /**
-    * Checks Relf's guideleines (2004):
+    * Checks Relf's guidelines (2004):
     * no outside underscore characters (e.g. _Apple_Count)
     * no multiple underscore characters (e.g. Apple__Count)
     *
@@ -52,29 +45,35 @@ public class TypographyGuidelines {
     * */
     public int checkUnderscores(){
         int numViolations = 0;
-        for(Entry<String, Entry<Type, Modifier>> entry: identifiers.entrySet()){
-            if (entry.getValue().getValue() == Modifier.finalModifier()){ //
+        for(Entry<String, Entry<Type, Modifier>> entry: fields.entrySet()){
+
+            // Check if it's final, and if so follows final field rules
+            if (entry.getValue().getValue() == Modifier.finalModifier()){
                 numViolations += followsConstantTypography(entry.getKey()) ? 0 : 1;
-                // java docs guidelines for constants/final variables
+                // Java Language Spec guideline for constants/final variables
             }
+
             char[] charArray = entry.getKey().toCharArray();
-            if (Arrays.asList(charArray[charArray.length - 1], charArray[0]).contains('_')){ // outside underscores
+
+            // Outside underscores
+            if (Arrays.asList(charArray[charArray.length - 1], charArray[0]).contains('_')){
                 numViolations++;
                 System.out.println("underscore vio: " + entry.getKey());
                 continue;
             }
+
+            // Multiple i.e contiguous underscores
             for (int i = 0; i < charArray.length; i++){
                 try {
                     if (charArray[i] == '_' && charArray[i + 1] == '_') {
-                        numViolations++; // multiple i.e contiguous underscores
+                        numViolations++;
                         System.out.println("underscore vio: " + entry.getKey());
-                        //todo write all these violations to different folders to later examine?
+                        //TODO: write all these violations to different folders to later examine?
                     }
                 }
                 catch(Exception e){
                     System.out.println(e);
                     System.out.println("exception: " + entry.getKey());
-
                 }
             }
         }
@@ -82,11 +81,11 @@ public class TypographyGuidelines {
     }
 
     /**
-    * Java specification guideline
-    * Currently called from inside checkUnderscores()
-    * The names of constants in interface types should be, and *final variables of class types*
+    * Checks a Java Language Specification guideline
+    * This method is currently called from inside checkUnderscores()
+    * "The names of constants in interface types should be, and final variables of class types
     * may conventionally be, a sequence of one or more words, acronyms, or abbreviations,
-    * all uppercase, with components separated by underscore "_" characters
+    * all uppercase, with components separated by underscore "_" characters"
     * */
     private boolean followsConstantTypography(String identifier) {
         String constantPattern = "^[A-Z]+(?:_[A-Z]+)*$";
@@ -94,12 +93,12 @@ public class TypographyGuidelines {
     }
 
     /**
-    * Per the Java spec
-    * Names of fields that are not final (and methods) should be in mixed case with a lowercase first letter
-    * and the first letters of subsequent words capitalized.
+     * Check if identifiers follow a casing convention; if they don't, write them to a txt file to later split and check.
+     * Also add all identifiers to a separate txt file for part of speech rules later.
     * */
     public String checkCaseTypes() throws Exception {
 
+        // Set up text file for casing violations
         File caseViolationsFile = new File("python_parsing/toSplit.txt");
         if(!(caseViolationsFile.exists() && !caseViolationsFile.isDirectory())) {
             FileWriter fw = new FileWriter("python_parsing/toSplit.txt", false);
@@ -109,6 +108,7 @@ public class TypographyGuidelines {
             fw.close();
         }
 
+        // Set up text file for all identifiers, to later be checked for part of speech rules
         File allIdsFile = new File("python_parsing/allIdentifiers.txt");
         if(!(allIdsFile.exists() && !allIdsFile.isDirectory())) {
             FileWriter fw = new FileWriter("python_parsing/allIdentifiers.txt", false);
@@ -118,65 +118,64 @@ public class TypographyGuidelines {
             fw.close();
         }
 
-//        int numViolations = 0;
-        for(Entry<String, Entry<Type, Modifier>> entry: identifiers.entrySet()){
-            // todo refactor this to a method to reduce duplicate code
-            FileWriter fw1 = null;
-            try {
-                fw1 = new FileWriter(allIdsFile, true);
-                BufferedWriter br = new BufferedWriter(fw1);
-                br.write("IDENTIFIER" + "\t" + entry.getKey() + "\t" + entry.getValue() + "\n");
-                br.close();
-                fw1.close();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            if (entry.getValue().getValue() != null){ // if identifier is final, does not need to follow camelcase
-                // Constant typography violation is checked for in checkUnderscores, so no need to double count them in the line below.
+        // For every field
+        for(Entry<String, Entry<Type, Modifier>> entry: fields.entrySet()){
+
+            // Add every field to allIdentifiers.txt, along with its type and whether or not it's final
+            writeFieldToFile(allIdsFile, entry);
+
+            // Add fields which don't superficially follow a casing convention to caseViolationsFile, to be evaluated later in splitter.py
+            if (entry.getValue().getValue() != null){ // if identifier is final
+                // Constant (i.e. final fields) typography violation is checked for in checkUnderscores,
+                // so we can skip checking them here.
                 continue;
-            } else {
-                if (!followsGuideline(entry.getKey())) {
-                    //write to caseViolationsFile if no case type matches
-                    FileWriter fw = null;
-                    try {
-                        fw = new FileWriter(caseViolationsFile, true);
-                        BufferedWriter br = new BufferedWriter(fw);
-                        br.write("IDENTIFIER" + "\t" + entry.getKey() + "\t" + entry.getValue() + "\n");
-                        br.close();
-                        fw.close();
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
+            } else { // if field is not final
+                if (!followsCasingConvention(entry.getKey())) {
+                    // write to caseViolationsFile if it doesn't appear to follow a casing convention
+                    writeFieldToFile(caseViolationsFile, entry);
                 }
             }
         }
+
+        // For every method
         for(Entry<String, Type> method : methods.entrySet()){
-            FileWriter fw1 = null;
-            try {
-                // every id gets written to allidsfile before we check if it follows any guideline
-                fw1 = new FileWriter(allIdsFile, true);
-                BufferedWriter br = new BufferedWriter(fw1);
-                br.write("METHOD" + "\t" + method.getKey() + "\t" + method.getValue() + "\n");
-                br.close();
-                fw1.close();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            if (!followsGuideline(method.getKey())) {
-                //write to caseViolationsFile
-                FileWriter fw = null;
-                try {
-                    fw = new FileWriter(caseViolationsFile, true);
-                    BufferedWriter br = new BufferedWriter(fw);
-                    br.write("METHOD" + "\t" + method.getKey() + "\t" + method.getValue() + "\n");
-                    br.close();
-                    fw.close();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
+
+            // Add every field to allIdentifiers.txt, along with its return type
+            writeMethodToTextFile(allIdsFile, method);
+
+            // Add fields which don't superficially follow a casing convention to caseViolationsFile, to be evaluated later in splitter.py
+            if (!followsCasingConvention(method.getKey())) {
+                writeMethodToTextFile(caseViolationsFile, method);
             }
         }
         return "camel case usages: " + camelCaseUses + "\npascal case usages: " + pascalCaseUses + "\nsnake case usages: " + snakeCaseUses + "\nkebab case usages: " + kebabCaseUses;
+    }
+
+    private void writeMethodToTextFile(File fileToWriteTo, Entry<String, Type> method) {
+        FileWriter fw1;
+        try {
+            // every identifier gets written to allIdentifiers.txt before we check if it follows any guidelines
+            fw1 = new FileWriter(fileToWriteTo, true);
+            BufferedWriter br = new BufferedWriter(fw1);
+            br.write("METHOD" + "\t" + method.getKey() + "\t" + method.getValue() + "\n"); // key = method name, value = return type
+            br.close();
+            fw1.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void writeFieldToFile(File fileToWriteTo, Entry<String, Entry<Type, Modifier>> entry) {
+        FileWriter fw;
+        try {
+            fw = new FileWriter(fileToWriteTo, true);
+            BufferedWriter br = new BufferedWriter(fw);
+            br.write("FIELD" + "\t" + entry.getKey() + "\t" + entry.getValue() + "\n");
+            br.close();
+            fw.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**
@@ -210,15 +209,15 @@ public class TypographyGuidelines {
      * */
     public int[] longerThanTwentyCharacters(){
         int methodViolations = 0;
-        int identifierViolations = 0;
-        for(String method : methods.keySet()){
-            methodViolations += (method.length() <= 20) ? 0 : 1;
+        int fieldViolations = 0;
+        for(String methodName : methods.keySet()){
+            methodViolations += (methodName.length() <= 20) ? 0 : 1;
         }
 
-        for(String identifier : identifiers.keySet()){
-            identifierViolations += (identifier.length() <= 20) ? 0 : 1;
+        for(String fieldName : fields.keySet()){
+            fieldViolations += (fieldName.length() <= 20) ? 0 : 1;
         }
-        return new int[] {identifierViolations, methodViolations };
+        return new int[] {fieldViolations, methodViolations };
     }
 
     /**
@@ -226,7 +225,7 @@ public class TypographyGuidelines {
      * @param identifier the identifier to be checked
      * @return true if it matches a naming guideline, false if not
      */
-    private boolean followsGuideline(String identifier) {
+    private boolean followsCasingConvention(String identifier) {
         if (isCamelCase(identifier)) {
             camelCaseUses += 1;
             return true;

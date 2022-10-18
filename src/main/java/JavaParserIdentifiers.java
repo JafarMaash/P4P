@@ -15,55 +15,56 @@ import java.io.*;
 import java.nio.file.Path;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
 /**
  * Here's the class for extracting identifiers from classes.
- * Right now it only gets variable and method names from one class, and stores them in separate hashmaps,
- * along with their variable/method return type.
- * Then it calls a guideline checker, which returns the number of violations (no further details/info on the violations,
- * but could easily add that).
+ * It gets all the variable and method names from a repository, and stores them in two hashmaps respectively,
+ * along with their type/return type.
+ * Then it calls a guideline checker (TypographyGuidelines), which returns the number of violations for each rule.
  *
- * Next steps here are to expand the extraction from one class out to a whole app, and other stuff that will come to mind
- * as we continue to work on this.
- * Also need to get rid of all the commented out unused stuff in here, will do that later when it becomes more clear what we need
- * and don't need.
+ * If there's something else you wanna do with the parser (like maybe extract class names and apply rules for those too)
+ * and it's not already in this class, have a look at Ewan's example repo on Github - link can be found in the readme.
+ * This class is a copy of that, but with extra parser functionalities you might find useful.
+ *
+ * Also I'm going to leave in any print statements, because you may find them useful when trying to understand
+ * what's going on.
+ *
  * */
 public class JavaParserIdentifiers {
     public static void main(String[] args) throws Exception {
         int numViolations = 0;
-        int numCamel = 0;
-        int[] overTwenty;
+        int[] overTwenty; // [num fields > 20 chars, num methods > 20 chars]
         String rootPath = "test_repos";
-        String src1 = rootPath + "/greenwall-master/";
+        String src1 = rootPath + "/pixel-dungeon-master"; // insert repo path here
         Analyser analyser = new Analyser();
         analyser.addSourcePath(src1);
         Modifier FINAL = Modifier.finalModifier();
         Set<Path> paths = Utility.findAllJavaSourceFilesFromRoots(src1);
-        Map<String, Entry<Type, Modifier>> identifiers = new HashMap<>();
-        Map<String, Type> methods = new HashMap<>(); // key method name, value return type
+        Map<String, Entry<Type, Modifier>> fields = new HashMap<>(); // key = field name, value = new entry(key = field type, value = final modifier or null)
+        Map<String, Type> methods = new HashMap<>(); // key = method name, value = return type
 
-        HashSet<String> dict = null;
+        // go through every file in the repo, and add identifiers to the hashmap
         for (Path path : paths) {
             try{
             CompilationUnit compilationUnit = analyser.getCompilationUnitForPath(path);
-
             VoidVisitor<Object> visitor = new VoidVisitorAdapter<Object>() {
                 @Override
                 public void visit(VariableDeclarator n, Object arg) {
                     super.visit(n, arg);
                 }
 
+                // Add fields
                 @Override
                 public void visit(VariableDeclarationExpr n, Object arg) {
                     super.visit(n, arg);
                     VariableDeclarator vd = n.getVariable(0);
-                    identifiers.put(vd.getNameAsString(), new SimpleEntry<>(vd.getType(), null));
+                    fields.put(vd.getNameAsString(), new SimpleEntry<>(vd.getType(), null));
                 }
 
+                // Add fields with FINAL modifiers as well
                 @Override
                 public void visit(FieldDeclaration n, Object arg) {
                     super.visit(n, arg);
@@ -76,11 +77,12 @@ public class JavaParserIdentifiers {
                     if (n.getModifiers().contains(FINAL)) {
                         mod = FINAL;
                     }
-                    identifiers.put(vd.getNameAsString(), new SimpleEntry<>(vd.getType(), mod));
+                    fields.put(vd.getNameAsString(), new SimpleEntry<>(vd.getType(), mod));
 //                    System.out.println("IDENTIFIER NAME " + vd.getNameAsString());
 //                    System.out.println("IDENTIFIER TYPE " + vd.getType());
                 }
 
+                // Add methods
                 @Override
                 public void visit(MethodDeclaration md, Object arg) {
                     super.visit(md, arg);
@@ -100,37 +102,29 @@ public class JavaParserIdentifiers {
                 }
             };
 //            System.out.println("MODULE for " + path);
-            //todo create a new identifierinfo object here, pass it to the visitor as the 2nd arg instead of null
+            // TODO: could create a new IdentifierInfo object here, pass it to the visitor as the 2nd arg instead of null
             visitor.visit(compilationUnit, null);
 
-            dict = new HashSet();
-            BufferedReader br = new BufferedReader(new FileReader("src/main/dictionaries/en_US.dic"));
-            String line;
-            while ((line = br.readLine()) != null) {
-                if (line.contains("/")) {
-                    dict.add(line.split("/")[0]);
-                } else {
-                    dict.add(line);
-                }
-            }
         }
             catch(Exception e){
             System.out.println(path);
         }
 
         }
-        TypographyGuidelines typographyGuidelines = new TypographyGuidelines(identifiers, methods, dict);
-        // todo put all the identifiers/methods into one big txt, to pass into python and check for PoS
+        TypographyGuidelines typographyGuidelines = new TypographyGuidelines(fields, methods);
         numViolations += typographyGuidelines.checkUnderscores();
         String caseCheckResults = typographyGuidelines.checkCaseTypes();
         overTwenty = typographyGuidelines.longerThanTwentyCharacters();
-        System.out.println("underscores: " + numViolations);
-        System.out.println("Number of identifiers: " + identifiers.size());
-        System.out.println("Long identifiers " + overTwenty[0]);
+        System.out.println("underscore violations: " + numViolations);
+        System.out.println("Number of fields: " + fields.size());
+        System.out.println("Long fields " + overTwenty[0]);
         System.out.println("Number of methods: " + methods.size());
         System.out.println("Long methods " + overTwenty[1]);
         System.out.println(caseCheckResults);
 
+
+        // Write the results to a separate (temporary/burner) csv, which makes for easy copy pasting into the actual spreadsheet of data.
+        // TODO: you could probably tidy up the csv writing/formatting to write straight into an actual data spreadsheet instead of a temporary one.
         File file = new File("python_parsing/csv_data.csv");
         try {
             // create FileWriter object with file as parameter
@@ -141,20 +135,20 @@ public class JavaParserIdentifiers {
 
             // adding header to csv
             String[] header = { "Repo name" };
-            writer.writeNext(header);
+            writer.writeNext(new String[]{src1});
 
             // add data to csv
             String[] data1 = { "Total methods", String.valueOf(methods.size())};
             writer.writeNext(data1);
             String[] data2 = { "Method violations (length)", String.valueOf(overTwenty[1]) };
             writer.writeNext(data2);
-            String[] data3 = { "Method violations (case)", "0" };
+            String[] data3 = { "Method violations (case)", "insert here after running Python script" };
             writer.writeNext(data3);
-            String[] data4 = { "Total identifiers", String.valueOf(identifiers.size())};
+            String[] data4 = { "Total fields", String.valueOf(fields.size())};
             writer.writeNext(data4);
-            String[] data5 = { "Identifier violations (length)", String.valueOf(overTwenty[0]) };
+            String[] data5 = { "Field violations (length)", String.valueOf(overTwenty[0]) };
             writer.writeNext(data5);
-            String[] data6 = { "Identifier violations (case)", "0" };
+            String[] data6 = { "Field violations (case)", "insert here after running Python script" };
             writer.writeNext(data6);
             String[] data7 = { "Primary case type", "Insert here" };
             writer.writeNext(data7);
