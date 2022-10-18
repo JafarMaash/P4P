@@ -110,5 +110,12 @@ This file is not relevant to the repo evaluation process. It can be used for int
 - PascalCase
 - snake_case
 - kebab-case
- 
+
+### The Data Spreadsheet
+In the data spreadsheet, semantic rules are numbered as follows: 
+![image](https://user-images.githubusercontent.com/62087759/196423862-19d07707-2b24-4096-9e30-429d2a558c5c.png)
+![image](https://user-images.githubusercontent.com/62087759/196423886-a3e4ebd8-ac35-4f35-8d46-19673031166f.png)
+
+In addition, we used to track what case conventions every repository followed, which you'll see in the spreadsheet.
+Virtually every repo was around 99% camelCase so we stopped.
 
