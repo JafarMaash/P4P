@@ -16,7 +16,7 @@ This project can be split into two major components:
 - The Java part (`P4P/src/main/java`), which uses JavaParser to extract identifiers and evaluate them typographically.
 - The Python part (`P4P/python_parsing`), which uses an identifier splitter and Natural Language Parser (NLP) to evaluate them semantically. 
 
-## General flow for evaluating a repository (overview of instructions for how to run)
+## General flow for evaluating a repository (how to run)
 - Download a repository's source code and extract the source files to a folder 
 - Edit the path variable inside `JavaParserIdentifiers.java` for the desired repository and run it to extract the identifiers from the repository
   - `toSplit.txt`, `allIdentifiers.txt`, and `csv_data.csv` are produced
