@@ -17,6 +17,10 @@ This project can be split into two major components:
 - The Python part (`P4P/python_parsing`), which uses an identifier splitter and Natural Language Parser (NLP) to evaluate them semantically. 
 
 ## General flow for evaluating a repository (how to run)
+### BEFORE RUNNING 
+- Install [spiral](https://github.com/casics/spiral) and [spaCy](https://spacy.io/usage).
+- Spiral's folder (`spiral`) sits at the top level inside python_parsing. 
+### TO RUN
 - Download a repository's source code and extract the source files to a folder 
 - Edit the path variable inside `JavaParserIdentifiers.java` for the desired repository and run it to extract the identifiers from the repository
   - `toSplit.txt`, `allIdentifiers.txt`, and `csv_data.csv` are produced
@@ -40,6 +44,8 @@ In addition, 3 files are created with every run:
 
 **NOTE: Sometimes, identifiers recorded in the txt files also carry over comments with them - I don't know why. These will break the Python scripts, 
 so if you want, before you run them, you can ctrl+f "/" in `allIdentifiers.txt` and `toSplit.txt` and remove any comments and ensure the file is formatted properly.**
+
+**NOTE: If you run into an issue with the splitter about the collections library, the fix is likely [this stackoverflow post](https://stackoverflow.com/questions/53978542/how-to-use-collections-abc-from-both-python-3-8-and-python-2-7/53978543#53978543).**
 
 To see an example of how to edit the root path in order to analyse your desired repository source code, look at how its done in the code for the `kalah_designs`.
 
