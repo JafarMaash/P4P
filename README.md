@@ -3,6 +3,8 @@ Welcome to the repository for Part 4 Project #67: *Evaluating Identifier Quality
 <br>Students: Jack Chu & Jafar Maash
 <br>Supervisor: Ewan Tempero
 
+If you are viewing this README from the compendium, we suggest checking the [Github repo](https://github.com/JafarMaash/P4P) in case there is a more recent version.
+
 Identifiers are a key source of information for developers when understanding concepts within source code. 
 <br>Consequently, writing meaningful identifiers is important and can lead to code of a higher quality, readability/comprehensibility, and maintainability.
 <br>The literature lays out a number of guidelines for how to meaningfully name identifiers. 
